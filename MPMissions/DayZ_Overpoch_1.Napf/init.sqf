@@ -1,32 +1,60 @@
+/*	
+	For DayZ Epoch
+	Addons Credits: Jetski Yanahui by Kol9yN, Zakat, Gerasimow9, YuraPetrov, zGuba, A.Karagod, IceBreakr, Sahbazz
+*/
 startLoadingScreen ["","RscDisplayLoadCustom"];
 cutText ["","BLACK OUT"];
 enableSaving [false, false];
 
-dayZ_instance =	24;	//Napf
-
-if (dayZ_instance == 24) then {
-	spawnShoremode = 1;
-	spawnArea= 1500;
-	dayz_minpos = -1000; 
-	dayz_maxpos = 26000;
-	dayz_MapArea = 18000;
-	SafezoneZ = [
-		[Schratten, 75, "Schratten"],
-		[Emmen, 100, "Emmen"],
-		[Lenz, 70, "Lenz"],
-		[Hero, 50, "Hero"]
-	];
-};
-
+//REALLY IMPORTANT VALUES
+dayZ_instance =	24;				//The instance
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
+
+//disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
-enableRadio true;
+//disable radio messages to be heard and shown in the left lower corner of the screen
+enableRadio false;
+// May prevent "how are you civillian?" messages from NPC
 enableSentences false;
+
+// DayZ Epochconfig
+spawnShoremode = 1; // Default = 1 (on shore)
+spawnArea= 1500; // Default = 1500
+// 
+MaxVehicleLimit = 300; // Default = 50
+MaxDynamicDebris = 500; // Default = 100
+dayz_MapArea = 18000; // Default = 10000
+
+dayz_minpos = -1000; 
+dayz_maxpos = 26000;
+
+dayz_paraSpawn = true;
+
+dayz_sellDistance_vehicle = 10;
+dayz_sellDistance_boat = 30;
+dayz_sellDistance_air = 40;
+
+dayz_maxAnimals = 5; // Default: 8
+dayz_tameDogs = true;
+DynamicVehicleDamageLow = 0; // Default: 0
+DynamicVehicleDamageHigh = 100; // Default: 100
+
+DZE_BuildOnRoads = false; // Default: False
+
+DZE_APlotforLife = true;
+DZE_PlotOwnership = true;
+DZE_modularBuild = true;
+
+
+EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+dayz_fullMoonNights = true;
+
+//Load in compiled functions
 call compile preprocessFileLineNumbers "Scripts\common\variables.sqf";
 progressLoadingScreen 0.1;
-call compile preprocessFileLineNumbers "fixes\publicEH.sqf";
+call compile preprocessFileLineNumbers "Scripts\common\publicEH.sqf";
 progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";
 progressLoadingScreen 0.4;
@@ -57,8 +85,6 @@ if (!isDedicated) then {
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	
 	
-	//anti Hack
-	[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";

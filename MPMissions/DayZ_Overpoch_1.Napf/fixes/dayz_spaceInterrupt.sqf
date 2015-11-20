@@ -27,7 +27,7 @@ if (_dikCode == 0x01) then {
 	call dayz_EjectPlayer;
 	
 	//Anti dupe
-	[] execVm "Scripts\dupe\esc.sqf";
+	//[] execVm "Scripts\dupe\esc.sqf";
 };
 // Disable ESC after death
 if (_dikCode == 0x01 && r_player_dead) then {
@@ -200,42 +200,42 @@ if (_dikcode == 0x18) then {
 };
 
 //Detach chute i
-if (_dikcode == 0x17) then { [] execVM "Scripts\detach.sqf"; };
+//if (_dikcode == 0x17) then { [] execVM "Scripts\detach.sqf"; };
 
 //Group management
-if ((_dikCode == 0xDB) || (_dikCode == 0xDC)) then {
-    if (tagName) then {
-		tagName = false;
-		titleText ["Group name tags OFF","PLAIN DOWN"];
-		titleFadeOut 4;
-	} else {
-		tagName = true;
-		titleText ["Group name tags ON","PLAIN DOWN"];
-		titleFadeOut 4;
-	};
-    _handled = true;
-};
-if (_dikCode in actionKeys "TacticalView") then { _handled = true; };
+//if ((_dikCode == 0xDB) || (_dikCode == 0xDC)) then {
+//    if (tagName) then {
+//		tagName = false;
+//		titleText ["Group name tags OFF","PLAIN DOWN"];
+//		titleFadeOut 4;
+//	} else {
+//		tagName = true;
+//		titleText ["Group name tags ON","PLAIN DOWN"];
+//		titleFadeOut 4;
+//	};
+//    _handled = true;
+//};
+//if (_dikCode in actionKeys "TacticalView") then { _handled = true; };
 
-//HUD rCTRL
-if (_dikCode == 0x9D) then { [] execVM "Scripts\gui\ToggleHUD.sqf"; };
+////HUD rCTRL
+//if (_dikCode == 0x9D) then { [] execVM "Scripts\gui\ToggleHUD.sqf"; };
 
-//Tactical seat U
-if (_dikCode == 0x16) then { player setVariable["tacseat",false,true]; };
+////Tactical seat U
+//if (_dikCode == 0x16) then { player setVariable["tacseat",false,true]; };
 
-//Running glitch Y
-if (_dikCode == 0x15) then {
-	if (vehicle player == player) then {
-		if ((animationState player) in ["amovpercmevasraswrfldf","amovpercmevasraswpstdf","amovpercmevasnonwnondf","amovpercmevasraswpstdfl","amovpercmevasraswpstdfr"]) then {
-			player switchMove "";
-			player playActionNow "stop";
-			disableUserInput true;
-			disableUserInput false;
-		}; 
-	};
-};
-
+////Running glitch Y
+//if (_dikCode == 0x15) then {
+//	if (vehicle player == player) then {
+//		if ((animationState player) in ["amovpercmevasraswrfldf","amovpercmevasraswpstdf","amovpercmevasnonwnondf","amovpercmevasraswpstdfl","amovpercmevasraswpstdfr"]) then {
+//			player switchMove "";
+//			player playActionNow "stop";
+//			disableUserInput true;
+//			disableUserInput false;
+//		}; 
+//	};
+//};
+//
 //Boost T
-if (_dikCode == 0x14) then { if (UK_boost) then { [] execVM "Scripts\boost.sqf"; }; };
-
+//if (_dikCode == 0x14) then { if (UK_boost) then { [] execVM "Scripts\boost.sqf"; }; };
+//
 _handled
