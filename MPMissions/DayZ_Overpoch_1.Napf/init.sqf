@@ -43,6 +43,11 @@ DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 
+DZE_noRotate = []; //Objects that cannot be rotated. Ex: DZE_noRotate = ["ItemVault"] (NOTE: The objects magazine classname)
+DZE_vectorDegrees = [0.01, 0.1, 1, 5, 15, 45, 90];
+DZE_curDegree = 45; //Starting rotation angle. //Prefered any value in array above
+DZE_dirWithDegrees = true; //When rotating objects with Q&E, use the custom degrees
+
 DZE_APlotforLife = true;
 DZE_PlotOwnership = true;
 DZE_modularBuild = true;

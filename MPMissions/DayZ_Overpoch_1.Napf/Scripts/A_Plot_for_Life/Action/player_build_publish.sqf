@@ -1,4 +1,4 @@
-private ["_passArray","_cancel","_position","_reason","_classnametmp","_classname","_tmpbuilt","_dir","_location","_text","_limit","_isOk","_proceed","_counter","_dis","_sfx","_started","_finished","_animState","_isMedic","_num_removed","_lockable","_combinationDisplay","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_playerUID","_OwnerUID","_toohigh"];
+private ["_passArray","_cancel","_position","_reason","_classnametmp","_classname","_tmpbuilt","_dir","_location","_text","_limit","_isOk","_proceed","_counter","_dis","_sfx","_started","_finished","_animState","_isMedic","_num_removed","_lockable","_combinationDisplay","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_playerUID","_OwnerUID","_vector","_buildOffset","_vUp"];
 
 //defines
 _cancel = _this select 0;
@@ -10,9 +10,15 @@ _isPole = _this select 5;
 _lockable = _this select 6;
 _dir = _this select 7;
 _reason = _this select 8;
-_requireplot = _this select 9;
+_vector = _this select 9;
 
 _playerUID = [player] call FNC_GetPlayerUID;
+
+if (DZE_APlotforLife) then {
+	_OwnerUID = _playerUID;
+}else{
+	_OwnerUID = dayz_characterID;
+};
 
 _passArray = [];
 
@@ -43,7 +49,8 @@ if(!_cancel) then {
 	_tmpbuilt = createVehicle [_classname, _location, [], 0, "CAN_COLLIDE"]; //create actual object that will be published to database
 
 	_tmpbuilt setdir _dir; //set direction inherited from passed args from control
-
+	_tmpbuilt setVariable["memDir",_dir,true];
+	
 	// Get position based on object
 	_location = _position;
 
@@ -51,6 +58,20 @@ if(!_cancel) then {
 		_location set [2,0]; //reset Z axis to zero (above terrain)
 	};
 
+	_tmpbuilt setVectorDirAndUp _vector;
+	
+	_buildOffset = [0,0,0];
+	_vUp = _vector select 1;
+	switch (_classname) do {
+		case "MetalFloor_DZ": { _buildOffset = [(_vUp select 0) * .148, (_vUp select 1) * .148,0]; };
+	};
+	
+	_location = [
+		(_location select 0) - (_buildOffset select 0),
+		(_location select 1) - (_buildOffset select 1),
+		(_location select 2) - (_buildOffset select 2)
+	];
+	
 	if (surfaceIsWater _location) then {
 		_tmpbuilt setPosASL _location;
 		_location = ASLtoATL _location; //Database uses ATL
@@ -184,10 +205,10 @@ if(!_cancel) then {
 				};
 
 				_tmpbuilt setVariable ["CharacterID",_combination,true];
-				_tmpbuilt setVariable ["ownerPUID",_playerUID,true];
+				_tmpbuilt setVariable ["ownerPUID",_OwnerUID,true];
 				
 				//call publish precompiled function with given args and send public variable to server to save item to database
-				PVDZE_obj_Publish = [_combination,_tmpbuilt,[_dir,_location,_playerUID],_classname];
+				PVDZE_obj_Publish = [_combination,_tmpbuilt,[_dir,_location,_playerUID,_vector],_classname];
 				publicVariableServer "PVDZE_obj_Publish";
 
 				cutText [format[(localize "str_epoch_player_140"),_combinationDisplay,_text], "PLAIN DOWN", 5]; //display new combination
@@ -195,14 +216,14 @@ if(!_cancel) then {
 
 			} else { //if not lockable item
 				_tmpbuilt setVariable ["CharacterID",dayz_characterID,true];
-				_tmpbuilt setVariable ["ownerPUID",_playerUID,true];
+				_tmpbuilt setVariable ["ownerPUID",_OwnerUID,true];
 
 				// fire?
 				if(_tmpbuilt isKindOf "Land_Fire_DZ") then { //if campfire, then spawn, but do not publish to database
 					_tmpbuilt spawn player_fireMonitor;
 				} else {
 					
-					PVDZE_obj_Publish = [dayz_characterID,_tmpbuilt,[_dir,_location,_playerUID],_classname];
+					PVDZE_obj_Publish = [dayz_characterID,_tmpbuilt,[_dir,_location,_playerUID,_vector],_classname];
 					publicVariableServer "PVDZE_obj_Publish";
 				};
 			};

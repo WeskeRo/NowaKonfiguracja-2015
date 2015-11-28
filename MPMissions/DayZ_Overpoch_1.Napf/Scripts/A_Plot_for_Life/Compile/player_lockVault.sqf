@@ -3,7 +3,7 @@
 	Usage: [_obj] spawn player_unlockVault;
 	Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 */
-private ["_objectID","_objectUID","_obj","_ownerID","_dir","_pos","_holder","_weapons","_magazines","_backpacks","_alreadyPacking","_lockedClass","_text","_playerNear","_characterID","_PlayerUID"];
+private ["_objectID","_objectUID","_obj","_ownerID","_dir","_pos","_holder","_weapons","_magazines","_backpacks","_alreadyPacking","_lockedClass","_text","_playerNear","_characterID","_PlayerUID","_vector"];
 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_10") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
@@ -33,7 +33,11 @@ _objectID 	= _obj getVariable["ObjectID","0"];
 _objectUID	= _obj getVariable["ObjectUID","0"];
 _ownerID =  _obj getVariable["ownerPUID", "0"];
 
-_playerUID = [player] call FNC_GetPlayerUID;
+if (DZE_APlotforLife) then {
+	_playerUID = [player] call FNC_GetPlayerUID;
+}else{
+	_PlayerUID = dayz_characterID;
+};
 
 if((_characterID != dayz_combination) && (_ownerID != _PlayerUID)) exitWith {DZE_ActionInProgress = false; s_player_lockvault = -1; cutText [format[(localize "str_epoch_player_115"),_text], "PLAIN DOWN"]; };
 
@@ -42,6 +46,7 @@ if (_alreadyPacking == 1) exitWith {DZE_ActionInProgress = false; s_player_lockv
 _obj setVariable["packing",1];
 
 _dir = direction _obj;
+_vector = [(vectorDir _obj),(vectorUp _obj)];
 _pos = _obj getVariable["OEMPos",(getposATL _obj)];
 
 if(!isNull _obj) then {
@@ -52,6 +57,8 @@ if(!isNull _obj) then {
 	//place vault
 	_holder = createVehicle [_lockedClass,_pos,[], 0, "CAN_COLLIDE"];
 	_holder setdir _dir;
+	_holder setVariable["memDir",_dir,true];
+	_holder setVectorDirAndUp _vector;
 	_holder setPosATL _pos;
 	player reveal _holder;
 	
