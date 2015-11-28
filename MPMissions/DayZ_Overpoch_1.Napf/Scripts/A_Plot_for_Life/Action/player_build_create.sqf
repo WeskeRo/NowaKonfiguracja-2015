@@ -1,13 +1,10 @@
 //create an object for default build system style
-private ["_passArray","_classname","_enableGhost","_ghost","_location1","_dir","_object","_objectHelper","_helperColor","_requireplot","_nearestPole","_distance","_maxBuildDistance"];
+private ["_passArray","_classname","_enableGhost","_ghost","_location1","_dir","_object","_objectHelper","_helperColor"];
 
 _classname = _this select 0;
 _ghost = _this select 1;
 _offset = _this select 2;
-_enableGhost = _this select 3; //pass false through args if not using ghost preview
-_requireplot = _this select 4;
-_nearestPole = _this select 5;
-_distance = _this select 6;
+_enableGhost = _this select 3; //pass false trough args if not using ghost preview
 
 _passArray = [];
 _objectHelper = objNull;
@@ -35,6 +32,8 @@ if (isClass (missionConfigFile >> "SnapBuilding" >> _classname)) then {
 	["","","",["Init",_object,_classname,_objectHelper]] spawn snap_build;
 };
 
+if !(DZE_buildItem in DZE_noRotate) then{
+	["","","",["Init","Init",0]] spawn build_vectors;
+};
 _passArray = [_location1,_object,_objectHelper];
 _passArray //[array,obj,array]
-

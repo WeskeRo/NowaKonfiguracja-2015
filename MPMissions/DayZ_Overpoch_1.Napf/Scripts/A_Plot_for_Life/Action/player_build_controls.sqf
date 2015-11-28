@@ -1,4 +1,4 @@
-private ["_canDo","_passArray","_objHDiff","_isOk","_zheightchanged","_zheightdirection","_rotate","_dir","_object","_position","_isAllowedUnderGround","_location1","_location2","_cancel","_reason","_lastDir","_objectHelper","_objectHelperDir","_objectHelperPos"];
+private ["_canDo","_passArray","_objHDiff","_isOk","_zheightchanged","_zheightdirection","_rotate","_dir","_object","_position","_isAllowedUnderGround","_location1","_location2","_cancel","_reason","_lastDir","_objectHelper","_objectHelperDir","_objectHelperPos","_vector"];
 
 _object = _this select 0;
 _isAllowedUnderGround = _this select 1;
@@ -15,6 +15,8 @@ _dir = getDir player; //required to pass direction when building
 helperDetach = false;
 _canDo = (!r_drag_sqf and !r_player_unconscious);
 _position = [_objectHelper] call FNC_GetPos;
+
+
 
 while {_isOk} do {
 
@@ -55,24 +57,40 @@ while {_isOk} do {
 	if (DZE_4) then {
 		_rotate = true;
 		DZE_4 = false;
-		_dir = -45;
+		if(DZE_dirWithDegrees) then{
+			DZE_memDir = DZE_memDir - DZE_curDegree;
+		}else{
+			DZE_memDir = DZE_memDir - 45;
+		};
+		
 	};
 	if (DZE_6) then {
 		_rotate = true;
 		DZE_6 = false;
-		_dir = 45;
+		if(DZE_dirWithDegrees) then{
+			DZE_memDir = DZE_memDir + DZE_curDegree;
+		}else{
+			DZE_memDir = DZE_memDir + 45;
+		};
 	};
 	
-	if (DZE_F and _canDo) then {	
-		if (helperDetach) then { 
-			_objectHelperDir = getDir _objectHelper;
+	if(DZE_updateVec) then{
+		[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
+		DZE_updateVec = false;
+	};
+	
+	if (DZE_F and _canDo) then {
+		if (helperDetach) then {
 			_objectHelper attachTo [player];
-			_objectHelper setDir _objectHelperDir-(getDir player);
+			DZE_memDir = DZE_memDir-(getDir player);
 			helperDetach = false;
-		} else {
-			_objectHelperDir = getDir _objectHelper;
-			detach _objectHelper;
-			[_objectHelper]	call FNC_GetSetPos;
+			[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
+		} else {		
+			_objectHelperPos = getPosATL _objectHelper;
+			detach _objectHelper;			
+			DZE_memDir = getDir _objectHelper;
+			[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
+			_objectHelper setPosATL _objectHelperPos;
 			_objectHelper setVelocity [0,0,0]; //fix sliding glitch
 			helperDetach = true;
 		};
@@ -80,19 +98,7 @@ while {_isOk} do {
 	};
 
 	if(_rotate) then {
-		if (helperDetach) then {
-			_objectHelperDir = getDir _objectHelper;
-			_objectHelper setDir _objectHelperDir+_dir;
-			[_objectHelper]	call FNC_GetSetPos;
-		} else {
-			detach _objectHelper;
-			_objectHelperDir = getDir _objectHelper;
-			_objectHelper setDir _objectHelperDir+_dir;
-			[_objectHelper]	call FNC_GetSetPos;
-			_objectHelperDir = getDir _objectHelper;
-			_objectHelper attachTo [player];
-			_objectHelper setDir _objectHelperDir-(getDir player);
-		};
+		[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
 	};
 
 	if(_zheightchanged) then {
@@ -142,8 +148,8 @@ while {_isOk} do {
 
 		if (!helperDetach) then {
 		_objectHelper attachTo [player];
-		_objectHelper setDir _objectHelperDir-(getDir player);
 		};
+		[_objectHelper,[DZE_memForBack,DZE_memLeftRight,DZE_memDir]] call fnc_SetPitchBankYaw;
 	};
 
 	sleep 0.5;
@@ -156,6 +162,7 @@ while {_isOk} do {
 		_position = [_object] call FNC_GetPos;
 		detach _object;
 		_dir = getDir _object;
+		_vector = [(vectorDir _object),(vectorUp _object)];	
 		deleteVehicle _object;
 		detach _objectHelper;
 		deleteVehicle _objectHelper;
@@ -212,5 +219,7 @@ while {_isOk} do {
 	};
 };
 
-_passArray = [_cancel,_reason,_position,_dir];
-_passArray //[bool,string,array,int]
+
+
+_passArray = [_cancel,_reason,_position,_dir,_vector];
+_passArray //[bool,string,array,int,array]

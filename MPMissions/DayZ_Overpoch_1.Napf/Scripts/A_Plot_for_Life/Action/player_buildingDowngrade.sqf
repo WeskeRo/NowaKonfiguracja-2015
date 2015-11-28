@@ -2,7 +2,7 @@
 	DayZ Base Building Upgrades
 	Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 */
-private ["_location","_dir","_classname","_text","_object","_objectID","_objectUID","_newclassname","_refund","_obj","_upgrade","_objectCharacterID","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_distance","_needText","_findNearestPoles","_findNearestPole","_IsNearPlot","_i","_invResult","_itemOut","_countOut","_abortInvAdd","_addedItems","_playerUID"];
+private ["_location","_dir","_classname","_text","_object","_objectID","_objectUID","_newclassname","_refund","_obj","_upgrade","_objectCharacterID","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_distance","_needText","_findNearestPoles","_findNearestPole","_IsNearPlot","_i","_invResult","_itemOut","_countOut","_abortInvAdd","_addedItems","_playerUID","_vector"];
 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_48") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
@@ -10,13 +10,17 @@ DZE_ActionInProgress = true;
 player removeAction s_player_downgrade_build;
 s_player_downgrade_build = 1;
 
-_distance = DZE_PlotPole select 0;
+_distance = 30;
 _needText = localize "str_epoch_player_246";
 
-_playerUID = [player] call FNC_GetPlayerUID;
+if (DZE_APlotforLife) then {
+	_playerUID = [player] call FNC_GetPlayerUID;
+}else{
+	_playerUID = dayz_characterID;
+};
 
 // check for near plot
-_findNearestPoles = (position (vehicle player)) nearEntities ["Plastic_Pole_EP1_DZ", _distance];
+_findNearestPoles = nearestObjects [(vehicle player), ["Plastic_Pole_EP1_DZ"], _distance];
 _findNearestPole = [];
 
 {
@@ -29,21 +33,27 @@ _IsNearPlot = count (_findNearestPole);
 
 _canBuildOnPlot = false;
 
-_plotcheck = [player, false] call FNC_find_plots;
-_distance = _plotcheck select 0;
-_IsNearPlot = _plotcheck select 1;
-_nearestPole = _plotcheck select 2;
-
 if(_IsNearPlot == 0) then {
 	_canBuildOnPlot = true;
 } else {
 
-	// Since there are plot poles nearby we need to check ownership && friend status
-	_buildcheck = [player, _nearestPole] call FNC_check_owner;
-	_isowner = _buildcheck select 0;
-	_isfriendly = _buildcheck select 1;
-	if ((_isowner) || (_isfriendly)) then {
-		_canBuildOnPlot = true;		
+	// check nearby plots ownership && then for friend status
+	_nearestPole = _findNearestPole select 0;
+
+	// Find owner
+	_ownerID = _nearestPole getVariable["ownerPUID","0"];
+
+	// diag_log format["DEBUG BUILDING: %1 = %2", dayz_characterID, _ownerID];
+
+	// check if friendly to owner
+	if(_playerUID == _ownerID) then {
+		_canBuildOnPlot = true;
+	} else {
+		_friendlies		= player getVariable ["friendlyTo",[]];
+		// check if friendly to owner
+		if(_ownerID in _friendlies) then {
+			_canBuildOnPlot = true;
+		};
 	};
 };
 
@@ -117,7 +127,10 @@ if ((count _upgrade) > 0) then {
 
 		// Get direction
 		_dir = getDir _obj;
-
+		
+		// Get vector
+		_vector = [(vectorDir _obj),(vectorUp _obj)];
+		
 		// Reset the character ID on locked doors before they inherit the newclassname
 		if (_classname in DZE_DoorsLocked) then {
 			_obj setVariable ["CharacterID",dayz_characterID,true];
@@ -131,18 +144,23 @@ if ((count _upgrade) > 0) then {
 
 		// Set direction
 		_object setDir _dir;
-
+		_object setVariable["memDir",_dir,true];
+		
+		// Set vector
+		_object setVectorDirAndUp _vector;
+		
 		// Set location
 		_object setPosATL _location;
 
 		// Set Owner.
-		_object setVariable ["ownerPUID",_playerUID,true];
+		_object setVariable ["ownerPUID",_ownerID,true];
 
 		//diag_log format["Player_buildingdowngrade: [newclassname: %1] [_ownerID: %2] [_objectCharacterID: %2]",_newclassname, _ownerID, _objectCharacterID];
 
 		cutText [format[(localize "str_epoch_player_142"),_text], "PLAIN DOWN", 5];
 
-		PVDZE_obj_Swap = [_objectCharacterID,_object,[_dir,_location,_playerUID],_classname,_obj,player];
+		_playerUID = [player] call FNC_GetPlayerUID;
+		PVDZE_obj_Swap = [_objectCharacterID,_object,[_dir,_location,_playerUID,_vector],_classname,_obj,player];
 		publicVariableServer "PVDZE_obj_Swap";
 
 		player reveal _object;
