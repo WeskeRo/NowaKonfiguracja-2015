@@ -2,7 +2,7 @@
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_40") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
-private ["_itemConfig","_classname","_classnametmp","_require","_text","_ghost","_lockable","_requireplot","_isAllowedUnderGround","_offset","_isPole","_isLandFireDZ","_hasRequired","_hasrequireditem","_reason","_buildObject","_location1","_object","_objectHelper","_position","_controls","_cancel","_dir","_plot_check_result","_nearest_pole"];
+private ["_itemConfig","_classname","_classnametmp","_require","_text","_ghost","_lockable","_requireplot","_isAllowedUnderGround","_offset","_isPole","_isLandFireDZ","_hasRequired","_hasrequireditem","_reason","_buildObject","_location1","_object","_objectHelper","_position","_controls","_cancel","_dir","_vector"];
 
 /*Basic Defines*/
 DZE_Q = false;
@@ -21,6 +21,11 @@ DZE_6 = false;
 DZE_F = false;
 
 DZE_cancelBuilding = false;
+
+DZE_updateVec = false;
+DZE_memDir = 0;
+DZE_memForBack = 0;
+DZE_memLeftRight = 0;
 
 call gear_ui_init;
 closeDialog 1;
@@ -53,12 +58,9 @@ _isPole = _itemConfig select 9; //bool
 _isLandFireDZ = _itemConfig select 10; //bool
 
 //Check for nearby plotpoles. Returns [_IsNearPlot,_nearestPole,_ownerID,_friendlies] [int,Obj,int,array]
-_plot_check_result = [_isPole, _requireplot, _isLandFireDZ] call player_build_plotCheck;
+[_isPole, _requireplot, _isLandFireDZ] call player_build_plotCheck;
 
 if (DZE_ActionInProgress) then { //needed otherwise _hasRequired gets RPT error
-
-_nearest_pole = _plot_check_result select 1;
-_distance = _plot_check_result select 4;
 
 //Check for build requirements (missing tools and items). Returns [_hasrequireditem,_reason] [bool,string]
 _hasRequired = [_require, _text, true, true] call player_build_buildReq;
@@ -69,7 +71,7 @@ _hasrequireditem = _hasRequired select 0; //bool
 	if (_hasrequireditem) then {
 		
 		//Create object that is attached to a player (i.e Ghost preview if available)
-		_buildObject = [_classname, _ghost, _offset, true, _requireplot, _nearest_pole,_distance] call player_build_create;
+		_buildObject = [_classname, _ghost, _offset, true] call player_build_create;
 		
 		//define items collected from function
 		_location1 = _buildObject select 0; //array
@@ -83,8 +85,9 @@ _hasrequireditem = _hasRequired select 0; //bool
 		_reason = _controls select 1; //string
 		_position = _controls select 2; //array
 		_dir = _controls select 3; //int
+		_vector = _controls select 4; //array
 		
 		//Publish item to a database
-		[_cancel, _position, _classnametmp,_isAllowedUnderGround, _text, _isPole, _lockable,_dir, _reason,_requireplot] call player_build_publish;
+		[_cancel, _position, _classnametmp,_isAllowedUnderGround, _text, _isPole, _lockable,_dir, _reason, _vector] call player_build_publish;
 	};
 };

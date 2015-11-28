@@ -108,8 +108,11 @@ if (!isDedicated) then {
 	player_harvestPlant =		compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_harvestPlant.sqf";
 	player_goFishing =			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_goFishing.sqf";
 	
-	if (DZE_modularBuild) then {
+
+
+	
 	player_build =				compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Action\modular_build.sqf";
+	
 	player_build_countNearby =	compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Action\player_build_countNearby.sqf";
 	player_build_states =		compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Action\player_build_states.sqf";
 	player_build_needNearby =	compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Action\player_build_needNearby.sqf";
@@ -121,10 +124,13 @@ if (!isDedicated) then {
 	player_build_publish =		compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Action\player_build_publish.sqf";
 	DZE_snap_build_file = 		"Scripts\Snap_Pro\snap_build.sqf"; // Set as a global variable as it is also referenced in snapbuild.sqf
 	snap_build = 				compile preprocessFileLineNumbers DZE_snap_build_file;
-	};
-	
 	FNC_check_owner =			compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Compile\fn_check_owner.sqf";
 	FNC_find_plots =			compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Compile\fn_find_plots.sqf";
+	
+		
+	fnc_SetPitchBankYaw =       compile preprocessFileLineNumbers "Scripts\BuildVectors\fnc_SetPitchBankYaw.sqf";
+	DZE_build_vector_file = 		"Scripts\BuildVectors\build_vectors.sqf";
+	build_vectors = 				compile preprocessFileLineNumbers DZE_build_vector_file;
 	
 	player_wearClothes =		compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
 	object_pickup = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_pickup.sqf";
