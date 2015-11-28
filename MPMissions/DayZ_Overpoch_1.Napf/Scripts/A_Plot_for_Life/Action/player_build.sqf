@@ -2,13 +2,17 @@
 	DayZ Base Building
 	Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 */
-private ["_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap","_playerID", "_playerUID","_ownerID","_buildcheck","_isowner","_isfriendly","_maxBuildDistance","_vector","_buildOffset","_vUp"];
+private ["_objects","_count","_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap","_playerID", "_playerUID","_ownerID","_buildcheck","_isowner","_isfriendly","_maxBuildDistance","_vector","_buildOffset","_vUp"];
 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_40") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
-// disallow building if too many objects are found within 30m
-if((count (([player] call FNC_GetPos) nearObjects ["All",30])) >= DZE_BuildingLimit) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_41"), "PLAIN DOWN"];};
+// disallow building if too many objects are found within plot pole area
+_objects = nearestObjects [player, DZE_maintainClasses, (DZE_PlotPole select 0)];
+_count = count _objects;
+if (_count > DZE_BuildingLimit) exitWith { DZE_ActionInProgress = false; cutText ["\n\nCannot build, too many objects within plot pole area.","PLAIN DOWN"]; };
+
+//if((count (([player] call FNC_GetPos) nearObjects ["All",30])) >= DZE_BuildingLimit) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_41"), "PLAIN DOWN"];};
 
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = 		dayz_isSwimming;
@@ -101,10 +105,10 @@ if(_abort) exitWith {
 	DZE_ActionInProgress = false;
 };
 
-_classname = 	getText (configFile >> "CfgMagazines" >> _item >> "ItemActions" >> "Build" >> "create");
+_classname = getText (configFile >> "CfgMagazines" >> _item >> "ItemActions" >> "Build" >> "create");
 _classnametmp = _classname;
-_require =  getArray (configFile >> "cfgMagazines" >> _this >> "ItemActions" >> "Build" >> "require");
-_text = 		getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
+_require = getArray (configFile >> "cfgMagazines" >> _this >> "ItemActions" >> "Build" >> "require");
+_text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
 _ghost = getText (configFile >> "CfgVehicles" >> _classname >> "ghostpreview");
 
 _lockable = 0;
@@ -166,6 +170,20 @@ if(_IsNearPlot == 0) then {
 
 	// check nearest pole only
 	_nearestPole = _findNearestPole select 0;
+	
+	//Plot manager --------------------------------------------------
+	_friendlies = _nearestPole getVariable ["plotfriends",[]];
+	_fuid  = [];
+	{
+		_friendUID = _x select 0;
+		_fuid  =  _fuid  + [_friendUID];
+	} forEach _friendlies;
+	_builder  = getPlayerUID player;
+	// check if friendly to owner
+	if (_builder in _fuid) then {
+		_canBuildOnPlot = true;
+	};
+	// -----------------------------------------------------------------
 
 	_buildcheck = [player, _nearestPole] call FNC_check_owner;
 	_isowner = _buildcheck select 0;
@@ -578,6 +596,10 @@ if (_hasrequireditem) then {
 
 					_tmpbuilt setVariable ["CharacterID",_combination,true];
 					_tmpbuilt setVariable ["ownerPUID",_playerID,true];
+					
+					if ((typeOf _tmpbuilt) in UKindestructible) then {
+						_tmpbuilt allowDamage false;
+					};
 
 					PVDZE_obj_Publish = [_combination,_tmpbuilt,[_dir,_location,_playerUID,_vector],_classname];
 					publicVariableServer "PVDZE_obj_Publish";
@@ -595,6 +617,7 @@ if (_hasrequireditem) then {
 					} else {
 						PVDZE_obj_Publish = [dayz_characterID,_tmpbuilt,[_dir,_location,_playerUID,_vector],_classname];
 						publicVariableServer "PVDZE_obj_Publish";
+						if (round(random(25)) == 1) then { [player,1] call GiveXP; };
 					};
 				};
 			} else {
