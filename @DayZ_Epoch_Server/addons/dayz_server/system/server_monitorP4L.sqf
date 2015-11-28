@@ -176,19 +176,10 @@ if (isServer && isNil "sm_done") then {
 			// _object setVehicleAmmo DZE_vehicleAmmo;
 			
 			_object setdir _dir;
-			
-			if(_vecExists)then
-				{
-					_object setVectorDirAndUp _vector;
-				}; 
-			
 			_object setposATL _pos;
 			_object setDamage _damage;
 			
 			if ((typeOf _object) in dayz_allowedObjects) then {
-				
-				_object setVariable["memDir",_dir,true];
-				
 				if (DZE_GodModeBase) then {
 					_object addEventHandler ["HandleDamage", {false}];
 				} else {
