@@ -2,6 +2,10 @@
 	FUNCTION COMPILES
 */
 //Player only
+
+BIS_fnc_numberDigits 	= compile preprocessFileLineNumbers "Scripts\gold\custom\numberDigits.sqf";
+BIS_fnc_numberText 	= compile preprocessFileLineNumbers "Scripts\gold\custom\numberText.sqf"; 
+
 if (!isDedicated) then {
 
 	"filmic" setToneMappingParams [0.07, 0.31, 0.23, 0.37, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -665,4 +669,6 @@ if (!isDedicated) then {
 		eh_localCleanup = {};
 	};
 
+	call compile preprocessFileLineNumbers "Scripts\gold\player_traderMenu.sqf";
+	
 initialized = true;
