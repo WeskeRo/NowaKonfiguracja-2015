@@ -133,7 +133,7 @@ if (_dikCode in (actionKeys "GetOver")) then {
 };
 
 //Debug box insert
-if (_dikCode == 210) then {	_nill = execVM "fixes\playerstats.sqf"; };
+if (_dikCode == 199) then {	_nill = execVM "fixes\playerstats.sqf"; };
 
 if (_dikCode in actionKeys "ForceCommandingMode") then { _handled = true };
 
