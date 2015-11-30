@@ -43,7 +43,7 @@ DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 
-
+DZE_ConfigTrader = true;
 
 DZE_APlotforLife = true;
 DZE_PlotOwnership = true;
@@ -95,8 +95,10 @@ if (!isDedicated) then {
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
+//Start SingleCurrrency
+[] execVM "Scripts\gold\init.sqf";
 
 //Start Dynamic Weather
-execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
+//execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"

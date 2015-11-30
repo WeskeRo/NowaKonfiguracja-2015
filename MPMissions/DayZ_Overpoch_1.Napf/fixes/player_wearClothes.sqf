@@ -1,12 +1,7 @@
-createDialog "MenClothing";
-call FillSkinList;
-/*
-_item spawn player_wearClothes;
-Added Female skin changes - DayZ Epoch - vbawol
-*/
-/*
-
 private ["_item","_onLadder","_hasclothesitem","_config","_text","_myModel","_itemNew","_currentSex","_newSex","_model","_playerNear"];
+
+zupa_cid =player getVariable ["CharacterID","0"];
+_bubank = player getVariable ["bank", 0];
 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_83") , "PLAIN DOWN"] };
 DZE_ActionInProgress = true;
@@ -25,7 +20,7 @@ if (!_hasclothesitem) exitWith { DZE_ActionInProgress = false; cutText [format[(
 
 if (vehicle player != player) exitWith { DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_85"), "PLAIN DOWN"]};
 
-if (!isNull (unitBackpack player)) exitWith { DZE_ActionInProgress = false; cutText [(localize "STR_EPOCH_ACTIONS_9"), "PLAIN DOWN"] };
+//if (!isNull (unitBackpack player)) exitWith { DZE_ActionInProgress = false; cutText [(localize "STR_EPOCH_ACTIONS_9"), "PLAIN DOWN"] };
 
 if ("CSGAS" in (magazines player)) exitWith { DZE_ActionInProgress = false; cutText [(localize "STR_EPOCH_ACTIONS_10"), "PLAIN DOWN"] };
 
@@ -49,16 +44,33 @@ if ( (isClass(_config >> _itemNew)) ) then {
 			if (_model != _myModel) then {
 				if(([player,_item] call BIS_fnc_invRemove) == 1) then {
 					player addMagazine _itemNew;
-					//[dayz_playerUID,dayz_characterID,_model] spawn player_humanityMorph; //old
+					player setVariable["bank",_bubank,true];
+					player setVariable["CharacterID",zupa_cid,true];
 					[dayz_playerUID,dayz_characterID,_model] spawn player_humanityMorph;
+					player setVariable["bank",_bubank,true];
+					player setVariable["CharacterID",zupa_cid,true];
 				};
 			};
+			player setVariable["bank",_bubank,true];
+			player setVariable["CharacterID",zupa_cid,true];
 
 		} else {
 			cutText [(localize "str_epoch_player_86"), "PLAIN DOWN"];
 		};
+			player setVariable["bank",_bubank,true];
+			player setVariable["CharacterID",zupa_cid,true];
 	};
+		player setVariable["bank",_bubank,true];
+			player setVariable["CharacterID",zupa_cid,true];
 };
+player setVariable["bank",_bubank,true];
+player setVariable["CharacterID",zupa_cid,true];
 DZE_ActionInProgress = false;
-
-/*
+player setVariable["bank",_bubank,true];
+player setVariable["CharacterID",zupa_cid,true];
+sleep 2;
+player setVariable["CharacterID",zupa_cid,true];
+player setVariable["bank",_bubank,true];
+sleep 2;
+player setVariable["CharacterID",zupa_cid,true];
+player setVariable["bank",_bubank,true];

@@ -117,6 +117,9 @@ if (_characterID != "0") then {
 		_headShots = 	["headShots",_character] call server_getDiff;
 		_humanity = 	["humanity",_character] call server_getDiff2;
 		//_humanity = 	_character getVariable ["humanity",0];
+		//Soul start: SC Edit >>> collecting players cashmoney
+		_cashMoney = 	["cashMoney",_character] call server_getDiff2;
+		//Soul end: SC Edit
 		_character addScore _kills;		
 		/*
 			Assess how much time has passed, for recording total time on server
@@ -168,7 +171,7 @@ if (_characterID != "0") then {
 		_currentState = [_currentWpn,_currentAnim,_temp];
 		if(DZE_FriendlySaving) then {
 			// save only last/most recent 5 entrys as we only have 200 chars in db field && weapon + animation names are sometimes really long 60-70 chars.
-			_friendlies = [(_character getVariable ["friendlies",[]]),5] call array_reduceSizeReverse;
+			_friendlies =  [];//[(_character getVariable ["friendlies",[]]),5] call array_reduceSizeReverse;
 			_currentState set [(count _currentState),_friendlies];
 		};
 		/*
@@ -187,9 +190,9 @@ if (_characterID != "0") then {
 			if (alive _character) then {
 				//Wait for HIVE to be free
 				//Send request
-				_key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
+				_key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:%17:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity,_cashMoney];
 				//diag_log ("HIVE: WRITE: "+ str(_key) + " / " + _characterID);
-				_key call server_hiveWrite;
+				_key call server_hiveWrite;							
 			};
 		};
 

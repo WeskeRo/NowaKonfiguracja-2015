@@ -9,14 +9,8 @@ _playerUID = getPlayerUID player;
 _weapons 	= weapons player;
 _countMags = call player_countMagazines; 
 _magazines = _countMags select 0;
-
-//Coins
-_cashMoney = player getVariable["UK111cash",0];
-if (_cashMoney < 0) then { _cashMoney = 0; };
-_bankMoney = player getVariable["UK111bank",0];
-
-//XP
-_UK111xp = player getVariable ["UK111xp",false];
+_cashMoney = player getVariable["cashMoney",0];
+_bankMoney = player getVariable["bankMoney",0];
 
 if ((_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText [(localize "str_epoch_player_17"), "PLAIN DOWN"]};
 
@@ -85,10 +79,10 @@ _newUnit 	= _group createUnit [_class,dayz_spawnPos,[],0,"NONE"];
 _newUnit 	setPosATL _position;
 _newUnit 	setDir _dir;
 
-//Coins
-_newUnit setVariable ["UK111cash",_cashMoney,true];
-_newUnit setVariable ["UK111bank",_bankMoney];
-
+//Soul start: SC Edit >>> readding variables used by single currency mod.
+_newUnit setVariable ["cashMoney",_cashMoney,true];
+_newUnit setVariable ["bankMoney",_bankMoney];
+//Soul end: SC Edit
 //XP
 if (isNil "_UK111xp") then {
 	_newUnit setVariable ["UK111xp",0,true];

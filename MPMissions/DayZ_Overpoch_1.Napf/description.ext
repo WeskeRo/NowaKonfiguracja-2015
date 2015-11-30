@@ -1,3 +1,5 @@
+#include "CfgTrader\cfgServerTrader.hpp"
+
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission="DayZ_Epoch Napf";
@@ -148,4 +150,18 @@ class DayZ_loadingScreen
 		};
 	};
 };
+// Add all this on the bottom
+class RscTitles
+{
+//#include "addons\playerhud\hud.hpp"
+};
+#include "Scripts\gold\custom\hw.hpp"
+#include "fixes\loot\CfgBuildingLoot.hpp"
+
+#include "Scripts\gold\custom\defines.hpp"
+#include "Scripts\gold\common.hpp"
+#include "Scripts\gold\bank_dialog.hpp"
+#include "Scripts\gold\give_player_dialog.hpp"
+
+
 #include "Scripts\snap_pro\snappoints.hpp"
