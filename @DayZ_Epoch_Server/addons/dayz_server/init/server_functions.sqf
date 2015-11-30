@@ -35,6 +35,7 @@ server_maintainArea = 			compile preprocessFileLineNumbers "\z\addons\dayz_serve
 
 /* PVS/PVC - Skaronator */
 server_sendToClient =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_sendToClient.sqf";
+#include "\z\addons\dayz_server\bankzones\bankinit.sqf"
 
 //onPlayerConnected 			{[_uid,_name] call server_onPlayerConnect;};
 onPlayerDisconnected 		{[_uid,_name] call server_onPlayerDisconnect;};
@@ -954,7 +955,7 @@ server_spawnCleanAnimals = {
 };
 
 server_logUnlockLockEvent = {
-	private["_player", "_obj", "_objectID", "_objectUID", "_statusText", "_PUID", "_status"];
+	private["_player", "_obj", "_objectID", "_objectUID", "_statusText", "_status"];
 	_player = _this select 0;
 	_obj = _this select 1;
 	_status = _this select 2;

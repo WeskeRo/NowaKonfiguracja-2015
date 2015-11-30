@@ -123,7 +123,7 @@ if (isServer && isNil "sm_done") then {
 		
 		_vector = [[0,0,0],[0,0,0]];
 _vecExists = false;
-_ownerPUID = "0";	
+_ownerPUID = "0";
 if (count _worldspace >= 3) then{
 	if(count _worldspace == 3) then{
 			if(typename (_worldspace select 2) == "STRING")then{
