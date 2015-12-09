@@ -286,6 +286,8 @@ dayz_resetSelfActions = {
 	s_givemoney_dialog = -1;
 	s_bank_dialog = -1;
 	s_bank_dialog2 = -1;
+	
+	s_player_plotManagement = -1;
 };
 call dayz_resetSelfActions;
 

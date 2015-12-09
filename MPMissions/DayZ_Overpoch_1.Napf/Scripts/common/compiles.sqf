@@ -16,8 +16,16 @@ if (!isDedicated) then {
 	fn_gearMenuChecks =			compile preprocessFileLineNumbers "fixes\fn_gearMenuChecks.sqf";
 	player_animalCheck =			compile preprocessFileLineNumbers "fixes\player_animalCheck.sqf";	
 	
-	
-	
+	/*Plot*/
+	PlotGetFriends      = compile preprocessFileLineNumbers "Scripts\plotManagement\plotGetFriends.sqf";
+	PlotNearbyHumans    = compile preprocessFileLineNumbers "Scripts\plotManagement\plotNearbyHumans.sqf";
+	PlotAddFriend       = compile preprocessFileLineNumbers "Scripts\plotManagement\plotAddFriend.sqf";
+	PlotRemoveFriend    = compile preprocessFileLineNumbers "Scripts\plotManagement\plotRemoveFriend.sqf";
+	MaintainPlot    	= compile preprocessFileLineNumbers "Scripts\plotManagement\maintain_area.sqf";
+	PlotPreview    		= compile preprocessFileLineNumbers "Scripts\plotManagement\plotToggleMarkers.sqf";
+	PlotObjects         = compile preprocessFileLineNumbers "Scripts\plotManagement\plotObjects.sqf"; // NEW
+	/*Plot End*/
+		
 	
 	
 
