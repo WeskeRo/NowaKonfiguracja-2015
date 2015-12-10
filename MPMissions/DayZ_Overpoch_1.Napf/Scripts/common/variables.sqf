@@ -10,6 +10,15 @@ MaxDonatorBankMoney = 1000000; // Bank size donators
 
 //-----------------------------------Currency & Banking Configs END ---------------------------------//
 
+/**DoorManagement Config**/
+DoorAdminList = ["76561198009425402","76561198018007006","76561198121993182","76561198089990137","76561198088732522" ,"76561198161513402"]; // List of Player Id's of admins that can manage all doors
+AllowManualCode = true;// 2 reason| 1: Allows breaking codes (if 2nd config = false and code = 3 digits) | 2: Friends can access access not owned doors until owner gets on.
+HarderPenalty = true;// Cen's Penalty: Flashes screen white. And kicks player to lobby if failed more then (random number between 4 and 14) times.
+// AllowUncrackableCode = false; // in next release: if set to true, player can change code to more then 4 digits, The manualCode will always fail when he does. THIS is for AntiCodeCrack servers that allow Manual Code for people that like that system.
+// in next release. AllowManualCode will allow players to change the code in the DoorManagement Menu.
+/**DoorManagement Config END**/
+DZE_DoorsLocked = ["Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallDoorLocked_DZ","CinderWallDoorSmallLocked_DZ"];
+
 
 if (isNil "DayZ_UseSteamID") then {
 	DayZ_UseSteamID = true;
@@ -288,6 +297,8 @@ dayz_resetSelfActions = {
 	s_bank_dialog2 = -1;
 	
 	s_player_plotManagement = -1;
+	
+	s_player_manageDoor = -1;
 };
 call dayz_resetSelfActions;
 
