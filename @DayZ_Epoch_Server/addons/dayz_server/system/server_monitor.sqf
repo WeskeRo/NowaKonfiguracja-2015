@@ -191,6 +191,10 @@ if (count _worldspace >= 3) then{
 			
 			//Create it
 			_object = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
+			if (typeOf (_object) in  DZE_DoorsLocked) then 
+			{
+				_object setVariable ["doorfriends", _inventory, true];
+			};
 			_object setVariable ["lastUpdate",time];
 			_object setVariable ["ObjectID", _idKey, true];
 			if (typeOf (_object) == "Plastic_Pole_EP1_DZ") then 
@@ -260,7 +264,7 @@ if (count _worldspace >= 3) then{
 				
 			};
 
-			if ((count _inventory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ")) then {
+			if ((count _inventory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ") && !(typeOf( _object) in  DZE_DoorsLocked)) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
 					_object setVariable ["WeaponCargo", (_inventory select 0),true];

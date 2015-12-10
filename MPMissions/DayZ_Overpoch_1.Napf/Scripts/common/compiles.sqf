@@ -25,6 +25,18 @@ if (!isDedicated) then {
 	PlotPreview    		= compile preprocessFileLineNumbers "Scripts\plotManagement\plotToggleMarkers.sqf";
 	PlotObjects         = compile preprocessFileLineNumbers "Scripts\plotManagement\plotObjects.sqf"; // NEW
 	/*Plot End*/
+	
+	/*DoorManagement Zupa*/
+	DoorGetFriends 				= compile preprocessFileLineNumbers "Scripts\doorManagement\doorGetFriends.sqf";
+	DoorNearbyHumans 			= compile preprocessFileLineNumbers "Scripts\doorManagement\doorNearbyHumans.sqf";
+	DoorAddFriend 				= compile preprocessFileLineNumbers "Scripts\doorManagement\doorAddFriend.sqf";
+	DoorRemoveFriend 			= compile preprocessFileLineNumbers "Scripts\doorManagement\doorRemoveFriend.sqf";
+	player_unlockDoor      		= compile preprocessFileLineNumbers "Scripts\doorManagement\player_unlockDoor.sqf";
+	player_unlockDoorCode 		= compile preprocessFileLineNumbers "Scripts\doorManagement\player_unlockDoorCode.sqf";
+	player_manageDoor			= compile preprocessFileLineNumbers "Scripts\doorManagement\initDoorManagement.sqf";
+	player_enterCode       		= compile preprocessFileLineNumbers "Scripts\doorManagement\player_enterCode.sqf";
+	player_changeCombo 			= compile preprocessFileLineNumbers "Scripts\doorManagement\player_changeCombo.sqf"; 
+/*DoorManagement End*/
 		
 	
 	
@@ -68,9 +80,6 @@ if (!isDedicated) then {
 			player setVariable["publish",_detail];
 		};
 	};
-
-	player_unlockDoor =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_unlockDoor.sqf";
-	player_changeCombo =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_changeCombo.sqf";
 
 	player_lockVault =			compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Compile\player_lockVault.sqf";
 	player_updateGui =			compile preprocessFileLineNumbers "Scripts\A_Plot_for_Life\Compile\player_updateGui.sqf";
