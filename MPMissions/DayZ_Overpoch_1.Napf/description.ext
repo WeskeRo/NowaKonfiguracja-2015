@@ -163,6 +163,9 @@ class RscTitles
 #include "Scripts\doorManagement\doorManagement.hpp"
 #include "Scripts\doorManagement\ComboLockUI.hpp"
 
+#include "Scripts\advancedTrading\ZSCdefines.hpp" // if u don't have it from ZSC
+#include "Scripts\advancedTrading\advancedTrading.hpp"
+
 #include "Scripts\gold\custom\hw.hpp"
 #include "fixes\loot\CfgBuildingLoot.hpp"
 

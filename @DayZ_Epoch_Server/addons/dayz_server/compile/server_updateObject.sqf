@@ -75,7 +75,7 @@ _object_inventory = {
 			getMagazineCargo _object,
 			getBackpackCargo _object
 			];
-		};
+			};
 		_previous = str(_object getVariable["lastInventory",[]]);
 		if (str(_inventory) != _previous) then {
 			_object setVariable["lastInventory",_inventory];
