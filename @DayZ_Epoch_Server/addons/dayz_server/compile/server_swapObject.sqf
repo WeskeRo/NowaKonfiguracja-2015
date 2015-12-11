@@ -59,9 +59,6 @@ _object setVariable ["OEMPos", call compile (_worldspace select 1), true];
 
 //diag_log ("PUBLISH: Attempt " + str(_object));
 
-//get UID
-_uid = _worldspace call dayz_objectUID2;
-
 //Send request
 _key = format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0 , _charID, _worldspace, [], [], 0,_uid];
 //diag_log ("HIVE: WRITE: "+ str(_key));

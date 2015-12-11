@@ -595,64 +595,64 @@ dayz_objectUID = {
 };
 
 dayz_objectUID2 = {
-		private["_position","_dir","_key","_element","_vector","_set","_vecCnt","_usedVec"];
-	_dir = _this select 0;
-	_key = "";
-	_position = _this select 1;
-	
-	if((count _this) == 2) then{
-		{
-			_x = _x * 10;
-			if ( _x < 0 ) then { _x = _x * -10 };
-			_key = _key + str(round(_x));
-		} count _position;
-		_key = _key + str(round(_dir));
-	}else{
-		_vector = [];
-		_usedVec = false;
-		{
-			_element = _x;
-			if(typeName _element == "ARRAY") then{
-				_vector = _element;
-				if((count _vector) == 2)then{
-					if(((count (_vector select 0)) == 3) && ((count (_vector select 1)) == 3))then{
-							{
-								_x = _x * 10;
-								if ( _x < 0 ) then { _x = _x * -10 };
-								_key = _key + str(round(_x));
-							} count _position;
-							
-							_vecCnt = 0;
-							{
-								_set = _x;
-								{
-									_vecCnt = _vecCnt + (round (_x * 100));
-									
-								} foreach _set;
-								
-							} foreach _vector;
-							if(_vecCnt < 0)then{
-								_vecCnt = ((_vecCnt * -1) * 3);
-							};
-							_key = _key + str(_vecCnt);
-							_usedVec = true;
-					};
-				};
-			};
-		} count _this;
-		
-		if!(_usedVec) then{
-				{
-					_x = _x * 10;
-					if ( _x < 0 ) then { _x = _x * -10 };
-					_key = _key + str(round(_x));
-				} count _position;
-				_key = _key + str(round(_dir));
-		};
-		
-		
-	};
-	_key
+    private["_position","_dir","_key","_element","_vector","_set","_vecCnt","_usedVec"];
+    _dir = _this select 0;
+    _key = "";
+    _position = _this select 1;
+
+    if((count _this) == 2) then{
+        {
+            _x = _x * 10;
+            if ( _x < 0 ) then { _x = _x * -10 };
+            _key = _key + str(round(_x));
+        } count _position;
+        _key = _key + str(round(_dir));
+    }else{
+        _vector = [];
+        _usedVec = false;
+        {
+            _element = _x;
+            if(typeName _element == "ARRAY") then{
+                _vector = _element;
+                if((count _vector) == 2)then{
+                    if(((count (_vector select 0)) == 3) && ((count (_vector select 1)) == 3))then{
+                            {
+                                _x = _x * 10;
+                                if ( _x < 0 ) then { _x = _x * -10 };
+                                _key = _key + str(round(_x));
+                            } count _position;
+
+                            _vecCnt = 0;
+                            {
+                                _set = _x;
+                                {
+                                    _vecCnt = _vecCnt + (round (_x * 100));
+
+                                } foreach _set;
+
+                            } foreach _vector;
+                            if(_vecCnt < 0)then{
+                                _vecCnt = ((_vecCnt * -1) * 3);
+                            };
+                            _key = _key + str(_vecCnt);
+                            _usedVec = true;
+                    };
+                };
+            };
+        } count _this;
+
+        if!(_usedVec) then{
+                {
+                    _x = _x * 10;
+                    if ( _x < 0 ) then { _x = _x * -10 };
+                    _key = _key + str(round(_x));
+                } count _position;
+                _key = _key + str(round(_dir));
+        };
+
+
+    };
+    _key
 };
 
 dayz_objectUID3 = {

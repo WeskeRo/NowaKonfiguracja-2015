@@ -624,7 +624,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	//Allow manage door
 	if((_typeOfCursorTarget in DZE_DoorsLocked)) then {
 		if (s_player_manageDoor < 0) then {		 
-		 s_player_manageDoor = player addAction ["<t color='#0059FF'>Manage Door</t>", "doorManagement\initDoorManagement.sqf", _cursorTarget, 5, false];
+		 s_player_manageDoor = player addAction ["<t color='#0059FF'>Manage Door</t>", "Scripts\doorManagement\initDoorManagement.sqf", _cursorTarget, 5, false];
 		};
 	} else {
 			player removeAction s_player_manageDoor;
@@ -923,6 +923,12 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 					s_player_parts set [count s_player_parts,_buy];
 				
 				} count (_traderMenu select 1);
+				
+				//Advanced tradind
+				_buyV = player addAction ["<t color='#0059FF'>Advanced Trading</t>", "Scripts\advancedTrading\init.sqf",(_traderMenu select 0), 999, true, false, "",""];
+				s_player_parts set [count s_player_parts,_buyV];
+				//
+				
 				// Database menu
 				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
