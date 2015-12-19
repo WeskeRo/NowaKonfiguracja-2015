@@ -340,6 +340,8 @@ dayz_resetSelfActions = {
 	s_player_plotManagement = -1;
 	
 	s_player_manageDoor = -1;
+	
+	s_clothes = -1;
 };
 call dayz_resetSelfActions;
 
