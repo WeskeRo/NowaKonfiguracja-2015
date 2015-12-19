@@ -547,6 +547,18 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_studybody = -1;
 	};
 
+// --------ZUPA - CLOTHING --------	
+	//Remove CLOTHES
+	if (_isMan and !_isAlive and !_isZombie and !_isAnimal) then {
+	if (s_clothes < 0) then {
+	s_clothes = player addAction [("" + ("Take Clothes") + ""), "zupa\skins\removeclothes.sqf",cursorTarget, 1, false, true, "",""];
+	};
+	} else {
+	player removeAction s_clothes;
+	s_clothes = -1;
+	};	
+// --------ZUPA - CLOTHING --------
+	
 	// logic vars
 	_player_cook = false;
 	_player_boil = false;
@@ -1057,6 +1069,10 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fillfuel = -1;
 	player removeAction s_player_studybody;
 	s_player_studybody = -1;
+	//remove clothes
+	player removeAction s_clothes;
+	s_clothes = -1;
+	
 	//Dog
 	player removeAction s_player_tamedog;
 	s_player_tamedog = -1;

@@ -156,6 +156,7 @@ class RscTitles
 //#include "addons\playerhud\hud.hpp"
 };
 
+#include "fixes\loot\CfgBuildingLoot.hpp"
 #include "Scripts\plotManagement\defines.hpp"
 #include "Scripts\plotManagement\plotManagement.hpp"
 
@@ -163,16 +164,19 @@ class RscTitles
 #include "Scripts\doorManagement\doorManagement.hpp"
 #include "Scripts\doorManagement\ComboLockUI.hpp"
 
-#include "Scripts\advancedTrading\ZSCdefines.hpp" // if u don't have it from ZSC
-#include "Scripts\advancedTrading\advancedTrading.hpp"
+
 
 #include "Scripts\gold\custom\hw.hpp"
-#include "fixes\loot\CfgBuildingLoot.hpp"
+
 
 //#include "Scripts\gold\custom\defines.hpp"
 #include "Scripts\gold\common.hpp"
 #include "Scripts\gold\bank_dialog.hpp"
 #include "Scripts\gold\give_player_dialog.hpp"
 
+#include "Scripts\advancedTrading\ZSCdefines.hpp" // if u don't have it from ZSC
+#include "Scripts\advancedTrading\advancedTrading.hpp"
+
+#include "Scripts\skins\SkinGui.hpp"
 
 #include "Scripts\snap_pro\snappoints.hpp"
