@@ -79,7 +79,6 @@ if (isServer) then {
 	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-						[]execVM "Scripts\spawn\start.sqf";
 };
 
 if (!isDedicated) then {
@@ -91,7 +90,7 @@ if (!isDedicated) then {
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-	
+						[] execVM "Scripts\spawn\start.sqf";
 	
 
 	//Lights
