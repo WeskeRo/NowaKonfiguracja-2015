@@ -3,6 +3,69 @@ private ["_nul","_result","_pos","_wsDone","_dir","_isOK","_countr","_objWpnType
 dayz_versionNo = 		getText(configFile >> "CfgMods" >> "DayZ" >> "version");
 dayz_hiveVersionNo = 	getNumber(configFile >> "CfgMods" >> "DayZ" >> "hiveVersion");
 
+// ### [CPC] Indestructible Buildables Fix
+_cpcimmune =[ 
+// handle damage false, enablesimulation false
+	"CinderWallHalf_DZ",
+	"CinderWall_DZ",
+	"MetalFloor_DZ",
+        "Fence_corrugated_DZ",
+	"Fort_RazorWire",
+	"FuelPump_DZ",
+    	"Hedgehog_DZ",
+	"ForestCamoNet_DZ",
+	"ForestLargeCamoNet_DZ",
+	"Land_CncBlock_Stripes",
+	"Land_Fort_Watchtower_EP1",
+	"Land_pumpa",
+	"LightPole_DZ",
+	"MAP_concrete_block",
+	"MAP_fort_watchtower",
+	"MAP_plot_istan1_rovny",
+	"MAP_plot_zed_drevo1",
+	"MAP_Wall_Stone",
+	"MAP_Wall_TinCom_3",
+	"MAP_Wall_TinCom_9",
+	"MetalFloor_Preview_DZ",
+	"MetalPanel_DZ",
+	"RampConcrete",
+	"WoodFloorHalf_DZ",
+	"WoodFloorQuarter_DZ",
+	"WoodFloor_DZ",
+	"WoodLargeWallWin_DZ",
+	"WoodLargeWall_DZ",
+	"WoodRamp_DZ",
+	"WoodSmallWallThird_DZ",
+	"WoodSmallWall_DZ",
+	"WoodStairsRails_DZ",
+	"WoodStairsSans_DZ",
+	"WoodStairs_DZ",
+	"WorkBench_DZ"
+];
+
+_cpcimmuneAnim = [ 
+// handle damage false, enable simulation true
+	"ZavoraAnim",
+        "DeerStand",
+	"WoodLadder_DZ",
+	"WoodShack_DZ",
+	"WoodCrate_DZ",
+	"VaultStorageLocked",
+	"TentStorageDomed2",
+	"TentStorage",
+	"StorageShed_DZ",
+	"SandNest_DZ",
+	"Sandbag1_DZ",
+	"Plastic_Pole_EP1_DZ",
+        "M240Nest_DZ",
+        "Land_Campfire",
+        "FireBarrel_DZ",
+        "BagFenceRound_DZ",
+        "GunRack_DZ",
+        "OutHouse_DZ"
+];
+// ### [CPC] Indestructible Buildables Fix
+
 _hiveLoaded = false;
 
 waitUntil{initialized}; //means all the functions are now defined
@@ -202,6 +265,20 @@ if (count _worldspace >= 3) then{
 					_object setVariable ["plotfriends", _inventory, true];
 				};
 			_object setVariable ["OwnerPUID", _ownerPUID, true];
+			
+			// ### [CPC] Indestructible Buildables Fix
+			if (typeOf(_object) in _cpcimmune) then 
+				{
+					_object addEventHandler ["HandleDamage", {false}];
+					_object enableSimulation false;
+				};
+				
+			if (typeOf(_object) in _cpcimmuneAnim) then 
+				{
+					_object addEventHandler ["HandleDamage", {false}];
+					_object enableSimulation true;
+				};
+			//KONIEC NIEZNISZCZALNYCH BAZ
 
 			_lockable = 0;
 			if(isNumber (configFile >> "CfgVehicles" >> _type >> "lockable")) then {
