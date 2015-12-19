@@ -30,7 +30,8 @@ dayz_MapArea = 18000; // Default = 10000
 dayz_minpos = -1000; 
 dayz_maxpos = 26000;
 
-dayz_paraSpawn = true;
+dayz_spawnselection = 0;
+dayz_paraSpawn = false;
 
 dayz_sellDistance_vehicle = 10;
 dayz_sellDistance_boat = 30;
@@ -78,6 +79,7 @@ if (isServer) then {
 	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+						[]execVM "Scripts\spawn\start.sqf";
 };
 
 if (!isDedicated) then {

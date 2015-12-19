@@ -179,4 +179,9 @@ class RscTitles
 
 #include "Scripts\skins\SkinGui.hpp"
 
+#include "Scripts\spawn\class.hpp"
+#include "Scripts\spawn\halo.hpp"
+#include "Scripts\spawn\spawn.hpp"
+
+
 #include "Scripts\snap_pro\snappoints.hpp"

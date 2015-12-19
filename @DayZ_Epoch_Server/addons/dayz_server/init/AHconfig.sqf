@@ -114,7 +114,7 @@ _blockDamageFrom = [
 /*  Check CMDMenus ?      */ _CCM =  false;	/* true or false */	/* only disable this if you know what you are doing. I strongly recommend to use this! */
 /*  BLOCK ALL CMDMenus    */ _BCM =  false;	/* true or false */	/* we don't need commandingMenus. so have this true as well. */
 /*  Check Actions ?       */ _CSA = false;	/* true or false */	/* this checks mousewheel actions */
-/*  Force Terrain Grid ?  */ _FTG =    50;	/* 50, 25, 12.5  */	/* if set to 50 grass will be very low for better client FPS.. default is 25 */
+/*  Force Terrain Grid ?  */ _FTG =    25;	/* 50, 25, 12.5  */	/* if set to 50 grass will be very low for better client FPS.. default is 25 */
 /*  Use Clutter check ?   */ _UBC =  true;	/* true or false */	/* BadSize: %1 - Plants and/or Clutter pbo(s) removed..! */
 /*  Log Epoch Maintain    */ _LEM =  true;	/* true or false */
 /* ********************************************************************************* */
