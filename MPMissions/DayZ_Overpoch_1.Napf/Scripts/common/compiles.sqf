@@ -38,9 +38,15 @@ if (!isDedicated) then {
 	player_changeCombo 			= compile preprocessFileLineNumbers "Scripts\doorManagement\player_changeCombo.sqf"; 
 /*DoorManagement End*/
 		
+/*SKINS AND CLOTHING*/	
 	
+	FillSkinList  = compile preprocessFileLineNumbers "Scripts\skins\getList.sqf";
+	ApplySkinList  = compile preprocessFileLineNumbers "Scripts\skins\changeClothes.sqf";
+	player_wearClothes  = compile preprocessFileLineNumbers "Scripts\skins\player_wearClothes.sqf"; 
+	player_switchModel  = compile preprocessFileLineNumbers "Scripts\skins\player_switchModel.sqf";
 	
-
+/*SKINS AND CLOTHING END*/		
+	
 	BIS_Effects_Burn = 				compile preprocessFile "\ca\Data\ParticleEffects\SCRIPTS\destruction\burn.sqf";
 	player_zombieCheck = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieCheck.sqf";	//Run on a players computer, checks if the player is near a zombie
 	player_zombieAttack = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieAttack.sqf";	//Run on a players computer, causes a nearby zombie to attack them
@@ -86,7 +92,7 @@ if (!isDedicated) then {
 	player_crossbowBolt =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_crossbowBolt.sqf";
 	player_music = 				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_music.sqf";			//Used to generate ambient music
 	player_death =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_death.sqf";
-	player_switchModel =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_switchModel.sqf";
+	//player_switchModel =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_switchModel.sqf";
 	player_checkStealth =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_checkStealth.sqf";
 	world_sunRise =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_sunRise.sqf";
 	world_surfaceNoise =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_surfaceNoise.sqf";
@@ -153,7 +159,7 @@ if (!isDedicated) then {
 	DZE_build_vector_file = 		"Scripts\BuildVectors\build_vectors.sqf";
 	build_vectors = 				compile preprocessFileLineNumbers DZE_build_vector_file;
 	
-	player_wearClothes =		compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
+	//player_wearClothes =		compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";
 	object_pickup = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_pickup.sqf";
 	player_flipvehicle = 		compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_flipvehicle.sqf";
 	player_sleep = 				compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_sleep.sqf";
@@ -678,6 +684,46 @@ if (!isDedicated) then {
 		];
 		_medical
 	};
+	
+	
+		//Coins --------------------------------
+	//_removed = [player, 5000] call SC_fnc_removeCoinsUK111; //if(_removed = true)then{Coins removed}else{not enough money};
+	SC_fnc_removeCoins = {
+		private ["_player","_amount","_wealth","_newwealth", "_result"];
+		_player = _this select 0;
+		_amount = _this select 1;
+		_result = false;
+		_wealth = _player getVariable["cashMoney",0];		
+		if (_wealth < _amount) then { 
+			_result = false;
+		} else { 						
+			_newwealth = _wealth - _amount;
+			_player setVariable["cashMoney",_newwealth, true];
+			_player setVariable ["moneychanged",1,true];	
+			_result = true;
+			PVDZE_plr_Save = [_player,(magazines _player),true,true] ;
+			publicVariableServer "PVDZE_plr_Save";			
+		};
+		_result
+	};
+	//_added = [player, 5000] call SC_fnc_addCoinsUK111; //if(_added = true)then{Coins added}else{IT FAILED};
+	SC_fnc_addCoins = {
+		private ["_player","_amount","_wealth","_newwealth", "_result"];			
+		_player = _this select 0;
+		_amount = _this select 1;
+		_result = false;	
+		_wealth = _player getVariable["cashMoney",0];
+		if ((_wealth + _amount) > 999999) then { _amount = (999999 - _wealth); };
+		_player setVariable["cashMoney",_wealth + _amount, true];
+		PVDZE_plr_Save = [_player,(magazines _player),true,true] ;
+		publicVariableServer "PVDZE_plr_Save";
+		_player setVariable["moneychanged",1,true];					
+		_newwealth = _player getVariable["cashMoney",0];		
+		if (_newwealth >= _wealth) then { _result = true; };			
+		_result
+	};
+	
+	
 
 	//Server Only
 	if (isServer) then {

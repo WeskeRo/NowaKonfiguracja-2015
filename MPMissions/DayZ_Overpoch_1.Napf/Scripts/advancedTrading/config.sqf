@@ -1,4 +1,4 @@
-Z_AT_FolderLocation = 'Sctipts\advancedTrading';
+Z_AT_FolderLocation = 'Scripts\advancedTrading';
 Z_VehicleDistance = 30; // Distance that a vehicle needs to be to see it's content or to sell it.
 Z_SingleCurrency = true; // Does your server use a single currency system.
 Z_AllowTakingMoneyFromBackpack = true; // When buying items with DEFAULT CURRENCY to any inventory. Do you allow the trader to take money from your backpack.
