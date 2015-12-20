@@ -92,6 +92,7 @@ if (!isDedicated) then {
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 						[] execVM "Scripts\spawn\start.sqf";
 						[] execVM "Scripts\dzgm\init.sqf";
+						[] execVM "Scripts\service_point\service_point.sqf";
 	
 
 	//Lights
