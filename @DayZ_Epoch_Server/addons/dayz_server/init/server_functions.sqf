@@ -972,3 +972,7 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), _PUID, _statusText];
 	};
 };
+
+currentInvites = [];
+publicVariable "currentInvites";
+"currentInvites" addPublicVariableEventHandler {publicVariable "currentInvites";};

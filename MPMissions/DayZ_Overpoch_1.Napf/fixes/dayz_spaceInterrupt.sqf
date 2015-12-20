@@ -203,19 +203,19 @@ if (_dikcode == 0x18) then {
 //if (_dikcode == 0x17) then { [] execVM "Scripts\detach.sqf"; };
 
 //Group management
-//if ((_dikCode == 0xDB) || (_dikCode == 0xDC)) then {
-//    if (tagName) then {
-//		tagName = false;
-//		titleText ["Group name tags OFF","PLAIN DOWN"];
-//		titleFadeOut 4;
-//	} else {
-//		tagName = true;
-//		titleText ["Group name tags ON","PLAIN DOWN"];
-//		titleFadeOut 4;
-//	};
-//    _handled = true;
-//};
-//if (_dikCode in actionKeys "TacticalView") then { _handled = true; };
+if ((_dikCode == 0xDB) || (_dikCode == 0xDC)) then {
+    if (tagName) then {
+		tagName = false;
+		titleText ["Group name tags OFF","PLAIN DOWN"];
+		titleFadeOut 4;
+	} else {
+		tagName = true;
+		titleText ["Group name tags ON","PLAIN DOWN"];
+		titleFadeOut 4;
+	};
+    _handled = true;
+};
+if (_dikCode in actionKeys "TacticalView") then { _handled = true; };
 
 ////HUD rCTRL
 //if (_dikCode == 0x9D) then { [] execVM "Scripts\gui\ToggleHUD.sqf"; };

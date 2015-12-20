@@ -151,9 +151,14 @@ class DayZ_loadingScreen
 	};
 };
 // Add all this on the bottom
+
+#include "Scripts\dzgm\defines.hpp"
 class RscTitles
 {
 //#include "addons\playerhud\hud.hpp"
+
+#include "Scripts\dzgm\icons.hpp"
+
 };
 
 #include "fixes\loot\CfgBuildingLoot.hpp"
@@ -164,7 +169,7 @@ class RscTitles
 #include "Scripts\doorManagement\doorManagement.hpp"
 #include "Scripts\doorManagement\ComboLockUI.hpp"
 
-
+#include "Scripts\common\extra_rc.hpp"
 
 #include "Scripts\gold\custom\hw.hpp"
 
@@ -183,5 +188,5 @@ class RscTitles
 #include "Scripts\spawn\halo.hpp"
 #include "Scripts\spawn\spawn.hpp"
 
-
+#include "Scripts\dzgm\groupManagement.hpp"
 #include "Scripts\snap_pro\snappoints.hpp"
