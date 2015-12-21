@@ -15,7 +15,7 @@ dayz_previousID = 0;
 //disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
 //disable radio messages to be heard and shown in the left lower corner of the screen
-enableRadio false;
+enableRadio true;
 // May prevent "how are you civillian?" messages from NPC
 enableSentences false;
 
@@ -68,6 +68,7 @@ progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "Scripts\common\compiles.sqf";
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";
+call compile preprocessFileLineNumbers "Scripts\logistic\init.sqf";	
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
