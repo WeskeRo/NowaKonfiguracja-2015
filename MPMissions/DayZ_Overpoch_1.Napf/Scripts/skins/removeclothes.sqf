@@ -105,12 +105,12 @@ if (_count > 0) exitWith {
 };
 if !(_isModel) then {
 	_txt = "These clothes can not be taken!";
-	cutText [txt,"PLAIN DOWN"];
+	cutText [_txt,"PLAIN DOWN"];
 	systemChat ("Zupa: "+str _txt+"");
 };
 if (_model in ["Survivor2_DZ"]) then {
 	_txt = "These clothes can not be taken!";
-	cutText [txt,"PLAIN DOWN"];
+	cutText [_txt,"PLAIN DOWN"];
 	systemChat ("Zupa: "+str _txt+"");
 };
 
@@ -138,6 +138,8 @@ if (_isModel &&  !(_model in ["Survivor2_DZ"])) then {
 		_magazines = magazines _body;
 		private ["_newBackpackType","_backpackWpn","_backpackMag"];
 		dayz_myBackpack = unitBackpack _body;
+		_hasBackPack = false;
+		
 		if (isNull (unitBackpack _body)) then {
 			_hasBackPack = false;
 		} else {

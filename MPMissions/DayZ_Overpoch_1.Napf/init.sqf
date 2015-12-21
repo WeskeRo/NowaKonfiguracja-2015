@@ -94,6 +94,8 @@ if (!isDedicated) then {
 						[] execVM "Scripts\dzgm\init.sqf";
 						[] execVM "Scripts\service_point\service_point.sqf";
 	
+	//Remote Messages
+    _nil = [] execVM "Scripts\common\RE.sqf";
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
