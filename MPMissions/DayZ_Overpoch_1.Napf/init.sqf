@@ -42,9 +42,18 @@ dayz_tameDogs = true;
 DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 
-DZE_BuildOnRoads = false; // Default: False
+DZE_BuildOnRoads = true; // Default: False
 
 DZE_ConfigTrader = true;
+
+DZE_SelfTransfuse = true;
+DZE_selfTransfuse_Values = [5000, 10, 300]; // default value
+
+DZE_DamageBeforeMaint = 0;
+
+DZE_PlotPole = [50,65];
+DZE_maintainRange = ((DZE_PlotPole select 0)+25);
+
 
 DZE_APlotforLife = true;
 DZE_PlotOwnership = true;
@@ -55,8 +64,22 @@ DZE_vectorDegrees = [0.01, 0.1, 1, 5, 15, 45, 90];
 DZE_curDegree = 45; //Starting rotation angle. //Prefered any value in array above
 DZE_dirWithDegrees = true; //When rotating objects with Q&E, use the custom degrees
 
-EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+EpochEvents = [["any","any","any","any",0,"crash_spawner"],
+["any","any","any","any",15,"crash_spawner"],
+["any","any","any","any",30,"crash_spawner"],
+["any","any","any","any",45,"crash_spawner"],
+["any","any","any","any",15,"supply_drop"],
+["any","any","any","any",16,"construction"],
+["any","any","any","any",30,"military"],
+["any","any","any","any",45,"supplyitems"],
+["any","any","any","any",59,"treasure"]];
+
+
 dayz_fullMoonNights = true;
+
+DZE_vehicleAmmo = 1;
+DZE_AllowCargoCheck = false;
+MaxAmmoBoxes = 25;
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "Scripts\common\variables.sqf";
@@ -80,9 +103,11 @@ if (isServer) then {
 	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	_nil = [] execVM "\z\addons\dayz_server\system\most_wanted.sqf";
 };
 
 if (!isDedicated) then {
+	
 	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
@@ -94,15 +119,27 @@ if (!isDedicated) then {
 						[] execVM "Scripts\spawn\start.sqf";
 						[] execVM "Scripts\dzgm\init.sqf";
 						[] execVM "Scripts\service_point\service_point.sqf";
-	
+						[] execVM "Scripts\startup\Server_WelcomeCredits.sqf";
+						[] execVM "Scripts\kill_msg\kill_msg.sqf";
+						[] execVM "snow.sqf";
 	//Remote Messages
     _nil = [] execVM "Scripts\common\RE.sqf";
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
-//Start SingleCurrrency
+//Start SingleCurrrencysw
 [] execVM "Scripts\gold\init.sqf";
+
+// -- No zombie plotpole --
+dayz_poleSafeArea = 50;
+[] execVM "Scripts\PlotNoZombie\base_SafeArea.sqf";
+
+[] execVM "Scripts\LoyaltyReward\fn_LReawrd.sqf"; //Loyalty Time Reward
+
+[] execVM "Scripts\marker\marker.sqf";
+
+[] execVM "Scripts\safezone\safezone.sqf";
 
 //Start Dynamic Weather
 //execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
