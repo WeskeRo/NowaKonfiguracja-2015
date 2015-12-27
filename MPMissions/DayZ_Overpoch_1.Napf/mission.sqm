@@ -51,6 +51,7 @@ class Mission
 		"frb",
 		"sbh_paranoia",
 		"arma1_sf_port_patch",
+		"american_law_enforcement",
 		"gsc_units_stalker_patch"
 	};
 	addOnsAuto[]=

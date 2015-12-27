@@ -121,7 +121,7 @@ if (!isDedicated) then {
 						[] execVM "Scripts\service_point\service_point.sqf";
 						[] execVM "Scripts\startup\Server_WelcomeCredits.sqf";
 						[] execVM "Scripts\kill_msg\kill_msg.sqf";
-						[] execVM "snow.sqf";
+						//[] execVM "snow.sqf";
 	//Remote Messages
     _nil = [] execVM "Scripts\common\RE.sqf";
 
@@ -145,3 +145,5 @@ dayz_poleSafeArea = 50;
 //execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+
+[] execVM "fixes\ZEVMission\ZEVMissionClientInit.sqf";

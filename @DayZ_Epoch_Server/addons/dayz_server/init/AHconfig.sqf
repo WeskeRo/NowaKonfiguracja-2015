@@ -40,7 +40,7 @@
 /*  Bottom esc menu TXT2  */ _LowerBottom = "by infiSTAR.de"; //do not use " in this text.
 /*  Color esc menu TXT    */ _EscColor = [0.6,0,0,1];
 /*  DebugMonitor TXT      */ _BottomDebug = "infiSTAR.de"; //do not use " in this text.
-/*  DebugMonitor Key      */ _ODK =  0xCF;	/* google DIK_KeyCodes (0xCF is END) */
+/*  DebugMonitor Key      */ _ODK =  0xC7  ;	/* google DIK_KeyCodes (0xCF is END) */
 /*  Use DebugMonitor      */ _DMS =  false;	/* true or false */	/* starts up with debugmonitor ON if true */
 /*  DebugMonitor Action   */ _DMW = false;	/* true or false */	/* "Debug" option on mousewheel */
 /*  Mod EPOCH ?           */ _MEH =  true;	/* true or false */
@@ -86,7 +86,7 @@ _blockDamageFrom = [
 /*  titleText & cutText   */ _TCT =  true;	/* true or false */	/* block titleText & cutText - some A.I. Missions and other mass message scripts needs this set to false */
 /*  unitRecoil checks     */ _URC =  true;	/* true or false */	/* checks unitRecoilCoefficient and resets default unitRecoilCoefficient */
 /*  Log Bad Keys pressed  */ _LBK = false;	/* true or false */	/* will be logged to surveillancelog.. can become huge spam I would have it disabled */
-/*  Punish Forbidden Keys */ _PBK =  true;	/* true or false */	/* will freeze the user on BadKey click for ~3 seconds! */
+/*  Punish Forbidden Keys */ _PBK =  false;	/* true or false */	/* will freeze the user on BadKey click for ~3 seconds! */
 /*  Forbid VON Sidechat   */ _VON =  true;	/* true or false */	/* talking on sidechat will put out a warning and kick if continue */
 /*  Use Chat Functions    */ _UCF =  true;	/* true or false */	/* Enables Chatfunctions like /dance */
 

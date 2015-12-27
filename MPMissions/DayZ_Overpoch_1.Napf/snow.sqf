@@ -4,8 +4,8 @@
 "filmGrain" ppEffectAdjust [0.02, 1, 1, 0.1, 1, false];
 "filmGrain" ppEffectCommit 5;
  
-setviewdistance 900;
-bis_fog = 0.8;
+setviewdistance 1500;
+bis_fog = 0.5;
  
 setviewdistance 900;
 0 setovercast 0.9;
