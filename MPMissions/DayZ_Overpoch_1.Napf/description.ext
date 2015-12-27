@@ -14,7 +14,7 @@ briefing = 0;
 debriefing = 0;
 
 onPauseScript = "";
-loadScreen = "\z\addons\dayz_code\gui\dayz_logo_ca.paa";
+loadScreen = "Scripts\startup\load.jpg";
 
 class Header
 {
@@ -26,6 +26,28 @@ class Header
 aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
+
+class CfgSounds
+{
+    sounds[] =
+    {
+		ZEVMissionMoney1, introSong
+    };
+	class ZEVMissionMoney1
+    {
+		name="ZEVMissionMoney1";
+		sound[]={fixes\ZEVMission\morse_code.ogg,0.9,1};
+		titles[] = {};
+    };
+	class introSong
+    {
+		name="introSong";
+		sound[]={Scripts\startup\introSong.ogg,0.9,1};
+		titles[] = {};
+    };
+	
+}
+
 
 class RscText
 {
