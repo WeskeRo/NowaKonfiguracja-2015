@@ -2944,16 +2944,7 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_2 = objNull; //BANDIT BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [13138.366, 6382.9604, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
-  _unit_2 = _this;
-  _this setDir 83.105286;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 
-};
 
 _unit_3 = objNull; //HERO WEAPON TRADER
 if (true) then
@@ -2965,30 +2956,22 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_4 = objNull;//HERO AMMO TRADER
-if (true) then
-{
-  _this = createAgent ["Tanny_PMC", [3966.9739, 10224.866, 2.2888184e-005], [], 0, "CAN_COLLIDE"];
-  _unit_4 = _this;
-  _this setDir 142.5891;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+//_unit_4 = objNull;//HERO AMMO TRADER
+//if (true) then
+//{
+ // _this = createAgent ["Tanny_PMC", [3966.9739, 10224.866, 2.2888184e-005], [], 0, "CAN_COLLIDE"];
+ // _unit_4 = _this;
+//  _this setDir 142.5891;
+//  _this setUnitAbility 0.60000002;
+ // _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+//};
 
-_unit_5 = objNull;//HERO BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [3970.4158, 10236.663, 0.35977098], [], 0, "CAN_COLLIDE"];
-  _unit_5 = _this;
-  _this setDir 129.99696;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+
 
 _unit_6 = objNull;//HERO MEDIC
 if (true) then
 {
-  _this = createAgent ["Dr_Annie_Baker_EP1", [3979.6414, 10243.397, 0.55326891], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Dr_Hladik_EP1", [3979.6414, 10243.397, 0.55326891], [], 0, "CAN_COLLIDE"];
   _unit_6 = _this;
   _this setDir 149.40459;
   _this setUnitAbility 0.60000002;
@@ -2996,25 +2979,8 @@ if (true) then
 };
 
 
-_unit_7 = objNull; //WESTERN WHOLESALER BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [3144.7085, 12135.188, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
-  _unit_7 = _this;
-  _this setDir 146.20467;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
 
-_unit_8 = objNull;//WESTERN WHOLESALER TRADER
-if (true) then
-{
-  _this = createAgent ["RUS_Commander", [3141.707, 12120.623, 4.5776367e-005], [], 0, "CAN_COLLIDE"];
-  _unit_8 = _this;
-  NWsaler = _this;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+//==================MUTENZ
 
 _unit_9 = objNull; //MUTENZ VEHICLE VENDOR (FRIENDLY)
 if (true) then
@@ -3058,19 +3024,12 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_13 = objNull; //MUTENZ BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [6239.478, 10431.795, -9.8705292e-005], [], 0, "CAN_COLLIDE"];
-  _unit_13 = _this;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+
 
 _unit_16 = objNull; //MUTENZ STORE (FRIENDLY)
 if (true) then
 {
-  _this = createAgent ["CIV_EuroWoman01_EP1", [6228.5449, 10422.612, 2.2411346e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Damsel3", [6228.5449, 10422.612, 2.2411346e-005], [], 0, "CAN_COLLIDE"];
   _unit_16 = _this;
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
@@ -3079,17 +3038,19 @@ if (true) then
 _unit_17 = objNull; //MUTENZ SUPLIES
 if (true) then
 {
-  _this = createAgent ["GUE_Villager3", [6226.56,10459.4,0.0015], [], 0, "NONE"];
+  _this = createAgent ["Ins_Woodlander3", [6226.56,10459.4,0.0015], [], 0, "NONE"];
   _unit_17 = _this;
   _this setDir -196.11475;
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
+/////==========================RUEMLINGEN
+
 _unit_18 = objNull; // RUEMLINGEN WEAPONS
 if (true) then
 {
-  _this = createAgent ["Ins_Soldier_AR", [11471.544, 16140.637, 8.392334e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["US_Delta_Force_AR_EP1", [11471.544, 16140.637, 8.392334e-005], [], 0, "CAN_COLLIDE"];
   _unit_18 = _this;
   _this setDir 79.892677;
   _this setUnitAbility 0.60000002;
@@ -3099,7 +3060,7 @@ if (true) then
 _unit_19 = objNull;// RUEMLINGEN AMMO
 if (true) then
 {
-  _this = createAgent ["Ins_Lopotev", [11470.703, 16143.22, -2.8610229e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Graves", [11470.703, 16143.22, -2.8610229e-005], [], 0, "CAN_COLLIDE"];
   _unit_19 = _this;
   _this setDir 62.077255;
   _this setUnitAbility 0.60000002;
@@ -3109,21 +3070,14 @@ if (true) then
 _unit_20 = objNull;// RUEMLINGEN VEHICLES DO WERYFIKACJI
 if (true) then
 {
-  _this = createAgent ["Ins_Worker2", [11508.826, 16140.297, 2.0980835e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["GUE_Commander", [11508.826, 16140.297, 2.0980835e-005], [], 0, "CAN_COLLIDE"];
   _unit_20 = _this;
   _this setDir -118.77013;
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_21 = objNull;// RUEMLINGEN BANK
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [11484.375, 16130.083, -5.3405762e-005], [], 0, "CAN_COLLIDE"];
-  _unit_21 = _this;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+
 
 _unit_22 = objNull;// RUEMLINGEN MEDICAL DO WERYFIKACJI
 if (true) then
@@ -3138,7 +3092,7 @@ if (true) then
 _unit_23 = objNull; //RUEMLINGEN STORE
 if (true) then
 {
-  _this = createAgent ["Damsel5", [11502.579, 16167.848, -5.7220459e-006], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Damsel3", [11502.579, 16167.848, -5.7220459e-006], [], 0, "CAN_COLLIDE"];
   _unit_23 = _this;
   _this setDir 149.67896;
   _this setVehicleVarName "RUE_FOOD";
@@ -3167,25 +3121,19 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
+//=========================east wholesaler
+
 _unit_26 = objNull;//EAST WHOLESALER TRADER
 if (true) then
 {
-  _this = createAgent ["TK_Special_Forces_MG_EP1", [18688.76, 9468.3516, 4.2915344e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["RUS_Commander", [18688.76, 9468.3516, 4.2915344e-005], [], 0, "CAN_COLLIDE"];
   _unit_26 = _this;
   _this setDir 23.613014;
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_27 = objNull;//EAST WHOLESALER BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [18684.979, 9459.0762, -0.00017642975], [], 0, "CAN_COLLIDE"];
-  _unit_27 = _this;
-  _this setDir 68.910049;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
+
 
 _unit_28 = objNull;//EAST WHOLESALER BOAT TRADER
 if (true) then
@@ -3197,6 +3145,19 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
+//=======================WESTERN WHOLESALER
+
+_unit_8 = objNull;//WESTERN WHOLESALER TRADER
+if (true) then
+{
+  _this = createAgent ["RUS_Commander", [3141.707, 12120.623, 4.5776367e-005], [], 0, "CAN_COLLIDE"];
+  _unit_8 = _this;
+  NWsaler = _this;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+//=======================GOLDWILL
 _unit_29 = objNull;//GOLDWIL STORE (BACKPACKS,FOOD)
 if (true) then
 {
@@ -3207,20 +3168,10 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_30 = objNull;//GOLDWIL BANKER
-if (true) then
-{
-  _this = createAgent ["Functionary1_EP1", [10984.336, 1952.7515, -3.8146973e-005], [], 0, "CAN_COLLIDE"];
-  _unit_30 = _this;
-  _this setDir 19.739439;
-  _this setUnitAbility 0.60000002;
-  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
-};
-
 _unit_31 = objNull;//GOLDWIL VEHICLES (NEUTRAL)
 if (true) then
 {
-  _this = createAgent ["GUE_Woodlander3", [10990.612, 1944.7803, -1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["GUE_Commander", [10990.612, 1944.7803, -1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _unit_31 = _this;
   _this setDir 33.341652;
   _this setUnitAbility 0.60000002;
@@ -3230,7 +3181,7 @@ if (true) then
 _unit_32 = objNull;//GOLDWIL BUILDING/PARTS SUPLIES
 if (true) then
 {
-  _this = createAgent ["GUE_Woodlander2", [11015.053, 1953.9609, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Ins_Woodlander3", [11015.053, 1953.9609, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
   _unit_32 = _this;
   _this setDir -56.42527;
   _this setUnitAbility 0.60000002;
@@ -3240,7 +3191,7 @@ if (true) then
 _unit_33 = objNull;//GOLDWIL MEDICAL SUPLIES
 if (true) then
 {
-  _this = createAgent ["pook_Doc_Bell47", [11015.418, 1976.9004, -4.196167e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Dr_Hladik_EP1", [11015.418, 1976.9004, -4.196167e-005], [], 0, "CAN_COLLIDE"];
   _unit_33 = _this;
   _this setDir 163.5871;
   _this setUnitAbility 0.60000002;
@@ -3250,7 +3201,7 @@ if (true) then
 _unit_34 = objNull;//GOLDWIL WEAPON TRADER
 if (true) then
 {
-  _this = createAgent ["Soldier_MG_PKM_PMC", [10986.038, 1984.5544, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["US_Delta_Force_AR_EP1", [10986.038, 1984.5544, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
   _unit_34 = _this;
   _this setDir 130.064;
   _this setUnitAbility 0.60000002;
@@ -3260,7 +3211,7 @@ if (true) then
 _unit_35 = objNull; //GOLDWIL AMMO TRADER
 if (true) then
 {
-  _this = createAgent ["GUE_Worker2", [10988.159, 1986.7159, -3.8146973e-006], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Graves", [10988.159, 1986.7159, -3.8146973e-006], [], 0, "CAN_COLLIDE"];
   _unit_35 = _this;
   _this setDir 139.32414;
   _this setUnitAbility 0.60000002;
@@ -3277,7 +3228,8 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_37 = objNull;
+//===============================================
+_unit_37 = objNull;// Aircraft Dealer
 if (true) then
 {
   _this = createAgent ["Drake_Light", [15128.7, 16420.936, 0.075260207], [], 0, "CAN_COLLIDE"];
@@ -3286,7 +3238,10 @@ if (true) then
   _this setUnitAbility 0.60000002;
 _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;};
 
-_unit_264 = objNull;  //GEM TRADER
+
+//===============================REVO
+
+_unit_264 = objNull;  //JET TRADER
 if (true) then
 {
   _this = createAgent ["gsc_scientist1", [18141.7, 2077.68,0], [], 0, "CAN_COLLIDE"];
@@ -3331,6 +3286,78 @@ _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this d
 };
 
 
+//========================BANKERS
+
+_unit_2 = objNull; //BANDIT BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [13138.366, 6382.9604, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
+  _unit_2 = _this;
+  _this setDir 83.105286;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+
+};
+
+_unit_5 = objNull;//HERO BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [3970.4158, 10236.663, 0.35977098], [], 0, "CAN_COLLIDE"];
+  _unit_5 = _this;
+  _this setDir 129.99696;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_7 = objNull; //WESTERN WHOLESALER BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [3144.7085, 12135.188, 1.1444092e-005], [], 0, "CAN_COLLIDE"];
+  _unit_7 = _this;
+  _this setDir 146.20467;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+
+_unit_13 = objNull; //MUTENZ BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [6239.478, 10431.795, -9.8705292e-005], [], 0, "CAN_COLLIDE"];
+  _unit_13 = _this;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_21 = objNull;// RUEMLINGEN BANK
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [11484.375, 16130.083, -5.3405762e-005], [], 0, "CAN_COLLIDE"];
+  _unit_21 = _this;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_27 = objNull;//EAST WHOLESALER BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [18684.979, 9459.0762, -0.00017642975], [], 0, "CAN_COLLIDE"];
+  _unit_27 = _this;
+  _this setDir 68.910049;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_30 = objNull;//GOLDWIL BANKER
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [10984.336, 1952.7515, -3.8146973e-005], [], 0, "CAN_COLLIDE"];
+  _unit_30 = _this;
+  _this setDir 19.739439;
+  _this setUnitAbility 0.60000002;
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
 _unit_271 = objNull; //Revo Banker 
 if (true) then
 {
@@ -3341,6 +3368,7 @@ if (true) then
   _this setUnitAbility 0.60000002;
 _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
+
 
 _unit_276 = objNull; //AWOL
 if (true) then
@@ -3353,6 +3381,7 @@ if (true) then
 _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
+
 _unit_277 = objNull; //Jet Trader
 if (true) then
 {
@@ -3363,5 +3392,7 @@ if (true) then
   _this setUnitAbility 0.60000002;
 _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
+
+
 
 processInitCommands;

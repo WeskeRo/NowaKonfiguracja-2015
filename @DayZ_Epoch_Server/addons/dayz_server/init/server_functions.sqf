@@ -679,7 +679,7 @@ dayz_recordLogin = {
 //ZEVMission init ->
 if (isServer) then 
 { 
-	[] execVM "\z\addons\dayz_server\ZEV\ZEVMissionInit.sqf";
+	//[] execVM "\z\addons\dayz_server\ZEV\ZEVMissionInit.sqf";
 };
 //ZEVMission init <-
 
@@ -984,26 +984,26 @@ currentInvites = [];
 publicVariable "currentInvites";
 "currentInvites" addPublicVariableEventHandler {publicVariable "currentInvites";};
 
-execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
+//execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
 
-execVM "\z\addons\dayz_server\map\brucke.sqf";
+//execVM "\z\addons\dayz_server\map\brucke.sqf";
 
-execVM "\z\addons\dayz_server\map\castle_pati.sqf";
-execVM "\z\addons\dayz_server\map\crates.sqf";
+//execVM "\z\addons\dayz_server\map\castle_pati.sqf";
+//execVM "\z\addons\dayz_server\map\crates.sqf";
 
 //execVM "\z\addons\dayz_server\map\insel.sqf";
 
-execVM "\z\addons\dayz_server\map\jet.sqf";
+//execVM "\z\addons\dayz_server\map\jet.sqf";
 
-execVM "\z\addons\dayz_server\map\misja_ikea.sqf";
+//execVM "\z\addons\dayz_server\map\misja_ikea.sqf";
 //execVM "\z\addons\dayz_server\map\mur.sqf";
 
-execVM "\z\addons\dayz_server\map\revo_trader.sqf";
+//execVM "\z\addons\dayz_server\map\revo_trader.sqf";
 
-execVM "\z\addons\dayz_server\map\teleporter_buildings.sqf";
+//execVM "\z\addons\dayz_server\map\teleporter_buildings.sqf";
 
 //execVM "\z\addons\dayz_server\map\trader1.sqf";
 
-execVM "\z\addons\dayz_server\map\base.sqf";
+//execVM "\z\addons\dayz_server\map\base.sqf";
 
 //execVM "\z\addons\dayz_server\init\broadcaster.sqf";
