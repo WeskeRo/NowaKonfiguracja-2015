@@ -543,7 +543,7 @@ if (count _worldspace >= 3) then{
 		
 		endLoadingScreen;
 	};
-
+	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";
