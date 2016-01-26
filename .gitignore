@@ -47,3 +47,6 @@ Temporary Items
 *.pbo
 SOURCES/
 MPMissions/DayZ_Overpoch_24.Napf/
+@DayZ_Epoch_Server/addons/dayz_server/init/AT.sqf
+@DayZ_Epoch_Server/addons/dayz_server/init/AH.sqf
+@DayZ_Epoch_Server/addons/dayz_server/init/AHconfig.sqf
