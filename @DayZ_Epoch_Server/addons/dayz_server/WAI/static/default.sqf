@@ -19,13 +19,44 @@ if(isServer) then {
 
 	Place your custom group spawns below
 	*/
+[[22691.7,3614.52,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22626.3,3669.31,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22708.9,3749.54,0.00149536], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22796,3746.47,0.000671387], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22771.8,3929.55,0.00576782], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22758.6,4083.44,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22557.1,3993.34,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22782.8,4233.33,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22586.9,4213.39,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22480.2,4232.53,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22400.5,4100.21,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22407.7,3958.61,0.0474243], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22416,3889.99,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22466.5,3818.57,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22519.2,3685.88,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22522.7,3584.36,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22545.8,3454.06,0.00189209], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22498.6,3441.84,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22461.5,3500.85,0.00131226], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22413.9,3547.03,0.00152588], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22448.4,3576.63,0.00131226], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22437.9,3613.93,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22428.9,3659.42,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22381.4,3682.87,0.00183105], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22276.9,3870.85,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22287.1,4026.44,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22273.2,4177.36,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22327.5,4200.62,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22285,4289.71,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22457.6,4343.92,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22544.1,4342.84,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22796.6,4312.53,0.00143433], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22549.8,4421.04,0.000915527], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
+[[22425.4,4423.18,0.0012207], 5, "Random", "Random",4, "Random", "Random", "Random", "Bandit"] call spawn_group;
 
 
-
-
-
-	//
-	Custom static weapon spawns Eg. (with mutiple positions)
+	
+	//Custom static weapon spawns Eg. (with mutiple positions)
 
 	[
 		[									// Position(s) (can be multiple)
@@ -61,19 +92,19 @@ if(isServer) then {
 			[22761.2,4297.5,0.00170898],
 			[22583.8,4431.67,0.00161743],
 			[22550.3,4410.55,0.00183105],
-			[22351.4,4412.96,0.00152588],
+			[22351.4,4412.96,0.00152588]
 		],
 		"M2StaticMG",						// Classname of turret
-		"easy",								// Skill level of unit (easy, medium, hard, extreme, Random)
+		"extreme",								// Skill level of unit (easy, medium, hard, extreme, Random)
 		"Bandit2_DZ",						// Skin classname, use "Random" or classname here
 		"Bandit",							// AI Type, "Hero" or "Bandit".
 		"Random",							// Primary gun set number. "Random" for random weapon set
-		2,									// Number of magazines
+		4,									// Number of magazines
 		"Random",							// Backpack classname, use "Random" or classname here
 		"Random"							// Gearset classname, use "Random" or classname here
 	] call spawn_static;
    //
-	Place your custom static weapon spawns below
+	//Place your custom static weapon spawns below
 	
 
 

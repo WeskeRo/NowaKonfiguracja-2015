@@ -52,6 +52,7 @@ class Mission
 		"sbh_paranoia",
 		"arma1_sf_port_patch",
 		"american_law_enforcement",
+		"oz_is_objects",
 		"gsc_units_stalker_patch"
 	};
 	addOnsAuto[]=
@@ -226,7 +227,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={25594.2,0,5.18089};
+			position[]={12547.509,213.96613,-5865.772};
 			name="respawn_west";
 			type="Empty";
 		};
