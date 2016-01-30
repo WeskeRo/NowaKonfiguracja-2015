@@ -23,6 +23,7 @@ class Mission
 		"mbg_buildings_3",
 		"mbg_killhouses",
 		"mbg_african_buildings",
+		"oz_is_objects",
 		"aif_arma1buildings",
 		"kpfswaysigns",
 		"buildings3",
@@ -52,7 +53,9 @@ class Mission
 		"sbh_paranoia",
 		"arma1_sf_port_patch",
 		"american_law_enforcement",
-		"gsc_units_stalker_patch"
+		"gsc_units_stalker_patch",
+		"ussof_us_navy_seals",
+		"danish_army_unitspec"
 	};
 	addOnsAuto[]=
 	{
@@ -298,22 +301,22 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={15487.767,87,17015.457};
+			position[]={17588.7, 1, 17657.3};
 			name="NeutralTraderCity";
 			text="Trader City Seedorf";
 			type="mil_circle";
 		};
 		class Item14
 		{
-			position[]={24713.129,409.62686,21741.785};
+			position[]={6851.2, 1, 17004.1};
 			name="FriendlyTraderCity";
-			text="Trader City Oberberg";
+			text="Trader City Garbow";
 			type="mil_circle";
 			colorName="ColorGreen";
 		};
 		class Item15
 		{
-			position[]={11046.387,179.40204,15669.861};
+			position[]={24857, 1, 15298.8};
 			name="HeroVendor";
 			text="Hero Vendor";
 			type="mil_dot";
@@ -321,7 +324,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={15350.896,112.05698,18522.543};
+			position[]={16615.6, 1, 1773.58};
 			name="UnarmedAirVehicles";
 			text="Axles Airfield";
 			type="mil_dot";
@@ -329,7 +332,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={2507.0181,271.86975,3870.2949};
+			position[]={11899.7, 1, 6588.69};
 			name="SouthWholesaler";
 			text="South Wholesaler";
 			type="mil_dot";
@@ -337,7 +340,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={223.39224,139.88173,22703.682};
+			position[]={2206.61, 1, 20292.4};
 			name="NorthWholesaler";
 			text="North Wholesaler";
 			type="mil_dot";
@@ -345,7 +348,7 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={16989.15,300.05701,1778.1558};
+			position[]={1345.1, 1, 11679.7};
 			name="BanditVendor";
 			text="Bandit Vendor";
 			type="mil_dot";
@@ -353,9 +356,9 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={13176.351,176.72119,6614.1758};
+			position[]={15232.8, 1, 11423};
 			name="NeutralTraderCIty2";
-			text="Trader city Oberdorf";
+			text="Trader city Middlands";
 			type="mil_circle";
 			colorName="ColorBlack";
 		};
@@ -365,7 +368,7 @@ class Mission
 		items=7;
 		class Item0
 		{
-			position[]={15502.063,87,17015.162};
+			position[]={17588.7, 1, 17657.3};
 			a=100;
 			b=100;
 			activationBy="WEST";
@@ -374,15 +377,15 @@ class Mission
 			age="UNKNOWN";
 			name="Seedorf";
 			expCond="(player distance Seedorf) < 100;";
-			expActiv="[""Boat Vendor"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""Boat Vendor"",true,""leave""] spawn player_traderCity;";
+			expActiv="[""trader city Seedorf"",true,""enter""] spawn player_traderCity;";
+			expDesactiv="[""trader city Seedorf"",true,""leave""] spawn player_traderCity;";
 			class Effects
 			{
 			};
 		};
 		class Item1
 		{
-			position[]={13166.374,176.72119,6611.3574};
+			position[]={6851.2, 1, 17004.1};
 			a=100;
 			b=100;
 			activationBy="WEST";
@@ -391,8 +394,8 @@ class Mission
 			age="UNKNOWN";
 			name="Oberdorf";
 			expCond="(player distance Oberdorf) < 100;";
-			expActiv="[""trader city Oberdorf"",true,""enter""] spawn player_traderCity;";
-			expDesactiv="[""trader city Oberdorf"",true,""leave""] spawn player_traderCity;";
+			expActiv="[""trader city Garbow"",true,""enter""] spawn player_traderCity;";
+			expDesactiv="[""trader city Garbow"",true,""leave""] spawn player_traderCity;";
 			class Effects
 			{
 			};
@@ -431,7 +434,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={11045.76,179.40204,15671.621};
+			position[]={24857, 1, 15298.8};
 			activationBy="WEST";
 			repeating=1;
 			interruptable=1;

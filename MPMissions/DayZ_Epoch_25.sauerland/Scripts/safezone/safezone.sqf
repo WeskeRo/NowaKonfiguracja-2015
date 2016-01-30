@@ -14,14 +14,15 @@ LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or le
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 _infiSZ =
 [
-[[13173,6620.6,0],50,true],
-[[16988.8,1778.95,0],50,true],
-[[2443.18,3898.18,0],50,true],
-[[11041.2,15683.3,0],50,true],
-[[224.821,22710.4,0],50,true],
-[[15486.5,17001.9,0],50,true],
-[[15349.7,18519.8,0],50,true],
-[[24741.7,21746.9,0],50,true]
+
+[[6851.2,17004.1,0],50,true],
+[[2206.61,20292.4,0],50,true],
+[[1345.1,11679.7,0],50,true],
+[[16615.6,1773.58,0],50,true],
+[[24857,15298.8,0],50,true],
+[[17588.7,17657.3,0],50,true],
+[[15232.8,11423,0],50,true],
+[[11899.7,6588.69,0],50,true]
 ];
 if (isServer) exitWith
 {

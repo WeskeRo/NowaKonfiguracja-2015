@@ -1,31 +1,3 @@
-activateAddons [ 
-  "bb_mercenary",
-  "aif_arma1buildings",
-  "map_eu",
-  "mbg_african_buildings",
-  "monaro",
-  "oz_is_objects",
-  "nissan_350z",
-  "csj_gyroac",
-  "mbg_buildings_3",
-  "goosuksf",
-  "danish_army_unitspec",
-  "nof_menfsk",
-  "pook_h13",
-  "ddopp_taserpack",
-  "frb",
-  "ussof_us_navy_seals",
-  "arma1_sf_port_patch"
-];
-
-activateAddons ["bb_mercenary", "aif_arma1buildings", "map_eu", "mbg_african_buildings", "monaro", "oz_is_objects", "nissan_350z", "csj_gyroac", "mbg_buildings_3", "goosuksf", "danish_army_unitspec", "nof_menfsk", "pook_h13", "ddopp_taserpack", "frb", "ussof_us_navy_seals", "arma1_sf_port_patch"];
-initAmbientLife;
-
-_this = createCenter west;
-_center_0 = _this;
-
-_group_0 = createGroup _center_0;
-
 _vehicle_1 = objNull;
 if (true) then
 {
@@ -2352,38 +2324,14 @@ if (true) then
   _this setPos [17586.357, 17696.566, 0.92682755];
 };
 
-_this = createCenter west;
-_center_3 = _this;
-
-_group_3 = createGroup _center_3;
-
-_this = createCenter west;
-_center_4 = _this;
-
-_group_4 = createGroup _center_4;
-
-_unit_134 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [2191.3513, 20296.33, -1.9073486e-005], [], 0, "CAN_COLLIDE"];
-  _unit_134 = _this;
-  _this setDir 143.05759;
-  _this setVehicleVarName "CityofSgewerkWholesellerBanker";
-  CityofSgewerkWholesellerBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
-
 _unit_137 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["INS_Lopotev_DZ", [2210.97, 20299.086, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+{// North Wholesaler
+  _this = createAgent ["Soldier_MG_PMC", [2210.97, 20299.086, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _unit_137 = _this;
   _this setDir -111.00982;
-  _this setVehicleVarName "CityofSgewerkWholesellerWholeseller";
-  CityofSgewerkWholesellerWholeseller = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_493 = objNull;
@@ -2395,37 +2343,24 @@ if (true) then
   _this setPos [2187.0942, 20298.996, 2.6702881e-005];
 };
 
-_unit_141 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [1338.7294, 11675.591], [], 0, "CAN_COLLIDE"];
-  _unit_141 = _this;
-  _this setVehicleVarName "GhostTownBanditTraderBanker";
-  GhostTownBanditTraderBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
+
 
 _unit_144 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["GUE_Soldier_Crew_DZ", [1342.155, 11676.479], [], 0, "CAN_COLLIDE"];
+{// Bandit Trader
+  _this = createAgent ["MVD_Soldier_Marksman", [1342.155, 11676.479], [], 0, "CAN_COLLIDE"];
   _unit_144 = _this;
-  _this setVehicleVarName "GhostTownBanditTraderVehiclesandGems";
-  GhostTownBanditTraderVehiclesandGems = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_147 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Bandit1_DZ", [1345.6064, 11676.504], [], 0, "CAN_COLLIDE"];
+{// Bandit Trader
+  _this = createAgent ["MVD_Soldier_Marksman", [1345.6064, 11676.504], [], 0, "CAN_COLLIDE"];
   _unit_147 = _this;
-  _this setVehicleVarName "GhostTownBanditTraderWeaponsandAmmo";
-  GhostTownBanditTraderWeaponsandAmmo = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_494 = objNull;
@@ -2438,147 +2373,99 @@ if (true) then
 
 _unit_151 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["GUE_Commander_DZ", [11895.814, 6589.6606, -7.6293945e-005], [], 0, "CAN_COLLIDE"];
+{// South Wholesaler
+  _this = createAgent ["GUE_Soldier_MG", [11895.814, 6589.6606, -7.6293945e-005], [], 0, "CAN_COLLIDE"];
   _unit_151 = _this;
   _this setDir -184.13748;
-  _this setVehicleVarName "CityofOberdorfWholesellerWholeseller";
-  CityofOberdorfWholesellerWholeseller = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_154 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [11898.472, 6589.7271, -6.1035156e-005], [], 0, "CAN_COLLIDE"];
-  _unit_154 = _this;
-  _this setDir 188.2076;
-  _this setVehicleVarName "CityofOberdorfWholesellerBanker";
-  CityofOberdorfWholesellerBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
+
 
 _unit_158 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["BAF_Pilot_W", [16616.186, 1771.3369, 0.10245141], [], 0, "CAN_COLLIDE"];
+{// Aircraft Dealer
+  _this = createAgent ["RU_Soldier_Pilot", [16616.186, 1771.3369, 0.10245141], [], 0, "CAN_COLLIDE"];
   _unit_158 = _this;
-  _this setVehicleVarName "OldAirfieldHeliPlaneandJetTraderMainTrader";
-  OldAirfieldHeliPlaneandJetTraderMainTrader = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_161 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [16610.939, 1770.9648], [], 0, "CAN_COLLIDE"];
-  _unit_161 = _this;
-  _this setVehicleVarName "OldAirfieldHeliPlaneandJetTraderBanker";
-  OldAirfieldHeliPlaneandJetTraderBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
 
+//==============================
 _unit_165 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Haris_Press_EP1_DZ", [17569.064, 17654.281, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
+{// Friendly Vehicles
+  _this = createAgent ["RU_Profiteer1", [17569.064, 17654.281, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _unit_165 = _this;
   _this setDir -166.82108;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderVehicles";
-  CityofMeschedeFriendlyTraderVehicles = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_168 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["UKSF_des_med_l", [17585.801, 17617.525, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
+{// Medical Supplies
+  _this = createAgent ["Dr_Hladik_EP1", [17585.801, 17617.525, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
   _unit_168 = _this;
   _this setDir -59.885067;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderMedic";
-  CityofMeschedeFriendlyTraderMedic = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_171 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["GUE_Commander_DZ", [17618.682, 17684.318, -4.5776367e-005], [], 0, "CAN_COLLIDE"];
+{// Black Market Vendor
+  _this = createAgent ["Ins_Soldier_GL", [17618.682, 17684.318, -4.5776367e-005], [], 0, "CAN_COLLIDE"];
   _unit_171 = _this;
   _this setDir -140.25488;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderBlackmarket";
-  CityofMeschedeFriendlyTraderBlackmarket = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+ };
+
 
 _unit_174 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["CZ_Soldier_DES_EP1", [17619.918, 17677.949], [], 0, "CAN_COLLIDE"];
+{// Weapons Friendly
+  _this = createAgent ["FR_Cooper", [17619.918, 17677.949], [], 0, "CAN_COLLIDE"];
   _unit_174 = _this;
   _this setDir -74.111656;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderGuns";
-  CityofMeschedeFriendlyTraderGuns = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_177 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["USMC_Soldier", [17618.67, 17675.873, 0.0051170867], [], 0, "CAN_COLLIDE"];
+{// Ammunition Friendly
+  _this = createAgent ["US_Delta_Force_AR_EP1", [17618.67, 17675.873, 0.0051170867], [], 0, "CAN_COLLIDE"];
   _unit_177 = _this;
   _this setDir -81.41246;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderAmmo";
-  CityofMeschedeFriendlyTraderAmmo = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_180 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["INS_Soldier_CO_DZ", [17582.057, 17693.834, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
+{// Friendly Building/Parts
+  _this = createAgent ["Rocker2", [17582.057, 17693.834, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
   _unit_180 = _this;
   _this setDir 110.16539;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderAutoParts";
-  CityofMeschedeFriendlyTraderAutoParts = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_183 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["pook_CDF_H13_Pilot", [17590.758, 17671.467, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+{// Friendly General Store
+  _this = createAgent ["Damsel4", [17590.758, 17671.467, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _unit_183 = _this;
   _this setDir 23.643721;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderMaterials";
-  CityofMeschedeFriendlyTraderMaterials = _this;
-  _this setUnitAbility 0.60000002;
-  if (true) then {_group_0 selectLeader _this;};
-  if (true) then {selectPlayer _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_186 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [17600.49, 17651.816, 6.1035156e-005], [], 0, "CAN_COLLIDE"];
-  _unit_186 = _this;
-  _this setDir 116.17564;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderBanker";
-  CityofMeschedeFriendlyTraderBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
-
+//====================
 _vehicle_495 = objNull;
 if (true) then
 {
@@ -3286,39 +3173,23 @@ if (true) then
   _this setPos [24850.223, 15292.312, 4.5776367e-005];
 };
 
-_unit_190 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [24850.928, 15291.474, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
-  _unit_190 = _this;
-  _this setDir 103.13319;
-  _this setVehicleVarName "CityofWeskerHeroTraderBanker";
-  CityofWeskerHeroTraderBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
-
 _unit_192 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Camo1_DZ", [24855.186, 15286.997, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
+{// Hero Vendor
+  _this = createAgent ["Tanny_PMC", [24855.186, 15286.997, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _unit_192 = _this;
-  _this setVehicleVarName "CityofWeskerHeroTraderWeaponsandAmmo";
-  CityofWeskerHeroTraderWeaponsandAmmo = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_194 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["SurvivorWpink_DZ", [24851.92, 15287.78, 0.00024414063], [], 0, "CAN_COLLIDE"];
+{// Hero Vendor
+  _this = createAgent ["Tanny_PMC", [24851.92, 15287.78, 0.00024414063], [], 0, "CAN_COLLIDE"];
   _unit_194 = _this;
   _this setDir 39.641636;
-  _this setVehicleVarName "CityofWeskerHeroTraderVehiclesandGems";
-  CityofWeskerHeroTraderVehiclesandGems = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_611 = objNull;
@@ -3805,111 +3676,87 @@ if (true) then
   _this setPos [6866.9033, 17004.971, 0.00018310547];
 };
 
-_unit_201 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [6835.4165, 17006.363, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
-  _unit_201 = _this;
-  _this setDir 165.19215;
-  _this setVehicleInit "CityofGarbowFriendlyTraderBanker";
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
 
+
+//================================
 _unit_203 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Soldier_Bodyguard_AA12_PMC_DZ", [6829.8501, 16997.059, -7.6293945e-006], [], 0, "CAN_COLLIDE"];
+{// Neutral Building/Parts
+  _this = createAgent ["RU_Villager1", [6829.8501, 16997.059, -7.6293945e-006], [], 0, "CAN_COLLIDE"];
   _unit_203 = _this;
   _this setDir 115.02197;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderMaterials";
-  CityofGarbowFriendlyTraderMaterials = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_204 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["WDL_Mercenary_Default12", [6835.1572, 16983.234, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
+{// Medical Supplies 3
+  _this = createAgent ["RU_Doctor", [6835.1572, 16983.234, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
   _unit_204 = _this;
   _this setDir 71.097847;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderMedic";
-  CityofGarbowFriendlyTraderMedic = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_205 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["SurvivorWdesert_DZ", [6870.7573, 16992.264, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
+{// Vehicles Neutral
+  _this = createAgent ["CIV_EuroMan01_EP1", [6870.7573, 16992.264, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _unit_205 = _this;
   _this setDir -114.26536;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderVehicles";
-  CityofGarbowFriendlyTraderVehicles = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_207 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Graves_Light_DZ", [6858.5962, 17012.105], [], 0, "CAN_COLLIDE"];
+{//black do zrobienia tylko czy aby napewno??
+  _this = createAgent ["Ins_Soldier_GL", [6858.5962, 17012.105], [], 0, "CAN_COLLIDE"];
   _unit_207 = _this;
   _this setDir -201.76926;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderBlackmarket";
-  CityofGarbowFriendlyTraderBlackmarket = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_208 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["frb_tl_mask", [6863.835, 17013.609, 7.6293945e-006], [], 0, "CAN_COLLIDE"];
+{// Weapons neutral
+  _this = createAgent ["TK_Commander_EP1", [6863.835, 17013.609, 7.6293945e-006], [], 0, "CAN_COLLIDE"];
   _unit_208 = _this;
   _this setDir 175.92184;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderGuns";
-  CityofGarbowFriendlyTraderGuns = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_209 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["US_Soldier_TL_EP1", [6867.6167, 17009.879, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
+{// Ammunition Neutral
+  _this = createAgent ["Ins_Soldier_AR", [6867.6167, 17009.879, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
   _unit_209 = _this;
   _this setDir -119.30679;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderAmmo";
-  CityofGarbowFriendlyTraderAmmo = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_211 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["INS_Worker2_DZ", [6852.4312, 17010.252, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
+{// Neutral General Store
+  _this = createAgent ["RU_Damsel5", [6852.4312, 17010.252, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
   _unit_211 = _this;
   _this setDir 170.90811;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderFood";
-  CityofGarbowFriendlyTraderFood = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_213 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Survivor2_DZ", [6844.7295, 17006.803, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
+{// Neutral Building/Parts 2
+  _this = createAgent ["Citizen2_EP1", [6844.7295, 17006.803, 3.8146973e-005], [], 0, "CAN_COLLIDE"];
   _unit_213 = _this;
   _this setDir 166.35706;
-  _this setVehicleVarName "CityofGarbowFriendlyTraderAutoparts";
-  CityofGarbowFriendlyTraderAutoparts = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_681 = objNull;
@@ -3950,14 +3797,12 @@ if (true) then
 
 _unit_217 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["INS_Lopotev_DZ", [17587.938, 17642.764], [], 0, "CAN_COLLIDE"];
+{// Neutral General Store
+  _this = createAgent ["RU_Damsel2", [17587.938, 17642.764], [], 0, "CAN_COLLIDE"];
   _unit_217 = _this;
   _this setDir 201.62924;
-  _this setVehicleVarName "CityofMeschedeFriendlyTraderFood";
-  CityofMeschedeFriendlyTraderFood = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_685 = objNull;
@@ -4437,110 +4282,85 @@ if (true) then
   _this setPos [15245.042, 11448.103, -0.5650925];
 };
 
+
 _unit_234 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["FR_Rodriguez", [15235.598, 11414.628], [], 0, "CAN_COLLIDE"];
+{// Black Market Vendor
+  _this = createAgent ["FR_Rodriguez", [15235.598, 11414.628], [], 0, "CAN_COLLIDE"];
   _unit_234 = _this;
   _this setDir -86.290245;
-  _this setVehicleVarName "K2TownFriendlyTraderBlackmarket";
-  K2TownFriendlyTraderBlackmarket = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_235 = objNull;
 if (true) then
 {
-  _this = _group_0 createUnit ["Rocker3_DZ", [15245.177, 11429.429, -6.1035156e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Citizen2_EP1", [15245.177, 11429.429, -6.1035156e-005], [], 0, "CAN_COLLIDE"];
   _unit_235 = _this;
   _this setDir -94.151474;
-  _this setVehicleVarName "K2TownFriendlyTraderMaterials";
-  K2TownFriendlyTraderMaterials = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_236 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Rocker1_DZ", [15247.599, 11442.036, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
+{// Neutral General Store
+  _this = createAgent ["RU_Damsel5", [15247.599, 11442.036, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _unit_236 = _this;
   _this setDir -84.364822;
-  _this setVehicleVarName "K2TownFriendlyTraderFood";
-  K2TownFriendlyTraderFood = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_237 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["Rocker2_DZ", [15245.788, 11433.795, 0.00012207031], [], 0, "CAN_COLLIDE"];
+{// Neutral Building/Parts 2
+  _this = createAgent ["Citizen2_EP1", [15245.788, 11433.795, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _unit_237 = _this;
   _this setDir -90.119263;
-  _this setVehicleVarName "K2TownFriendlyTraderAutoparts";
-  K2TownFriendlyTraderAutoparts = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_238 = objNull;
 if (true) then
 {
-  _this = _group_0 createUnit ["SurvivorWurban_DZ", [15249.21, 11408.757, 6.1035156e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Ins_Worker2", [15249.21, 11408.757, 6.1035156e-005], [], 0, "CAN_COLLIDE"];
   _unit_238 = _this;
-  _this setVehicleVarName "K2TownFriendlyTraderVehicles";
-  K2TownFriendlyTraderVehicles = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_239 = objNull;
 if (true) then
 {
-  _this = _group_0 createUnit ["GUE_Soldier_CO_DZ", [15227.979, 11406.462, 0.00012207031], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["TK_Soldier_AMG_EP1", [15227.979, 11406.462, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _unit_239 = _this;
   _this setDir 355.41595;
-  _this setVehicleVarName "K2TownFriendlyTraderAmmo";
-  K2TownFriendlyTraderAmmo = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _unit_240 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["GUE_Soldier_Crew_DZ", [15233.56, 11409.165, 0.00012207031], [], 0, "CAN_COLLIDE"];
+{// Neutral Weapons 2
+  _this = createAgent ["TK_Soldier_Crew_EP1", [15233.56, 11409.165, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _unit_240 = _this;
   _this setDir -49.500408;
-  _this setVehicleVarName "K2TownFriendlyTraderGuns";
-  K2TownFriendlyTraderGuns = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
-_unit_241 = objNull;
-if (true) then
-{
-  _this = _group_0 createUnit ["Functionary1_EP1_DZ", [15233.39, 11436.462, 0.00012207031], [], 0, "CAN_COLLIDE"];
-  _unit_241 = _this;
-  _this setDir 96.255486;
-  _this setVehicleVarName "K2TownFriendlyTraderBanker";
-  K2TownFriendlyTraderBanker = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
-};
+
 
 _unit_247 = objNull;
 if (true) then
-{
-  _this = _group_0 createUnit ["UKSF_des_med_l", [15220.325, 11409.102, -0.033989035], [], 0, "CAN_COLLIDE"];
+{// Medical Supplies 2
+  _this = createAgent ["pook_Doc_Bell47", [15220.325, 11409.102, -0.033989035], [], 0, "CAN_COLLIDE"];
   _unit_247 = _this;
-  _this setVehicleVarName "K2TownFriendlyTraderMedic";
-  K2TownFriendlyTraderMedic = _this;
-  _this setUnitAbility 0.60000002;
-  if (false) then {_group_0 selectLeader _this;};
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
 };
 
 _vehicle_765 = objNull;
@@ -4903,6 +4723,104 @@ if (true) then
   _this setPos [15233.142, 11435.422, 1.1825472];
 };
 
-processInitCommands;
-runInitScript;
-finishMissionInit;
+//BANKERS!----------------------------------------------
+_unit_134 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [2191.3513, 20296.33, -1.9073486e-005], [], 0, "CAN_COLLIDE"];
+  _unit_134 = _this;
+  _this setDir 143.05759;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_141 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [1338.7294, 11675.591], [], 0, "CAN_COLLIDE"];
+  _unit_141 = _this;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_154 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [11898.472, 6589.7271, -6.1035156e-005], [], 0, "CAN_COLLIDE"];
+  _unit_154 = _this;
+  _this setDir 188.2076;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_161 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [16610.939, 1770.9648], [], 0, "CAN_COLLIDE"];
+  _unit_161 = _this;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_186 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [17600.49, 17651.816, 6.1035156e-005], [], 0, "CAN_COLLIDE"];
+  _unit_186 = _this;
+  _this setDir 116.17564;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_190 = objNull;
+if (true) then
+{//banker
+  _this = createAgent ["Functionary1_EP1", [24850.928, 15291.474, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
+  _unit_190 = _this;
+  _this setDir 103.13319;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_201 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [6835.4165, 17006.363, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _unit_201 = _this;
+  _this setDir 165.19215;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+
+_unit_241 = objNull;
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [15233.39, 11436.462, 0.00012207031], [], 0, "CAN_COLLIDE"];
+  _unit_241 = _this;
+  _this setDir 96.255486;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
+//BANKERS!----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
