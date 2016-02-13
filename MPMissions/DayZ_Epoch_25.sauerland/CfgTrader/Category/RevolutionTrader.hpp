@@ -3,7 +3,7 @@ class Category_693 {
 		class A10 {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
-		sell[] = {300000,"Coins"};
+		sell[] = {3000000,"Coins"};
 		};
 		
 		class F35B {
@@ -81,19 +81,19 @@ class Category_694 {
 		class m107_SKN {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class BAF_AS50_TWS {
 		type = "trade_weapons";
 		buy[] = {1000000,"Coins"};
-		sell[] = {200000,"Coins"};
+		sell[] = {400000,"Coins"};
 		};	
 		
 		class BAF_AS50_TWS_Large {
 		type = "trade_weapons";
 		buy[] = {1000000,"Coins"};
-		sell[] = {200000,"Coins"};
+		sell[] = {400000,"Coins"};
 		};	
 		
 		class PMC_AS50_TWS_Large {
@@ -105,67 +105,67 @@ class Category_694 {
 		class PMC_AS50_scoped_Large {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class BAF_AS50_scoped_Large {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class m107 {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class M107_DZ {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class m107_TWS_EP1 {
 		type = "trade_weapons";
 		buy[] = {1000000,"Coins"};
-		sell[] = {200000,"Coins"};
+		sell[] = {400000,"Coins"};
 		};	
 		
 		class m107_TWS_EP1_DZ {
 		type = "trade_weapons";
 		buy[] = {1000000,"Coins"};
-		sell[] = {200000,"Coins"};
+		sell[] = {400000,"Coins"};
 		};	
 		
 		class vil_CG84T {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};	
 		
 		class vil_Panzerfaust3 {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};
 		
 		class Vil_RPO_A {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};
 		
 		class BAF_NLAW_Launcher {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};
 		
 		class SMAW {
 		type = "trade_weapons";
 		buy[] = {400000,"Coins"};
-		sell[] = {100000,"Coins"};
+		sell[] = {200000,"Coins"};
 		};
 		
 };
