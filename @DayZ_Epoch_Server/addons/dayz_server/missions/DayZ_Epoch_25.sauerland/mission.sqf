@@ -4286,7 +4286,7 @@ if (true) then
 _unit_234 = objNull;
 if (true) then
 {// Black Market Vendor
-  _this = createAgent ["FR_Rodriguez", [15235.598, 11414.628], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Ins_Soldier_GL", [15235.598, 11414.628], [], 0, "CAN_COLLIDE"];
   _unit_234 = _this;
   _this setDir -86.290245;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
@@ -4804,23 +4804,62 @@ if (true) then
 //BANKERS!----------------------------------------------
 
 
+_unit_250 = objNull; //Revo Supplies
+if (true) then
+{
+  _this = createAgent ["Rita_Ensler_EP1", [8911.9434, 21768.68, 0.10020167], [], 0, "CAN_COLLIDE"];
+  _unit_250 = _this;
+  _this setDir 57.604534;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this setUnitAbility 0.60000002;
+_this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
+};
+
+
+_unit_251 = objNull; //Revo Weapons
+if (true) then
+{
+  _this = createAgent ["CIV_Contractor2_BAF", [8943.5293, 21764.256], [], 0, "CAN_COLLIDE"];
+  _unit_251 = _this;
+  _this setDir -92.39695;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this setUnitAbility 0.60000002;
+_this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
+};
+
+
+_unit_252 = objNull; //Revo Banker 
+if (true) then
+{
+  _this = createAgent ["US_Soldier_Officer_EP1", [8951.5703, 21824.309, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
+  _unit_252 = _this;
+  _this setDir -114.87836;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this setUnitAbility 0.60000002;
+_this allowDammage false; _this disableAI 'FSM';/*_this disableAI 'MOVE';*/ _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;/*_this enableSimulation false;*/
+};
 
 
 
+_unit_253 = objNull; //Revo Vehicles
+if (true) then
+{
+  _this = createAgent ["Functionary1_EP1", [8914.374, 21792.865, 1.9073486e-005], [], 0, "CAN_COLLIDE"];
+  _unit_253 = _this;
+  _this setDir 78.003937;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this setUnitAbility 0.60000002;
+_this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
+};
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_unit_254 = objNull;  //GEM TRADER
+if (true) then
+{
+  _this = createAgent ["gsc_scientist1", [15175.795, 18299.957, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _unit_254 = _this;
+  _this setDir -0.16126102;
+  _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
+  _this setUnitAbility 0.60000002;
+_this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
+};

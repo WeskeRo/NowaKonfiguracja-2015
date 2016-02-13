@@ -1,5 +1,5 @@
 // DayZ Epoch TRADERS for 17
-serverTraders = ["Tanny_PMC","US_Delta_Force_AR_EP1","FR_Cooper","RU_Profiteer1","Damsel4","TK_Commander_EP1","Ins_Soldier_AR","RU_Villager1","MVD_Soldier_Marksman","RU_Soldier_Pilot","CIV_EuroMan01_EP1","Ins_Soldier_GL","Rocker2","Profiteer1","RU_Damsel5","TK_Soldier_Crew_EP1","TK_Soldier_AMG_EP1","Soldier_MG_PMC","RU_Damsel2","GUE_Soldier_MG","TK_Special_Forces_EP1","Ins_Worker2","Citizen2_EP1","pook_Doc_Bell47","RU_Doctor","Dr_Hladik_EP1"];
+serverTraders = ["US_Soldier_Officer_EP1","Rita_Ensler_EP1","CIV_Contractor2_BAF","gsc_scientist1","Tanny_PMC","US_Delta_Force_AR_EP1","FR_Cooper","RU_Profiteer1","Damsel4","TK_Commander_EP1","Ins_Soldier_AR","RU_Villager1","MVD_Soldier_Marksman","RU_Soldier_Pilot","CIV_EuroMan01_EP1","Ins_Soldier_GL","Rocker2","Profiteer1","RU_Damsel5","TK_Soldier_Crew_EP1","TK_Soldier_AMG_EP1","Soldier_MG_PMC","RU_Damsel2","GUE_Soldier_MG","TK_Special_Forces_EP1","Ins_Worker2","Citizen2_EP1","pook_Doc_Bell47","RU_Doctor","Dr_Hladik_EP1"];
 // Hero Vendor
 menu_Tanny_PMC = [
 	[["Ammunition",478],["Clothes",575],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["Money",700]],
@@ -161,4 +161,32 @@ menu_Dr_Hladik_EP1 = [
 	[["Chemlites / Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
 	"friendly"
+];
+
+// GEM Trader
+menu_gsc_scientist1 = [
+	[["Revolution Jets",693]],  
+	[],
+	"neutral"
+	
+];
+// Revo Weapons
+menu_CIV_Contractor2_BAF = [
+	[["Revo Weapons",694],["Revo Ammo",695],["Revo Explosives",699],["Reammo Truck",702]],  
+	[],
+	"neutral"	
+];
+
+// Revo supplies
+menu_Rita_Ensler_EP1 = [
+	[["Revo Food",701],["Revo supplies",698]],  
+	[],
+	"neutral"	
+];
+
+// Revo Vehicles
+menu_US_Soldier_Officer_EP1 = [
+	[["Revo Armors",696],["Revo Birds",697],["Revo Statics",734]],  
+	[],
+	"neutral"	
 ];

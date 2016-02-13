@@ -984,7 +984,7 @@ currentInvites = [];
 publicVariable "currentInvites";
 "currentInvites" addPublicVariableEventHandler {publicVariable "currentInvites";};
 
-execVM "\z\addons\dayz_server\map\area51.sqf";
+//execVM "\z\addons\dayz_server\map\area51.sqf";
 
 //execVM "\z\addons\dayz_server\map\bandit_outpost.sqf";
 
@@ -995,11 +995,12 @@ execVM "\z\addons\dayz_server\map\area51.sqf";
 
 //execVM "\z\addons\dayz_server\map\insel.sqf";
 
-//execVM "\z\addons\dayz_server\map\jet.sqf";
+execVM "\z\addons\dayz_server\map\jet111.sqf";
 
 //execVM "\z\addons\dayz_server\map\misja_ikea.sqf";
 //execVM "\z\addons\dayz_server\map\mur.sqf";
 
+execVM "\z\addons\dayz_server\map\revo.sqf";
 //execVM "\z\addons\dayz_server\map\revo_trader.sqf";
 
 //execVM "\z\addons\dayz_server\map\teleporter_buildings.sqf";

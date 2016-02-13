@@ -477,7 +477,7 @@ if (!isDedicated) then {
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_traderMenuHive.sqf";
 	};
 	// recent murders menu code
-	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_murderMenu.sqf";
+	call compile preprocessFileLineNumbers "fixes\player_murderMenu.sqf";
 
 	//This is still needed but the fsm should terminate if any errors pop up.
 	[] spawn {
@@ -691,41 +691,10 @@ if (!isDedicated) then {
 	
 	
 		//Coins --------------------------------
-	//_removed = [player, 5000] call SC_fnc_removeCoinsUK111; //if(_removed = true)then{Coins removed}else{not enough money};
-	SC_fnc_removeCoins = {
-		private ["_player","_amount","_wealth","_newwealth", "_result"];
-		_player = _this select 0;
-		_amount = _this select 1;
-		_result = false;
-		_wealth = _player getVariable["cashMoney",0];		
-		if (_wealth < _amount) then { 
-			_result = false;
-		} else { 						
-			_newwealth = _wealth - _amount;
-			_player setVariable["cashMoney",_newwealth, true];
-			_player setVariable ["moneychanged",1,true];	
-			_result = true;
-			PVDZE_plr_Save = [_player,(magazines _player),true,true] ;
-			publicVariableServer "PVDZE_plr_Save";			
-		};
-		_result
-	};
-	//_added = [player, 5000] call SC_fnc_addCoinsUK111; //if(_added = true)then{Coins added}else{IT FAILED};
-	SC_fnc_addCoins = {
-		private ["_player","_amount","_wealth","_newwealth", "_result"];			
-		_player = _this select 0;
-		_amount = _this select 1;
-		_result = false;	
-		_wealth = _player getVariable["cashMoney",0];
-		if ((_wealth + _amount) > 999999) then { _amount = (999999 - _wealth); };
-		_player setVariable["cashMoney",_wealth + _amount, true];
-		PVDZE_plr_Save = [_player,(magazines _player),true,true] ;
-		publicVariableServer "PVDZE_plr_Save";
-		_player setVariable["moneychanged",1,true];					
-		_newwealth = _player getVariable["cashMoney",0];		
-		if (_newwealth >= _wealth) then { _result = true; };			
-		_result
-	};
+
+	SC_fnc_removeCoins = compile preprocessFileLineNumbers "Scripts\advancedTrading\functions\SC_fnc_removeCoins.sqf";
+
+	SC_fnc_addCoins = compile preprocessFileLineNumbers "Scripts\advancedTrading\functions\SC_fnc_addCoins.sqf";
 	
 	
 

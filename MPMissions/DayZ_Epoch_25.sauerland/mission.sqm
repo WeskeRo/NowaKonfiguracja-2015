@@ -12,6 +12,7 @@ class Mission
 		"dayz_equip",
 		"dayz_epoch",
 		"dayz_vehicles",
+		"glt_bh_wreck",
 		"cacharacters_pmc",
 		"ca_modules_functions",
 		"warfarebuildings",
@@ -220,7 +221,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=21;
+		items=23;
 		class Item0
 		{
 			position[]={15177.789,286.18497,11335.177};
@@ -361,6 +362,22 @@ class Mission
 			text="Trader city Middlands";
 			type="mil_circle";
 			colorName="ColorBlack";
+		};
+		class Item21
+		{
+			position[]={8914.374, 1, 21792.865};
+			name="REVO1";
+			text="Revolution Trader";
+			type="selector_selectedMission";
+			colorName="ColorRed";
+		};
+		class Item22
+		{
+			position[]={15232.8, 1, 11423};
+			name="REVO2";
+			text="Revo Jet Trader";
+			type="selector_selectedEnemy";
+			colorName="ColorRed";
 		};
 	};
 	class Sensors

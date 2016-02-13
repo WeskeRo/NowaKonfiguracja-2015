@@ -210,7 +210,7 @@ if(isServer) then {
 
 	/* STATIC MISSIONS CONFIG */
 
-		static_missions				= true;		// use static mission file
+		static_missions				= false;		// use static mission file
 		custom_per_world			= false;		// use a custom mission file per world
 
 	/* END STATIC MISSIONS CONFIG */

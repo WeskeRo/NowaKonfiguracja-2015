@@ -12,80 +12,70 @@ if (((count _this) >= 6) && {(typeName (_this select 5)) == "STRING"} && {(_this
 };
 _victim = _newObject;
 _newObject setVariable ["bodyName", _victimName, true];
-_newObject setVariable ["bodyUID", _playerID, true];
 
 _killer = _victim getVariable["AttackedBy", "nil"];
 _killerName = _victim getVariable["AttackedByName", "nil"];
+_lastHit = _victim getVariable["LastHit",0];
 
 // when a zombie kills a player _killer, _killerName && _weapon will be "nil"
 // we can use this to determine a zombie kill && send a customized message for that. right now no killmsg means it was a zombie.
-if ((typeName _killer) != "STRING") then
-{
-	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
-	_distance = _victim getVariable["AttackedFromDistance", "nil"];
 
-	if ((owner _victim) == (owner _killer)) then 
-	{
-		_message = format["%1 killed himself",_victimName];
-		_loc_message = format["PKILL: %1 killed himself", _victimName];
-	}
-	else
-	{
-		_message = format["%1 was killed by %2 with weapon %3 from %4m",_victimName, _killerName, _weapon, _distance];
-		_loc_message = format["PKILL: %1 was killed by %2 with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
-	};
+if ((time - _lastHit) < 30) then {
+	if ((typeName _killer) != "STRING") then {
+		_weapon = _victim getVariable["AttackedByWeapon", "nil"];
+		_distance = _victim getVariable["AttackedFromDistance", "nil"];
 
-	diag_log _loc_message;
+		if ((owner _victim) == (owner _killer)) then {
+			_message = format["%1 killed themselves!",_victimName];
+			_loc_message = format["PDEATH: %1 killed themselves!", _victimName];
+		} else {
+			if (side _killer == EAST) then {
+				_message = format["%1 was killed by %2 (AI) with weapon %3 from %4m",_victimName, _killerName, _weapon, _distance];
+				_loc_message = format["AI Kill: %1 was killed by %2 (AI) with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
+			} else {
+				_message = format["%1 was killed by %2 with weapon %3 from %4m",_victimName, _killerName, _weapon, _distance];
+				_loc_message = format["PVP Event: %1 was killed by %2 with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
+			};
+		};
 
-	if(DZE_DeathMsgGlobal) then {
-		[nil, nil, rspawn, [_killer, _message], { (_this select 0) globalChat (_this select 1) }] call RE;
-	};
-	/* needs customRemoteMessage
-	if(DZE_DeathMsgGlobal) then {
-		customRemoteMessage = ['globalChat', _message, _killer];
-		publicVariable "customRemoteMessage";
-	};
-	*/
-	if(DZE_DeathMsgSide) then {
-		[nil, nil, rspawn, [_killer, _message], { (_this select 0) sideChat (_this select 1) }] call RE;
-	};
-	if(DZE_DeathMsgTitleText) then {
-		[nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE;
-	};
+		// build array to store death messages to allow viewing at message board in trader citys.
+		_death_record = [
+			_victimName,
+			_killerName,
+			_weapon,
+			_distance,
+			ServerCurrentTime
+		];
+		PlayerDeaths set [count PlayerDeaths,_death_record];
 
-	// build array to store death messages to allow viewing at message board in trader citys.
-	_death_record = [
-		_victimName,
-		_killerName,
-		_weapon,
-		_distance,
-		ServerCurrentTime
-	];
-	PlayerDeaths set [count PlayerDeaths,_death_record];
+		if(DZE_DeathMsgGlobal) then { [nil, nil, rspawn, [_killer, _message], { (_this select 0) globalChat (_this select 1) }] call RE; };
+		if(DZE_DeathMsgSide) then { [nil, nil, rspawn, [_killer, _message], { (_this select 0) sideChat (_this select 1) }] call RE; };
+		if(DZE_DeathMsgTitleText) then { [nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE; };
+	};
+} else {
+	_message = format["%1 died of natural causes!",_victimName];
+	_loc_message = format["Accidental Death: %1 died of natural causes!", _victimName];
 
-	// Cleanup
-	_victim setVariable["AttackedBy", "nil", true];
-	_victim setVariable["AttackedByName", "nil", true];
-	_victim setVariable["AttackedByWeapon", "nil", true];
-	_victim setVariable["AttackedFromDistance", "nil", true];
+	if(DZE_DeathMsgGlobal) then { [nil, nil, rspawn, [_victim, _message], { (_this select 0) globalChat (_this select 1) }] call RE; };
+	if(DZE_DeathMsgSide) then { [nil, nil, rspawn, [_victim, _message], { (_this select 0) sideChat (_this select 1) }] call RE; };
+	if(DZE_DeathMsgTitleText) then { [nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE; };
 };
 
-// Might not be the best way...
-/*
-if (isnil "dayz_disco") then {
-	dayz_disco = [];
-};
-*/
+// Cleanup
+_victim setVariable["AttackedBy", "nil", true];
+_victim setVariable["AttackedByName", "nil", true];
+_victim setVariable["AttackedByWeapon", "nil", true];
+_victim setVariable["AttackedFromDistance", "nil", true];
+_victim setVariable["LastHit", "nil", true];
 
-// dayz_disco = dayz_disco - [_playerID];
+diag_log _loc_message;
+
 _newObject setVariable["processedDeath",diag_tickTime];
 
 if (typeName _minutes == "STRING") then
 {
 	_minutes = parseNumber _minutes;
 };
-
-diag_log ("PDEATH: Player Died " + _playerID);
 
 if (_characterID != "0") then
 {
