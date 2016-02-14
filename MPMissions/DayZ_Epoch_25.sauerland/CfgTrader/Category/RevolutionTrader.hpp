@@ -559,12 +559,6 @@ class Category_697 {
 		sell[] = {3000000,"Coins"};
 		};
 
-		class Mi17_CDF {
-		type = "trade_any_vehicle";
-		buy[] = {500000,"Coins"};
-		sell[] = {250000,"Coins"};
-		};
-
 		class Ka52 {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
