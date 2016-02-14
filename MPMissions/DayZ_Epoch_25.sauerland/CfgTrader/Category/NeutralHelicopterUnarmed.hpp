@@ -1,5 +1,5 @@
 class Category_519 {
-	class Mi17_Civilian_DZ {
+	class Mi17_Civilian {
 		type = "trade_any_vehicle";
 		buy[] ={63000,"Coins"};
 		sell[] ={31000,"Coins"};
