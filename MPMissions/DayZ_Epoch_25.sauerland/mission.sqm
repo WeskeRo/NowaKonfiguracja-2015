@@ -303,7 +303,7 @@ class Mission
 		{
 			position[]={17588.7, 1, 17657.3};
 			name="NeutralTraderCity";
-			text="Trader City Seedorf";
+			text="Trader City Meschede";
 			type="mil_circle";
 		};
 		class Item14
@@ -333,16 +333,16 @@ class Mission
 		class Item17
 		{
 			position[]={11899.7, 1, 6588.69};
-			name="SouthWholesaler";
-			text="South Wholesaler";
+			name="SouthWholeseller";
+			text="South Wholeseller";
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
 		class Item18
 		{
 			position[]={2206.61, 1, 20292.4};
-			name="NorthWholesaler";
-			text="North Wholesaler";
+			name="NorthWholeseller";
+			text="North Wholeseller";
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
@@ -358,7 +358,7 @@ class Mission
 		{
 			position[]={15232.8, 1, 11423};
 			name="NeutralTraderCIty2";
-			text="Trader city Middlands";
+			text="Trader City Middlands";
 			type="mil_circle";
 			colorName="ColorBlack";
 		};
