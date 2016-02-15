@@ -302,17 +302,17 @@ class Mission
 		class Item13
 		{
 			position[]={17588.7, 1, 17657.3};
-			name="NeutralTraderCity";
+			name="FriendlyTraderCity";
 			text="Trader City Meschede";
 			type="mil_circle";
+			colorName="ColorGreen";
 		};
 		class Item14
 		{
 			position[]={6851.2, 1, 17004.1};
-			name="FriendlyTraderCity";
+			name="NeutralTraderCity";
 			text="Trader City Garbow";
 			type="mil_circle";
-			colorName="ColorGreen";
 		};
 		class Item15
 		{

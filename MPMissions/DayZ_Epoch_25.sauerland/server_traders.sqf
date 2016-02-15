@@ -1,167 +1,199 @@
-// DayZ Epoch TRADERS for 17
-serverTraders = ["US_Soldier_Officer_EP1","Rita_Ensler_EP1","CIV_Contractor2_BAF","gsc_scientist1","Tanny_PMC","US_Delta_Force_AR_EP1","FR_Cooper","RU_Profiteer1","Damsel4","TK_Commander_EP1","Ins_Soldier_AR","RU_Villager1","MVD_Soldier_Marksman","RU_Soldier_Pilot","CIV_EuroMan01_EP1","Ins_Soldier_GL","Rocker2","Profiteer1","RU_Damsel5","TK_Soldier_Crew_EP1","TK_Soldier_AMG_EP1","Soldier_MG_PMC","RU_Damsel2","GUE_Soldier_MG","TK_Special_Forces_EP1","Ins_Worker2","Citizen2_EP1","pook_Doc_Bell47","RU_Doctor","Dr_Hladik_EP1"];
-// Hero Vendor
-menu_Tanny_PMC = [
-	[["Ammunition",478],["Clothes",575],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["Money",700]],
-	[],
-	"hero"
-];
-// Ammunition Friendly
-menu_US_Delta_Force_AR_EP1 = [
-	[["Assault Rifle Ammo",609],["Light Machine Gun Ammo",610],["Pistol Ammo",611],["Shotguns And Single Shot Ammo",613],["Sniper Rifle Ammo",614],["Submachine Gun Ammo",612],["Overwatch Pistol Ammo",1012],["Overwatch Gun Ammo",1013]],
-	[],
-	"friendly"
-];
-// Weapons Friendly
-menu_FR_Cooper = [
-	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns And Single Shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Vil",1002],["Overwatch Tar",1003],["Overwatch Sniper",1011],["Overwatch Scar",1004],["Overwatch Sidearm",1001],["Overwatch Mas",1007],["Overwatch Hk417",1009],["Overwatch Hk416",1008],["Overwatch Hk416",1008],["Overwatch Dmr",1010],["Overwatch Acr",1005]],
-	[],
-	"friendly"
-];
-// Friendly Vehicles
-menu_RU_Profiteer1 = [
-	[["Bikes And Atv",587],["Buses And Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591],["Overwatch Civ Car",1015],["Overwatch Nissian Car",1016]],
-	[],
-	"friendly"
-];
-// Friendly General Store
-menu_Damsel4 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579]],
-	[["ItemCopperBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Copper Bar",101]],
-	"friendly"
-];
-// Weapons neutral
-menu_TK_Commander_EP1 = [
-	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns And Single Shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Vil",1002],["Overwatch Tar",1003],["Overwatch Sniper",1011],["Overwatch Scar",1004],["Overwatch Sidearm",1001],["Overwatch Mas",1007],["Overwatch Hk417",1009],["Overwatch Hk416",1008],["Overwatch G3",1006],["Overwatch Dmr",1010],["Overwatch Acr",1005]],
-	[],
-	"neutral"
-];
-// Ammunition Neutral
-menu_Ins_Soldier_AR = [
-	[["Assault Rifle Ammo",609],["Light Machine Gun Ammo",610],["Pistol Ammo",611],["Shotguns And Single Shot Ammo",613],["Sniper Rifle Ammo",614],["Submachine Gun Ammo",612],["Overwatch Pistol Ammo",1012],["Overwatch Gun Ammo",1013]],
-	[],
-	"neutral"
-];
-// Neutral Building/Parts
-menu_RU_Villager1 = [
-	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509],["Money",700]],
-	[],
-	"neutral"
-];
-// Bandit Trader
-menu_MVD_Soldier_Marksman = [
-	[["Ammunition",577],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["Money",700]],
-	[],
-	"hostile"
-];
-// Aircraft Dealer
-menu_RU_Soldier_Pilot = [
-	[["Airplanes",517],["Helicopter Unarmed",519],["Overwatch Camel",1014]],
-	[],
-	"neutral"
-];
-// Vehicles Neutral
-menu_CIV_EuroMan01_EP1 = [
-	[["Bikes And Atv",587],["Buses And Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591],["Overwatch Civ Car",1015],["Overwatch Nissian Car",1016]],
-	[],
-	"neutral"
-];
-// Black Market Vendor
-menu_Ins_Soldier_GL = [
-	[["Black Market Weapons",526],["Black Market Ammo",527],["Explosives",529]],
-	[],
-	"neutral"
-];
-// Friendly Building/Parts
-menu_Rocker2 = [
-	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509],["Money",700]],
-	[],
-	"friendly"
-];
-// Neutral Vehicles 2
-menu_Profiteer1 = [
-	[["Bikes And Atv",587],["Buses And Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591],["Overwatch Civ Car",1015],["Overwatch Nissian Car",1016]],
-	[],
-	"neutral"
-];
-// Neutral General Store
-menu_RU_Damsel5 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579]],
-	[["ItemCopperBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Copper Bar",101]],
-	"neutral"
-];
-// Medical Supplies
-menu_Dr_Hladic_EP1 = [
-	[["Chemlites / Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
+// DayZ Epoch TRADERS
+serverTraders = ["US_Soldier_Officer_EP1","Rita_Ensler_EP1","CIV_Contractor2_BAF","gsc_scientist1","Functionary1_EP1","RU_Profiteer1","Rocker2","CIV_EuroMan01_EP1","FR_Cooper","TK_GUE_Soldier_5_EP1","Tanny_PMC","US_Delta_Force_AR_EP1","TK_CIV_Takistani04_EP1","CIV_EuroMan02_EP1","MVD_Soldier_Marksman","Soldier_Sniper_PMC","GUE_Soldier_3","RU_Damsel4","Damsel4","GUE_Villager4","CIV_EuroWoman02_EP1","Citizen3_EP1","ibr_lingorman6","RU_Priest","Profiteer2","RU_Functionary2"];
+//=============================================================	
+// Hero
+menu_Tanny_PMC = [[
+	["Ammunition",478],
+	["Clothes",476],
+	["Helicopters",493],
+	["Vehicles",479],
+	["Weapons",477],
+	["Launchers",704]],
+	[],"hero"];
+//=============================================================		
+// Bandit
+menu_MVD_Soldier_Marksman = [[ 
+	["Ammunition",577],
+	["Clothing",575],
+	["Helicopters",512],
+	["Vehicles",534],
+	["Weapons",627],
+	["Launchers",704]],
+	[],"hostile"];
+//=============================================================		
+// Weapons NEUTRAL
+menu_TK_CIV_Takistani04_EP1 = [[
+	["Assault Rifles",410],
+	["Light Machine Gun",411],
+	["Shotguns and Single-shot",422],
+	["Sniper Rifles",423],
+	["Submachine Guns",424],
+	["Pistols",420],
+	["ACR Variants",412],
+	["ACR SD Variants",418],
+	["DMR Variants",414],
+	["G3 Variants",415],
+	["HK Variants",416],
+	["TAR/MAS Variants",419],
+	["Launchers",426]],
+	[],"neutral"];	
+// Weapons FRIENDLY
+menu_FR_Cooper = [[
+	["Assault Rifles",410],
+	["Light Machine Gun",411],
+	["Shotguns and Single-shot",422],
+	["Sniper Rifles",423],
+	["Submachine Guns",424],
+	["Pistols",420],
+	["ACR Variants",412],
+	["ACR SD Variants",418],
+	["DMR Variants",414],
+	["G3 Variants",415],
+	["HK Variants",416],
+	["TAR/MAS Variants",419],
+	["Launchers",426]],
+	[],"friendly"];	
+//=============================================================	
+// Ammunition NEUTRAL
+menu_CIV_EuroMan02_EP1 = [[
+	["Assault Rifle Ammo",609],
+	["Light Machine Gun Ammo",610],
+	["Pistol Ammo",611],
+	["Shotguns and Single-shot Ammo",613],
+	["Sniper Rifle Ammo",614],
+	["Submachine Gun Ammo",612],
+	["Mixed Ammo",698]],
+	[],"neutral"];
+// Ammunition FRIENDLY
+menu_US_Delta_Force_AR_EP1 = [[
+	["Assault Rifle Ammo",609],
+	["Light Machine Gun Ammo",610],
+	["Pistol Ammo",611],
+	["Shotguns and Single-shot Ammo",613],
+	["Sniper Rifle Ammo",614],
+	["Submachine Gun Ammo",612],
+	["Mixed Ammo",698]],
+	[],"friendly"];
+//=============================================================		
+// Black Market NEUTRAL
+menu_GUE_Soldier_3 = [[
+	["Explosives",501],
+	["Assault Rifles",502],
+	["Sniper Rifles",503],
+	["Pistols",504],
+	["Ammo",505],
+	["Vehicle Ammo",506]],
+	[],"neutral"];		
+// Black Market Friendly
+//menu_GUE_Soldier_3 = [[
+//	["Explosives",501],
+//	["Assault Rifles",502],
+//	["Sniper Rifles",503],
+//	["Pistols",504],
+//	["Ammo",505],
+//	["Vehicle Ammo",506]],
+//	[],"neutral"];	
+//=============================================================		
+// Medical Supplies NEUTRAL
+menu_CIV_EuroWoman02_EP1 = [[
+	["Chem-lites/Flares",666],
+	["Medical Supplies",665],
+	["Smoke Grenades",668]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-	"friendly"
-];
-// Neutral Weapons 2
-menu_TK_Soldier_Crew_EP1 = [
-	[["Assault Rifle",615],["Light Machine Gun",616],["Pistols",617],["Shotguns and Single-shot",620],["Sniper Rifle",619],["Submachine Guns",618]],
-	[],
-	"neutral"
-];
-// Neutral Ammo 2
-menu_TK_Soldier_AMG_EP1 = [
-	[["Assault Rifle Ammo",609],["Light Machine Gun Ammo",610],["Pistol Ammo",611],["Shotguns and Single Shot Ammo",613],["Sniper Rifle Ammo",614],["Submachine Gun Ammo",612],["Overwatch Pistol Ammo",1012],["Overwatch Gun Ammo",1013]],
-	[],
-	"neutral"
-];
-// North Wholesaler
-menu_Soldier_MG_PMC = [
-	[["Wholesale",636]],
-	[],
-	"neutral"
-];
-// Neutral General Store
-menu_RU_Damsel2 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579]],
-	[["ItemCopperBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Copper Bar",101]],
-	"neutral"
-];
-// South Wholesaler
-menu_GUE_Soldier_MG = [
-	[["Wholesale",636]],
-	[],
-	"neutral"
-];
-// North Boat Vendor
-menu_TK_Special_Forces_EP1 = [
-	[["Boats Armed",673],["Boats Unarmed",672]],
-	[],
-	"neutral"
-];
-// Vehicles Neutral 2
-menu_Ins_Worker2 = [
-	[["Bikes And Atv",587],["Buses And Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591],["Overwatch Civ Car",1015],["Overwatch Nissian Car",1016]],
-	[],
-	"neutral"
-];
-// Neutral Building/Parts 2
-menu_Citizen2_EP1 = [
-	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509],["Money",700]],
-	[],
-	"neutral"
-];
-// Medical Supplies 2
-menu_pook_Doc_Bell47 = [
-	[["Chemlites / Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
+	"neutral"];
+// Medical Supplies FRIENDLY
+menu_Dr_Hladik_EP1 = [[
+	["Chem-lites/Flares",666],
+	["Medical Supplies",665],
+	["Smoke Grenades",668]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-	"neutral"
-];
-// Medical Supplies 3
-menu_RU_Doctor = [
-	[["Chemlites / Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
-	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-	"neutral"
-];
-// Medical Supplies
-menu_Dr_Hladik_EP1 = [
-	[["Chemlites / Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
-	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-	"friendly"
-];
+	"friendly"];
+//=============================================================		
+// Building/Parts NEUTRAL
+menu_TK_GUE_Soldier_5_EP1 = [[
+	["Building Supplies",678],
+	["Toolbelt Items",679],
+	["Vehicle Parts",677]],
+	[],"neutral"];
+// Building/Parts FRIENDLY
+menu_Rocker2 = [[
+	["Building Supplies",678],
+	["Toolbelt Items",679],
+	["Vehicle Parts",677]],
+	[],"friendly"];
+//=============================================================	
+// General Stores NEUTRAL
+menu_RU_Damsel4 = [[
+	["Backpacks",632],
+	["Clothes",631],
+	["Cooked Meats",634],
+	["Drinks",633],
+	["Packaged Food",635]],
+	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
+	"neutral"];
+// General Stores FRIENDLY
+menu_Damsel4 = [[
+	["Backpacks",632],
+	["Clothes",631],
+	["Cooked Meats",634],
+	["Drinks",633],
+	["Packaged Food",635]],
+	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
+	"friendly"];
+//=============================================================	
+// Vehicles NEUTRAL
+menu_CIV_EuroMan01_EP1 = [[
+	["Bikes and ATV",608],
+	["Buses and Vans",563],
+	["Cargo Trucks",564],
+	["Fuel Trucks",492],
+	["Military Unarmed",491],
+	["Trucks",495],
+	["Used Cars",585],
+	["Utility Vehicles",565],
+	["Sport Cars",697]],
+	[],"neutral"];
+// Vehicles FRIENDLY
+menu_RU_Profiteer1 = [[
+	["Bikes and ATV",608],
+	["Buses and Vans",563],
+	["Cargo Trucks",564],
+	["Fuel Trucks",492],
+	["Military Unarmed",491],
+	["Trucks",495],
+	["Used Cars",585],
+	["Utility Vehicles",565],
+	["Sport Cars",697]],
+	[],"friendly"];
+//=============================================================	
+// Boats
+menu_GUE_Villager4 = [[
+	["Boats Armed",558],
+	["Boats Unarmed",557]],
+	[],"neutral"];
+//=============================================================	
+// Air crafts
+menu_Soldier_Sniper_PMC = [[
+	["Airplanes",517],
+	["Helicopter Unarmed",519]],
+	[],"neutral"];
+//=============================================================	
+// Wholesalers
+menu_Citizen3_EP1 = [[
+	["Wholesale",675],
+	["Metals",696]],
+	[],"neutral"];
+//=============================================================	
+// Bankers
+menu_Functionary1_EP1 = [[["Metals",696]],[],"neutral"];
+//=============================================================	
+// Drug Dealer
+//menu_RU_Priest = [[["Drugs",693]],[],"neutral"];
+// Oil refinery
+//menu_Profiteer1 = [[["Oil",694]],[],"neutral"];
+// Gem trader
+//menu_Profiteer2 = [[["Gems",695]],[],"neutral"];
+
 
 // GEM Trader
 menu_gsc_scientist1 = [
