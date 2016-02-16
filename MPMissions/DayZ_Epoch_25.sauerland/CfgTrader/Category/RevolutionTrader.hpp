@@ -1,4 +1,4 @@
-class Category_693 {
+class Category_800 {
 
 		class A10 {
 		type = "trade_any_vehicle";
@@ -40,7 +40,7 @@ class Category_693 {
 
 
 
-class Category_694 {
+class Category_801 {
 
 		class RPG7V {
 		type = "trade_weapons";
@@ -171,7 +171,7 @@ class Category_694 {
 };
 
 
-class Category_695 {
+class Category_802 {
 		class PG7V {
 		type = "trade_items";
 		buy[] = {70000,"Coins"};
@@ -350,7 +350,7 @@ class Category_695 {
 
 
 
-class Category_696 {
+class Category_803 {
 
 		class HMMWV_M998_crows_M2_DES_EP1 {
 		type = "trade_any_vehicle";
@@ -515,7 +515,7 @@ class Category_696 {
 		
 };
 
-class Category_697 {
+class Category_804 {
 
 		class AW159_Lynx_BAF {
 		type = "trade_any_vehicle";
@@ -559,12 +559,6 @@ class Category_697 {
 		sell[] = {3000000,"Coins"};
 		};
 
-		class Mi17_CDF {
-		type = "trade_any_vehicle";
-		buy[] = {500000,"Coins"};
-		sell[] = {250000,"Coins"};
-		};
-
 		class Ka52 {
 		type = "trade_any_vehicle";
 		buy[] = {6000000,"Coins"};
@@ -585,7 +579,7 @@ class Category_697 {
 		
 };
 
-class Category_698 {
+class Category_805 {
 
 
 		class ItemComboLock {
@@ -614,7 +608,7 @@ class Category_698 {
 
 };
 
-class Category_699 {
+class Category_806 {
 
 		class BAF_ied_v1 {
 		type = "trade_items";
@@ -648,7 +642,7 @@ class Category_699 {
 		
 };
 
-class Category_702 {
+class Category_807 {
 
 		class MtvrReammo_DES_EP1 {
 		type = "trade_any_vehicle";

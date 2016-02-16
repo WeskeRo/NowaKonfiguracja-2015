@@ -1,5 +1,5 @@
 // DayZ Epoch TRADERS
-serverTraders = ["US_Soldier_Officer_EP1","Rita_Ensler_EP1","CIV_Contractor2_BAF","gsc_scientist1","Functionary1_EP1","RU_Profiteer1","Rocker2","CIV_EuroMan01_EP1","FR_Cooper","TK_GUE_Soldier_5_EP1","Tanny_PMC","US_Delta_Force_AR_EP1","TK_CIV_Takistani04_EP1","CIV_EuroMan02_EP1","MVD_Soldier_Marksman","Soldier_Sniper_PMC","GUE_Soldier_3","RU_Damsel4","Damsel4","GUE_Villager4","CIV_EuroWoman02_EP1","Citizen3_EP1","ibr_lingorman6","RU_Priest","Profiteer2","RU_Functionary2"];
+serverTraders = ["Dr_Hladik_EP1","US_Soldier_Officer_EP1","Rita_Ensler_EP1","CIV_Contractor2_BAF","gsc_scientist1","Functionary1_EP1","RU_Profiteer1","Rocker2","CIV_EuroMan01_EP1","FR_Cooper","TK_GUE_Soldier_5_EP1","Tanny_PMC","US_Delta_Force_AR_EP1","TK_CIV_Takistani04_EP1","CIV_EuroMan02_EP1","MVD_Soldier_Marksman","Soldier_Sniper_PMC","GUE_Soldier_3","RU_Damsel4","Damsel4","GUE_Villager4","CIV_EuroWoman02_EP1","Citizen3_EP1","ibr_lingorman6","RU_Priest","Profiteer2","RU_Functionary2"];
 //=============================================================	
 // Hero
 menu_Tanny_PMC = [[
@@ -8,7 +8,7 @@ menu_Tanny_PMC = [[
 	["Helicopters",493],
 	["Vehicles",479],
 	["Weapons",477],
-	["Launchers",704]],
+	//["Launchers",704]],
 	[],"hero"];
 //=============================================================		
 // Bandit
@@ -18,7 +18,7 @@ menu_MVD_Soldier_Marksman = [[
 	["Helicopters",512],
 	["Vehicles",534],
 	["Weapons",627],
-	["Launchers",704]],
+	//["Launchers",704]],
 	[],"hostile"];
 //=============================================================		
 // Weapons NEUTRAL
@@ -35,7 +35,7 @@ menu_TK_CIV_Takistani04_EP1 = [[
 	["G3 Variants",415],
 	["HK Variants",416],
 	["TAR/MAS Variants",419],
-	["Launchers",426]],
+	//["Launchers",426]],
 	[],"neutral"];	
 // Weapons FRIENDLY
 menu_FR_Cooper = [[
@@ -51,7 +51,7 @@ menu_FR_Cooper = [[
 	["G3 Variants",415],
 	["HK Variants",416],
 	["TAR/MAS Variants",419],
-	["Launchers",426]],
+	//["Launchers",426]],
 	[],"friendly"];	
 //=============================================================	
 // Ammunition NEUTRAL
@@ -197,28 +197,28 @@ menu_Functionary1_EP1 = [[["Metals",696]],[],"neutral"];
 
 // GEM Trader
 menu_gsc_scientist1 = [
-	[["Revolution Jets",693]],  
+	[["Revo Jets",800]],  
 	[],
 	"neutral"
 	
 ];
 // Revo Weapons
 menu_CIV_Contractor2_BAF = [
-	[["Revo Weapons",694],["Revo Ammo",695],["Revo Explosives",699],["Reammo Truck",702]],  
+	[["Revo Weapons",801],["Revo Ammo",802],["Revo Explosives",806],["Reammo Truck",807]],  
 	[],
 	"neutral"	
 ];
 
 // Revo supplies
 menu_Rita_Ensler_EP1 = [
-	[["Revo Food",701],["Revo supplies",698]],  
+	[["Revo Food",809],["Revo supplies",805]],  
 	[],
 	"neutral"	
 ];
 
 // Revo Vehicles
 menu_US_Soldier_Officer_EP1 = [
-	[["Revo Armors",696],["Revo Birds",697],["Revo Statics",734]],  
+	[["Revo Armors",803],["Revo Birds",804],["Revo Statics",808]],  
 	[],
 	"neutral"	
 ];

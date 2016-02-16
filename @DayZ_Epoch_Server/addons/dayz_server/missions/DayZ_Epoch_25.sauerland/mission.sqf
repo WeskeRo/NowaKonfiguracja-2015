@@ -2327,7 +2327,7 @@ if (true) then
 _unit_137 = objNull;
 if (true) then
 {// North Wholesaler
-  _this = createAgent ["Soldier_MG_PMC", [2210.97, 20299.086, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Citizen3_EP1", [2210.97, 20299.086, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _unit_137 = _this;
   _this setDir -111.00982;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;  ";
