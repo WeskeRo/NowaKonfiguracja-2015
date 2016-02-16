@@ -7,8 +7,8 @@ menu_Tanny_PMC = [[
 	["Clothes",476],
 	["Helicopters",493],
 	["Vehicles",479],
-	["Weapons",477],
-	//["Launchers",704]],
+	["Weapons",477]],
+	//["Launchers",704]
 	[],"hero"];
 //=============================================================		
 // Bandit
@@ -17,8 +17,8 @@ menu_MVD_Soldier_Marksman = [[
 	["Clothing",575],
 	["Helicopters",512],
 	["Vehicles",534],
-	["Weapons",627],
-	//["Launchers",704]],
+	["Weapons",627]],
+	//["Launchers",704]
 	[],"hostile"];
 //=============================================================		
 // Weapons NEUTRAL
@@ -34,7 +34,7 @@ menu_TK_CIV_Takistani04_EP1 = [[
 	["DMR Variants",414],
 	["G3 Variants",415],
 	["HK Variants",416],
-	["TAR/MAS Variants",419],
+	["TAR/MAS Variants",419]],
 	//["Launchers",426]],
 	[],"neutral"];	
 // Weapons FRIENDLY
@@ -50,7 +50,7 @@ menu_FR_Cooper = [[
 	["DMR Variants",414],
 	["G3 Variants",415],
 	["HK Variants",416],
-	["TAR/MAS Variants",419],
+	["TAR/MAS Variants",419]],
 	//["Launchers",426]],
 	[],"friendly"];	
 //=============================================================	
