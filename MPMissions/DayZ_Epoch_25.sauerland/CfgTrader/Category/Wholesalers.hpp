@@ -1,12 +1,9 @@
 class Category_675 {
-	class 30m_plot_kit {type = "trade_items";buy[] = {200000,"Coins"};sell[] = {50000,"Coins"};};
-	class ItemLetter {type = "trade_items";buy[] = {300000,"Coins"};sell[] = {100000,"Coins"};};
-	class ItemCitrine {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {50000,"Coins"};};
-	class ItemAmethyst {type = "trade_items";buy[] = {50000,"Coins"};sell[] = {25000,"Coins"};};
-	class ItemBook3 {type = "trade_items";buy[] = {300000,"Coins"};sell[] = {100000,"Coins"};};
-	class ItemBook4 {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {50000,"Coins"};};
+	class 30m_plot_kit {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {25000,"Coins"};};
+	class ItemCitrine {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {100000,"Coins"};};
+	class ItemAmethyst {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {100000,"Coins"};};
 	class ItemFuelBarrelEmpty {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class ItemComboLock {type = "trade_items";buy[] = {100000,"Coins"};sell[] = {40000,"Coins"};};
+	class ItemComboLock {type = "trade_items";buy[] = {10000,"Coins"};sell[] = {3000,"Coins"};};
 	class PartPlywoodPack {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {1000,"Coins"};};
 	class PartPlankPack {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemWoodWallThird {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {1000,"Coins"};};

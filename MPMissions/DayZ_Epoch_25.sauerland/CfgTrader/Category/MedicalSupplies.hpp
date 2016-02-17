@@ -9,13 +9,13 @@ class Category_666 {
 };
 //Medical Supplies
 class Category_665 {
-	class ItemAntibiotic {type = "trade_items";buy[] = {4000,"Coins"};sell[] = {2000,"Coins"};};
-	class ItemBandage {type = "trade_items";buy[] = {300,"Coins"};sell[] = {300,"Coins"};};
+	class ItemAntibiotic {type = "trade_items";buy[] = {4000,"Coins"};sell[] = {500,"Coins"};};
+	class ItemBandage {type = "trade_items";buy[] = {500,"Coins"};sell[] = {300,"Coins"};};
 	class ItemBloodbag {type = "trade_items";buy[] = {4000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemEpinephrine {type = "trade_items";buy[] = {300,"Coins"};sell[] = {300,"Coins"};};
 	class ItemHeatPack {type = "trade_items";buy[] = {300,"Coins"};sell[] = {300,"Coins"};};
-	class ItemMorphine {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
-	class ItemPainkiller {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+	class ItemMorphine {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {500,"Coins"};};
+	class ItemPainkiller {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {500,"Coins"};};
 };
 //Smoke Grenades
 class Category_668 {

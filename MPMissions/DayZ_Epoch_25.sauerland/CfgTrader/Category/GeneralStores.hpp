@@ -1,16 +1,16 @@
 //Backpacks
 class Category_632 {
-	class DZ_Patrol_Pack_EP1 {type = "trade_backpacks";buy[] = {800,"Coins"};sell[] = {800,"Coins"};};
-	class CZ_VestPouch_EP1 {type = "trade_backpacks";buy[] = {300,"Coins"};sell[] = {300,"Coins"};};
-	class DZ_ALICE_Pack_EP1 {type = "trade_backpacks";buy[] = {1200,"Coins"};sell[] = {1200,"Coins"};};
-	class DZ_Assault_Pack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+	class DZ_Patrol_Pack_EP1 {type = "trade_backpacks";buy[] = {800,"Coins"};sell[] = {100,"Coins"};};
+	class CZ_VestPouch_EP1 {type = "trade_backpacks";buy[] = {300,"Coins"};sell[] = {50,"Coins"};};
+	class DZ_ALICE_Pack_EP1 {type = "trade_backpacks";buy[] = {1200,"Coins"};sell[] = {1000,"Coins"};};
+	class DZ_Assault_Pack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {5000,"Coins"};};
 	class DZ_Backpack_EP1 {type = "trade_backpacks";buy[] = {8000,"Coins"};sell[] = {4000,"Coins"};};
 	class DZ_British_ACU {type = "trade_backpacks";buy[] = {4000,"Coins"};sell[] = {2000,"Coins"};};
-	class DZ_CivilBackpack_EP1 {type = "trade_backpacks";buy[] = {6000,"Coins"};sell[] = {4000,"Coins"};};
-	class DZ_Czech_Vest_Puch {type = "trade_backpacks";buy[] = {300,"Coins"};sell[] = {300,"Coins"};};
-	class DZ_TK_Assault_Pack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class DZ_TerminalPack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class DZ_GunBag_EP1 {type = "trade_backpacks";buy[] = {6000,"Coins"};sell[] = {3000,"Coins"};};
+	class DZ_CivilBackpack_EP1 {type = "trade_backpacks";buy[] = {6000,"Coins"};sell[] = {2000,"Coins"};};
+	class DZ_Czech_Vest_Puch {type = "trade_backpacks";buy[] = {300,"Coins"};sell[] = {50,"Coins"};};
+	class DZ_TK_Assault_Pack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class DZ_TerminalPack_EP1 {type = "trade_backpacks";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class DZ_GunBag_EP1 {type = "trade_backpacks";buy[] = {6000,"Coins"};sell[] = {2000,"Coins"};};
 };
 //Clothes
 class Category_631 {
@@ -32,11 +32,11 @@ class Category_631 {
 };
 //Cooked Meats
 class Category_634 {
-	class FoodbaconCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class FoodbeefCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class FoodchickenCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class FoodmuttonCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
-	class FoodrabbitCooked {type = "trade_items";buy[] = {1200,"Coins"};sell[] = {1000,"Coins"};};
+	class FoodbaconCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class FoodbeefCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class FoodchickenCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class FoodmuttonCooked {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
+	class FoodrabbitCooked {type = "trade_items";buy[] = {1200,"Coins"};sell[] = {600,"Coins"};};
 	class ItemTroutCooked {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemSeaBassCooked {type = "trade_items";buy[] = {3000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemTunaCooked {type = "trade_items";buy[] = {4000,"Coins"};sell[] = {1000,"Coins"};};
