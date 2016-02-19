@@ -696,14 +696,10 @@ class Category_807 {
 		class ItemSodaClays {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaSmasht {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaDrwaste {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
-		class ItemSodaFranka {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaLemonade {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
-		class ItemSodaLirik {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaLvg {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaMzly {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
-		class ItemSodaPeppsy {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaRabbit {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
-		class ItemSodaSacrite {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		};
 	
 };
