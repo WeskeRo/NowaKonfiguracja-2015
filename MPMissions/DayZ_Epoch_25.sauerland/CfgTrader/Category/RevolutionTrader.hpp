@@ -606,6 +606,11 @@ class Category_805 {
 		sell[] = {8000,"Coins"};
 		};
 
+		class ItemHotwireKit {
+		type = "trade_items";
+		buy[] = {10000000,"Coins"};
+		sell[] = {500000,"Coins"};
+		};
 };
 
 class Category_806 {
@@ -673,5 +678,33 @@ class Category_807 {
 		buy[] = {5000000,"Coins"};
 		sell[] = {2500000,"Coins"};
 		};
+		
+		class Category_809 {
+		
+		class FoodCanGriff {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanBadguy {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanBoneboy {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanCorn {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanCurgon {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanDemon {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanFraggleos {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanHerpy {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanOrlok {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanPowell {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanTylers{type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanFraggleos {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class FoodCanFraggleos {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
+		class ItemSodaR4z0rItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaClaysItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaSmashtItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaDrwasteItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaFrankaItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaLemonadeItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaLirikItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaLvgItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaMzlyItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaPeppsyItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaRabbitItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
+		class ItemSodaSacriteItemSodaCoke {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		
 };
