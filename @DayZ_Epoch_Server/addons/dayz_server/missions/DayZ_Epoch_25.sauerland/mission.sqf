@@ -901,6 +901,7 @@ if (true) then
   _this setDir -176.65572;
   _this setVehicleLock "LOCKED";
   _this setPos [1337.4507, 11675.637, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_282 = objNull;
@@ -1004,14 +1005,6 @@ if (true) then
   _this = createVehicle ["Land_radar", [1344.666, 11742.539, -0.261455], [], 0, "CAN_COLLIDE"];
   _vehicle_299 = _this;
   _this setPos [1344.666, 11742.539, -0.261455];
-};
-
-_vehicle_310 = objNull;
-if (true) then
-{
-  _this = createVehicle ["HeliH", [16620.82, 1806.2296, 6.1035156e-005], [], 0, "CAN_COLLIDE"];
-  _vehicle_310 = _this;
-  _this setPos [16620.82, 1806.2296, 6.1035156e-005];
 };
 
 _vehicle_311 = objNull;
@@ -1359,6 +1352,7 @@ if (true) then
   _this setDir 234.78633;
   _this setVehicleLock "LOCKED";
   _this setPos [17564.262, 17653.65, -3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_354 = objNull;
@@ -1368,6 +1362,7 @@ if (true) then
   _vehicle_354 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17572.404, 17654.559, 2.4944887];
+  _this enableSimulation false;
 };
 
 _vehicle_355 = objNull;
@@ -1410,6 +1405,7 @@ if (true) then
   _this = createVehicle ["Can_small", [17569.27, 17653.039, 0.79656917], [], 0, "CAN_COLLIDE"];
   _vehicle_360 = _this;
   _this setPos [17569.27, 17653.039, 0.79656917];
+  _this enableSimulation false;
 };
 
 _vehicle_361 = objNull;
@@ -1634,6 +1630,7 @@ if (true) then
   _vehicle_390 = _this;
   _this setDir 20.062101;
   _this setPos [17600.006, 17665.754, 0.00015258789];
+  _this enableSimulation false;
 };
 
 _vehicle_391 = objNull;
@@ -1644,6 +1641,7 @@ if (true) then
   _this setDir 6.1357355;
   _this setVehicleLock "LOCKED";
   _this setPos [17600.385, 17667.637, 0.00018310547];
+  _this enableSimulation false;
 };
 
 _vehicle_393 = objNull;
@@ -1723,6 +1721,7 @@ if (true) then
   _this = createVehicle ["Explosive", [17618.123, 17676.719, 0.76435465], [], 0, "CAN_COLLIDE"];
   _vehicle_401 = _this;
   _this setPos [17618.123, 17676.719, 0.76435465];
+  _this enableSimulation false;
 };
 
 _vehicle_402 = objNull;
@@ -1801,6 +1800,7 @@ if (true) then
   _vehicle_410 = _this;
   _this setDir 27.783873;
   _this setPos [17618.619, 17682.85, 0.76581407];
+  _this enableSimulation false;
 };
 
 _vehicle_411 = objNull;
@@ -1811,6 +1811,7 @@ if (true) then
   _this setDir -156.99998;
   _this setVehicleLock "LOCKED";
   _this setPos [17611.254, 17687.523, 0.00018310547];
+  _this enableSimulation false;
 };
 
 _vehicle_414 = objNull;
@@ -1821,6 +1822,7 @@ if (true) then
   _this setDir -27.125561;
   _this setVehicleLock "LOCKED";
   _this setPos [17591.348, 17614.039, -0.011350022];
+  _this enableSimulation false;
 };
 
 _vehicle_415 = objNull;
@@ -1831,6 +1833,7 @@ if (true) then
   _this setDir -177.86902;
   _this setVehicleLock "LOCKED";
   _this setPos [17619.506, 17672.789, -0.079328351];
+  _this enableSimulation false;
 };
 
 _vehicle_418 = objNull;
@@ -1840,6 +1843,7 @@ if (true) then
   _vehicle_418 = _this;
   _this setDir 22.423857;
   _this setPos [17621.713, 17684.211];
+  _this enableSimulation false;
 };
 
 _vehicle_419 = objNull;
@@ -1849,6 +1853,7 @@ if (true) then
   _vehicle_419 = _this;
   _this setDir -70.144981;
   _this setPos [17621.92, 17679.461, 3.0520139e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_420 = objNull;
@@ -1858,6 +1863,7 @@ if (true) then
   _vehicle_420 = _this;
   _this setDir -67.36837;
   _this setPos [17620.957, 17675.041];
+  _this enableSimulation false;
 };
 
 _vehicle_421 = objNull;
@@ -1867,36 +1873,40 @@ if (true) then
   _vehicle_421 = _this;
   _this setDir 114.90074;
   _this setPos [17622.266, 17682.896, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_422 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicAmmunitionBox", [17622.318, 17677.625, 0.00010681152], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [17622.318, 17677.625, 0.00010681152], [], 0, "CAN_COLLIDE"];
   _vehicle_422 = _this;
   _this setDir 20.984127;
   _this setVehicleLock "LOCKED";
   _this setPos [17622.318, 17677.625, 0.00010681152];
+  _this enableSimulation false;
 };
 
 _vehicle_424 = objNull;
 if (true) then
 {
-  _this = createVehicle ["Ammobox_PMC", [17621.775, 17676.482], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [17621.775, 17676.482], [], 0, "CAN_COLLIDE"];
   _vehicle_424 = _this;
   _this setDir 23.606375;
   _this setVehicleLock "LOCKED";
   _this setPos [17621.775, 17676.482];
+  _this enableSimulation false;
 };
 
 _vehicle_425 = objNull;
 if (true) then
 {
-  _this = createVehicle ["Ammobox_PMC", [17620.232, 17682.764, -7.6293945e-005], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [17620.232, 17682.764, -7.6293945e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_425 = _this;
   _this setDir 25.579075;
   _this setVehicleLock "LOCKED";
   _this setPos [17620.232, 17682.764, -7.6293945e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_426 = objNull;
@@ -1950,6 +1960,7 @@ if (true) then
   _this setDir 118.52151;
   _this setVehicleLock "LOCKED";
   _this setPos [17575.375, 17647.016, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_439 = objNull;
@@ -2249,6 +2260,7 @@ if (true) then
   _vehicle_480 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [1343.2046, 11675.381];
+  _this enableSimulation false;
 };
 
 _vehicle_481 = objNull;
@@ -2258,6 +2270,7 @@ if (true) then
   _vehicle_481 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [1346.0861, 11675.298, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_482 = objNull;
@@ -2303,6 +2316,7 @@ if (true) then
   _vehicle_488 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17582.951, 17692.848, 0.77945828];
+  _this enableSimulation false;
 };
 
 _vehicle_489 = objNull;
@@ -2313,6 +2327,7 @@ if (true) then
   _this setDir -35.838081;
   _this setVehicleLock "LOCKED";
   _this setPos [17583.328, 17693.914, 0.80804974];
+  _this enableSimulation false;
 };
 
 _vehicle_490 = objNull;
@@ -2322,6 +2337,7 @@ if (true) then
   _vehicle_490 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17586.357, 17696.566, 0.92682755];
+  _this enableSimulation false;
 };
 
 _unit_137 = objNull;
@@ -2473,6 +2489,7 @@ if (true) then
   _vehicle_495 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17583.871, 17696.227, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_496 = objNull;
@@ -2482,6 +2499,7 @@ if (true) then
   _vehicle_496 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17584.689, 17695.893];
+  _this enableSimulation false;
 };
 
 _vehicle_497 = objNull;
@@ -2491,6 +2509,7 @@ if (true) then
   _vehicle_497 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17586.223, 17695.982, 0.95097047];
+  _this enableSimulation false;
 };
 
 _vehicle_498 = objNull;
@@ -2501,6 +2520,7 @@ if (true) then
   _this setDir 106.67188;
   _this setVehicleLock "LOCKED";
   _this setPos [17582.879, 17691.611, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_499 = objNull;
@@ -2510,6 +2530,7 @@ if (true) then
   _vehicle_499 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17579.857, 17695.85, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_500 = objNull;
@@ -2520,6 +2541,7 @@ if (true) then
   _this setDir -34.295166;
   _this setVehicleLock "LOCKED";
   _this setPos [17579.465, 17694.467, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_501 = objNull;
@@ -2529,6 +2551,7 @@ if (true) then
   _vehicle_501 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [17584.734, 17697.08, 1.1080841];
+  _this enableSimulation false;
 };
 
 _vehicle_507 = objNull;
@@ -2539,6 +2562,7 @@ if (true) then
   _this setDir -146.08694;
   _this setVehicleLock "LOCKED";
   _this setPos [17583.707, 17678.916];
+  _this enableSimulation false;
 };
 
 _vehicle_510 = objNull;
@@ -2549,6 +2573,7 @@ if (true) then
   _this setDir -67.352142;
   _this setVehicleLock "LOCKED";
   _this setPos [17580.553, 17680.354, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_511 = objNull;
@@ -2559,6 +2584,7 @@ if (true) then
   _this setDir -146.17033;
   _this setVehicleLock "LOCKED";
   _this setPos [17596.088, 17667.641, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_512 = objNull;
@@ -2569,6 +2595,7 @@ if (true) then
   _this setDir 19.219269;
   _this setVehicleLock "LOCKED";
   _this setPos [17593.717, 17671.943, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_513 = objNull;
@@ -2907,21 +2934,23 @@ if (true) then
 _vehicle_572 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicAmmunitionBox", [24855.119, 15285.42, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [24855.119, 15285.42, 7.6293945e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_572 = _this;
   _this setDir 85.183159;
   _this setVehicleLock "LOCKED";
   _this setPos [24855.119, 15285.42, 7.6293945e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_573 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicWeaponsBox", [24853.596, 15286.134, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [24853.596, 15286.134, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_573 = _this;
   _this setDir 84.032341;
   _this setVehicleLock "LOCKED";
   _this setPos [24853.596, 15286.134, 1.5258789e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_575 = objNull;
@@ -2932,6 +2961,7 @@ if (true) then
   _this setDir 81.027046;
   _this setVehicleLock "LOCKED";
   _this setPos [24854.221, 15287.895, 0.79163951];
+  _this enableSimulation false;
 };
 
 _vehicle_577 = objNull;
@@ -3056,6 +3086,7 @@ if (true) then
   _vehicle_596 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [24856.568, 15328.419, -0.13607298];
+  _this enableSimulation false;
 };
 
 _vehicle_597 = objNull;
@@ -3066,6 +3097,7 @@ if (true) then
   _this setDir -1.4945774;
   _this setVehicleLock "LOCKED";
   _this setPos [24848.182, 15325.113, -0.071894117];
+  _this enableSimulation false;
 };
 
 _vehicle_599 = objNull;
@@ -3075,6 +3107,7 @@ if (true) then
   _vehicle_599 = _this;
   _this setDir 90.793381;
   _this setPos [24868.031, 15275.806, -0.13553812];
+  _this enableSimulation false;
 };
 
 _vehicle_600 = objNull;
@@ -3152,6 +3185,7 @@ if (true) then
   _this = createVehicle ["Can_small", [24852.484, 15288.879, 0.77483863], [], 0, "CAN_COLLIDE"];
   _vehicle_608 = _this;
   _this setPos [24852.484, 15288.879, 0.77483863];
+  _this enableSimulation false;
 };
 
 _vehicle_609 = objNull;
@@ -3161,6 +3195,7 @@ if (true) then
   _vehicle_609 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [24851.107, 15285.958, 0.011800486];
+  _this enableSimulation false;
 };
 
 _vehicle_610 = objNull;
@@ -3171,6 +3206,7 @@ if (true) then
   _this setDir 82.730255;
   _this setVehicleLock "LOCKED";
   _this setPos [24850.223, 15292.312, 4.5776367e-005];
+  _this enableSimulation false;
 };
 
 _unit_192 = objNull;
@@ -3199,6 +3235,7 @@ if (true) then
   _vehicle_611 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [6870.2422, 16995.287];
+  _this enableSimulation false;
 };
 
 _vehicle_612 = objNull;
@@ -3209,6 +3246,7 @@ if (true) then
   _this setDir -140.85822;
   _this setVehicleLock "LOCKED";
   _this setPos [6871.7456, 16990.49, 5.3405762e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_613 = objNull;
@@ -3298,6 +3336,7 @@ if (true) then
   _vehicle_623 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [6836.6626, 17006.527, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_624 = objNull;
@@ -3418,6 +3457,7 @@ if (true) then
   _vehicle_639 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [6842.4443, 17005.162, 0.78542882];
+  _this enableSimulation false;
 };
 
 _vehicle_640 = objNull;
@@ -3427,6 +3467,7 @@ if (true) then
   _vehicle_640 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [6843.6807, 17005.672, 0.77910823];
+  _this enableSimulation false;
 };
 
 _vehicle_642 = objNull;
@@ -3436,6 +3477,7 @@ if (true) then
   _vehicle_642 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [6844.2783, 17005.916, -7.6293945e-006];
+  _this enableSimulation false;
 };
 
 _vehicle_643 = objNull;
@@ -3464,6 +3506,7 @@ if (true) then
   _this setDir -15.930836;
   _this setVehicleLock "LOCKED";
   _this setPos [6865.0308, 17015.023, 4.5776367e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_646 = objNull;
@@ -3474,6 +3517,7 @@ if (true) then
   _this setDir 251.50098;
   _this setVehicleLock "LOCKED";
   _this setPos [6866.3335, 17013.744, 6.8664551e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_647 = objNull;
@@ -3630,6 +3674,7 @@ if (true) then
   _this = createVehicle ["WeaponHolder_M4A1", [6864.188, 17012.869, 0.84455937], [], 0, "CAN_COLLIDE"];
   _vehicle_671 = _this;
   _this setPos [6864.188, 17012.869, 0.84455937];
+  _this enableSimulation false;
 };
 
 _vehicle_672 = objNull;
@@ -3639,6 +3684,7 @@ if (true) then
   _vehicle_672 = _this;
   _this setDir 64.097107;
   _this setPos [6864.7983, 17013.049, 0.81795573];
+  _this enableSimulation false;
 };
 
 _vehicle_673 = objNull;
@@ -3674,6 +3720,7 @@ if (true) then
   _this setDir -110.42321;
   _this setVehicleLock "LOCKED";
   _this setPos [6866.9033, 17004.971, 0.00018310547];
+  _this enableSimulation false;
 };
 
 
@@ -3923,6 +3970,7 @@ if (true) then
   _vehicle_705 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15249.115, 11433.529, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_706 = objNull;
@@ -3933,6 +3981,7 @@ if (true) then
   _this setDir 5.0539703;
   _this setVehicleLock "LOCKED";
   _this setPos [15243.996, 11435.782, 6.1035156e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_707 = objNull;
@@ -3943,6 +3992,7 @@ if (true) then
   _this setDir -79.49411;
   _this setVehicleLock "LOCKED";
   _this setPos [15233.004, 11435.352, -0.056708336];
+  _this enableSimulation false;
 };
 
 _vehicle_708 = objNull;
@@ -3952,6 +4002,7 @@ if (true) then
   _vehicle_708 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15245.593, 11435.321, -0.0064121573];
+  _this enableSimulation false;
 };
 
 _vehicle_709 = objNull;
@@ -3961,6 +4012,7 @@ if (true) then
   _vehicle_709 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15244.912, 11432.586, 6.1035156e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_710 = objNull;
@@ -3970,6 +4022,7 @@ if (true) then
   _vehicle_710 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15244.93, 11435.406, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_711 = objNull;
@@ -3980,6 +4033,7 @@ if (true) then
   _this setDir 16.955091;
   _this setVehicleLock "LOCKED";
   _this setPos [15244.992, 11435.877, 6.1035156e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_712 = objNull;
@@ -3989,6 +4043,7 @@ if (true) then
   _vehicle_712 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15244.748, 11432.591, 0.056994222];
+  _this enableSimulation false;
 };
 
 _vehicle_713 = objNull;
@@ -3998,6 +4053,7 @@ if (true) then
   _vehicle_713 = _this;
   _this setVehicleLock "LOCKED";
   _this setPos [15246.436, 11434.623, 6.1035156e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_714 = objNull;
@@ -4053,6 +4109,7 @@ if (true) then
   _this setDir -78.310013;
   _this setVehicleLock "LOCKED";
   _this setPos [15220.399, 11405.776, 9.1552734e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_726 = objNull;
@@ -4090,66 +4147,73 @@ if (true) then
   _this setDir 303.65256;
   _this setVehicleLock "LOCKED";
   _this setPos [15226.201, 11404.272, 0.0002746582];
+  _this enableSimulation false;
 };
 
 _vehicle_733 = objNull;
 if (true) then
 {
-  _this = createVehicle ["BAF_VehicleBox", [15232.617, 11407.505, 0.00012207031], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15232.617, 11407.505, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _vehicle_733 = _this;
   _this setDir 15.6858;
   _this setVehicleLock "LOCKED";
   _this setPos [15232.617, 11407.505, 0.00012207031];
+  _this enableSimulation false;
 };
 
 _vehicle_734 = objNull;
 if (true) then
 {
-  _this = createVehicle ["BAF_BasicWeapons", [15226.666, 11407.096, 0.00030517578], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15226.666, 11407.096, 0.00030517578], [], 0, "CAN_COLLIDE"];
   _vehicle_734 = _this;
   _this setDir 101.77036;
   _this setVehicleLock "LOCKED";
   _this setPos [15226.666, 11407.096, 0.00030517578];
+  _this enableSimulation false;
 };
 
 _vehicle_735 = objNull;
 if (true) then
 {
-  _this = createVehicle ["BAF_BasicWeapons", [15225.471, 11407.358, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15225.471, 11407.358, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_735 = _this;
   _this setDir 14.01389;
   _this setVehicleLock "LOCKED";
   _this setPos [15225.471, 11407.358, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_737 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicAmmunitionBox", [15234.32, 11414.326, 0.00021362305], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15234.32, 11414.326, 0.00021362305], [], 0, "CAN_COLLIDE"];
   _vehicle_737 = _this;
   _this setDir 11.864286;
   _this setVehicleLock "LOCKED";
   _this setPos [15234.32, 11414.326, 0.00021362305];
+  _this enableSimulation false;
 };
 
 _vehicle_738 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicAmmunitionBox", [15234.472, 11415.085, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15234.472, 11415.085, -3.0517578e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_738 = _this;
   _this setDir 9.6777229;
   _this setVehicleLock "LOCKED";
   _this setPos [15234.472, 11415.085, -3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_739 = objNull;
 if (true) then
 {
-  _this = createVehicle ["LocalBasicWeaponsBox", [15235.285, 11416.629, -0.034985766], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15235.285, 11416.629, -0.034985766], [], 0, "CAN_COLLIDE"];
   _vehicle_739 = _this;
   _this setDir 9.6154394;
   _this setVehicleLock "LOCKED";
   _this setPos [15235.285, 11416.629, -0.034985766];
+  _this enableSimulation false;
 };
 
 _vehicle_742 = objNull;
@@ -4160,6 +4224,7 @@ if (true) then
   _this setDir 37.965954;
   _this setVehicleLock "LOCKED";
   _this setPos [15253.448, 11410.513];
+  _this enableSimulation false;
 };
 
 _vehicle_746 = objNull;
@@ -4271,6 +4336,7 @@ if (true) then
   _vehicle_761 = _this;
   _this setDir 97.522789;
   _this setPos [15215.979, 11431.539, -0.17462109];
+  _this enableSimulation false;
 };
 
 _vehicle_762 = objNull;
@@ -4431,26 +4497,29 @@ if (true) then
   _this = createVehicle ["LightPole_DZ", [15253.939, 11407.192, -2.9344537], [], 0, "CAN_COLLIDE"];
   _vehicle_773 = _this;
   _this setPos [15253.939, 11407.192, -2.9344537];
+  _this enableSimulation false;
 };
 
 _vehicle_774 = objNull;
 if (true) then
 {
-  _this = createVehicle ["Supply_Crate_DZE", [15231.213, 11428.645, 0.00012207031], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15231.213, 11428.645, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _vehicle_774 = _this;
   _this setDir -36.517338;
   _this setVehicleLock "LOCKED";
   _this setPos [15231.213, 11428.645, 0.00012207031];
+  _this enableSimulation false;
 };
 
 _vehicle_775 = objNull;
 if (true) then
 {
-  _this = createVehicle ["Supply_Crate_DZE", [15232.897, 11431.968, 0.0002746582], [], 0, "CAN_COLLIDE"];
+  _this = createVehicle ["AmmoCrates_NoInteractive_Medium", [15232.897, 11431.968, 0.0002746582], [], 0, "CAN_COLLIDE"];
   _vehicle_775 = _this;
   _this setDir 90.753845;
   _this setVehicleLock "LOCKED";
   _this setPos [15232.897, 11431.968, 0.0002746582];
+  _this enableSimulation false;
 };
 
 _vehicle_776 = objNull;
@@ -4486,6 +4555,7 @@ if (true) then
   _this = createVehicle ["RoadCone", [15223.384, 11426.949, 0.00012207031], [], 0, "CAN_COLLIDE"];
   _vehicle_780 = _this;
   _this setPos [15223.384, 11426.949, 0.00012207031];
+  _this enableSimulation false;
 };
 
 _vehicle_781 = objNull;
@@ -4494,6 +4564,7 @@ if (true) then
   _this = createVehicle ["RoadCone", [15226.443, 11426.308, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_781 = _this;
   _this setPos [15226.443, 11426.308, 9.1552734e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_782 = objNull;
@@ -4502,6 +4573,7 @@ if (true) then
   _this = createVehicle ["RoadCone", [15229.3, 11426.069, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_782 = _this;
   _this setPos [15229.3, 11426.069, 9.1552734e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_783 = objNull;
@@ -4510,6 +4582,7 @@ if (true) then
   _this = createVehicle ["RoadCone", [15231.564, 11426.559, 0.00021362305], [], 0, "CAN_COLLIDE"];
   _vehicle_783 = _this;
   _this setPos [15231.564, 11426.559, 0.00021362305];
+  _this enableSimulation false;
 };
 
 _vehicle_784 = objNull;
@@ -4518,6 +4591,7 @@ if (true) then
   _this = createVehicle ["RoadCone", [15233.124, 11428.18], [], 0, "CAN_COLLIDE"];
   _vehicle_784 = _this;
   _this setPos [15233.124, 11428.18];
+  _this enableSimulation false;
 };
 
 _vehicle_785 = objNull;
@@ -4526,6 +4600,7 @@ if (true) then
   _this = createVehicle ["Land_coneLight", [15236.817, 11419.924, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
   _vehicle_785 = _this;
   _this setPos [15236.817, 11419.924, 3.0517578e-005];
+  _this enableSimulation false;
 };
 
 _vehicle_786 = objNull;
@@ -4534,6 +4609,7 @@ if (true) then
   _this = createVehicle ["Land_coneLight", [15248.115, 11417.817, 0.0002746582], [], 0, "CAN_COLLIDE"];
   _vehicle_786 = _this;
   _this setPos [15248.115, 11417.817, 0.0002746582];
+  _this enableSimulation false;
 };
 
 _vehicle_789 = objNull;
