@@ -704,5 +704,6 @@ class Category_807 {
 		class ItemSodaPeppsy {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaRabbit {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaSacrite {type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
-		
+		};
+	
 };
