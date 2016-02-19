@@ -1003,6 +1003,9 @@ execVM "\z\addons\dayz_server\map\jet111.sqf";
 execVM "\z\addons\dayz_server\map\revo.sqf";
 //execVM "\z\addons\dayz_server\map\revo_trader.sqf";
 
+execVM "\z\addons\dayz_server\map\sl_gold_adds.sqf";
+execVM "\z\addons\dayz_server\map\sl_map_adds.sqf";
+
 //execVM "\z\addons\dayz_server\map\teleporter_buildings.sqf";
 
 //execVM "\z\addons\dayz_server\map\trader1.sqf";

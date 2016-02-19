@@ -220,7 +220,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=21;
+		items=27;
 		class Item0
 		{
 			position[]={15177.789,286.18497,11335.177};
@@ -362,6 +362,64 @@ class Mission
 			type="mil_circle";
 			colorName="ColorBlack";
 		};
+        class Item21
+		{
+			position[]={5515.7925, 0, 23541.201};
+			name="Hannibals Castle";
+			text="Hannibals Castle";
+			colorName="ColorOrange";
+			fillName="Solid";
+			a=0.75;
+			b=0.75;
+			type="mil_objective";
+		};
+        class Item22
+		{
+			position[]={24280.848, 0, 14383.133};
+			name="Death Valley";
+			text="Death Valley";
+			colorName="ColorOrange";
+			fillName="Solid";
+			type="mil_objective";
+			a=0.75;
+			b=0.75;
+		};
+        class Item23
+		{ 
+			position[]={1589.4476,0,21287.691};
+			name="Bandit Outpost-1";
+			text="Bandit Outpost-1";
+			type="o_armor";
+			colorName="ColorRed";
+		};
+		class Item24
+		{ 
+			position[]={14900.266,0,9461.7783};
+			name="Bandit Outpost-2";
+			text="Bandit Outpost-2";
+			type="o_armor";
+			colorName="ColorGreen";
+		};
+		class Item25
+		{ 
+			position[]={2421.5449,0,6922.0029};
+			name="Bandit Outpost-3";
+			text="Bandit Outpost-3";
+			type="o_armor";
+			colorName="ColorBlue";
+		};
+        class Item26
+		{
+			position[]={22594.643, 0.0625, 4228.0107};
+			name="Goldmine";
+			text="Goldmine";
+			colorName="ColorOrange";
+			fillName="Solid";
+			type="mil_objective";
+			a=0.75;
+			b=0.75;
+		};
+		
 	};
 	class Sensors
 	{

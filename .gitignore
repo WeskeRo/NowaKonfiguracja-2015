@@ -39,6 +39,7 @@ $RECYCLE.BIN/
 .AppleDB
 .AppleDesktop
 Network Trash Folder
+
 Temporary Items
 .apdisk
 @DayZ_Epoch_Server/addons/dayz_server.pbo
@@ -46,6 +47,7 @@ Temporary Items
 @DayZ_Epoch_Server/addons/dayz_server.pbo
 *.pbo
 SOURCES/
+BEC/
 MPMissions/DayZ_Overpoch_24.Napf/
 @DayZ_Epoch_Server/addons/dayz_server/init/AT.sqf
 @DayZ_Epoch_Server/addons/dayz_server/init/AH.sqf
