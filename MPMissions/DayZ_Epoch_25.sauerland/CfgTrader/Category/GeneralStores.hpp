@@ -47,6 +47,7 @@ class Category_633 {
 	class ItemSodaPepsi {type = "trade_items";buy[] = {250,"Coins"};sell[] = {250,"Coins"};};
 	class ItemSodaMdew {type = "trade_items";buy[] = {6000,"Coins"};sell[] = {3000,"Coins"};};
 	class ItemWaterbottleUnfilled {type = "trade_items";buy[] = {800,"Coins"};sell[] = {800,"Coins"};};
+	class ItemWaterbottle {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {800,"Coins"};};
 	class ItemSodaRbull {type = "trade_items";buy[] = {6000,"Coins"};sell[] = {3000,"Coins"};};
 	class ItemSodaOrangeSherbet {type = "trade_items";buy[] = {4000,"Coins"};sell[] = {2000,"Coins"};};
 };
