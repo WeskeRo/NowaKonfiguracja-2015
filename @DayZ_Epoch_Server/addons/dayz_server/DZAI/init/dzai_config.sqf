@@ -101,30 +101,30 @@ DZAI_deathMessages = false;
 DZAI_staticAI = true;
 
 //Set minimum and maximum wait time in seconds to respawn an AI group after all units have been killed. Applies to both static AI and custom spawned AI (Default: Min 300, Max 600).									
-DZAI_respawnTimeMin = 300;
-DZAI_respawnTimeMax = 600;
+DZAI_respawnTimeMin = 1200;
+DZAI_respawnTimeMax = 2400;
 
 //Time to allow spawned AI units to exist in seconds before being despawned when no players are present in a trigger area. Applies to both static AI and custom spawned AI (Default: 120)										
 DZAI_despawnWait = 120;										
 
 //Respawn limits. Set to -1 for unlimited respawns. (Default: -1 for each).
-DZAI_respawnLimit0 = -1; 	//Respawn limit for low level AI found in low-value areas (Default: -1)
-DZAI_respawnLimit1 = -1; 	//Respawn limit for mid level AI found in cities and other mid-value areas (Default: -1)
-DZAI_respawnLimit2 = -1; 	//Respawn limit for high level AI found in places with military loot (Default: -1)
-DZAI_respawnLimit3 = -1; 	//Respawn limit for very high level AI in places with high-grade military loot (Default: -1)
+DZAI_respawnLimit0 = 2; 	//Respawn limit for low level AI found in low-value areas (Default: -1)
+DZAI_respawnLimit1 = 1; 	//Respawn limit for mid level AI found in cities and other mid-value areas (Default: -1)
+DZAI_respawnLimit2 = 1; 	//Respawn limit for high level AI found in places with military loot (Default: -1)
+DZAI_respawnLimit3 = 2; 	//Respawn limit for very high level AI in places with high-grade military loot (Default: -1)
 
 //Spawn probabilities
-DZAI_spawnChance0 = 0.40;	//Spawn chance for low-skill AI typically found in small towns (Default: 0.40)
-DZAI_spawnChance1 = 0.60;	//Spawn chance for mid-level AI typically found in cities and large towns (Default: 0.60)
-DZAI_spawnChance2 = 0.80;	//Spawn chance for high-level AI typically found in places with military-grade loot (Default: 0.80)
-DZAI_spawnChance3 = 0.90;	//Spawn chance for expert-level AI found in areas with high-grade military loot (Default: 0.90)
+DZAI_spawnChance0 = 0.20;	//Spawn chance for low-skill AI typically found in small towns (Default: 0.40)
+DZAI_spawnChance1 = 0.40;	//Spawn chance for mid-level AI typically found in cities and large towns (Default: 0.60)
+DZAI_spawnChance2 = 0.50;	//Spawn chance for high-level AI typically found in places with military-grade loot (Default: 0.80)
+DZAI_spawnChance3 = 0.60;	//Spawn chance for expert-level AI found in areas with high-grade military loot (Default: 0.90)
 
 
 /*	Dynamic AI Spawning Settings
 --------------------------------------------------------------------------------------------------------------------*/		
 
 //Enable or disable dynamic AI spawns. If enabled, AI spawn locations will be generated for randomly selected players at randomized intervals (Default: true)									
-DZAI_dynAISpawns = true;
+DZAI_dynAISpawns = false;
 
 //Time (seconds) required to reach maximum spawn probability per player, after which the probability is reset to 0%. Lower number = More frequent spawns, Higher Number = Less frequent. (Recommended range: 1200-2700, Default: 1200)
 DZAI_maxSpawnTime = 1200;
