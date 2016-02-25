@@ -167,6 +167,12 @@ class Category_801 {
 		buy[] = {400000,"Coins"};
 		sell[] = {200000,"Coins"};
 		};
+	
+		class Strela-2 9K32 {
+		type = "trade_weapons";
+		buy[] = {400000,"Coins"};
+		sell[] = {200000,"Coins"};
+		};
 		
 };
 
@@ -344,6 +350,12 @@ class Category_802 {
 		type = "trade_items";
 		buy[] = {100000,"Coins"};
 		sell[] = {35000,"Coins"};
+		};
+		
+	class 9K32 Strela {
+		type = "trade_items";
+		buy[] = {250000,"Coins"};
+		sell[] = {50000,"Coins"};
 		};
 		
 };

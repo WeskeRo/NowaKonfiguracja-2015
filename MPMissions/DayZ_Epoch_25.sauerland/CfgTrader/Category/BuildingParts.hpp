@@ -13,6 +13,7 @@ class Category_678 {
 	class ItemTentDomed2 {type = "trade_items";buy[] = {10000,"Coins"};sell[] = {4000,"Coins"};};
 	class ItemLightBulb {type = "trade_items";buy[] = {1000,"Coins"};sell[] = {500,"Coins"};};
 	class ItemGenerator {type = "trade_items";buy[] = {10000,"Coins"};sell[] = {3000,"Coins"};};
+	class ItemMixOil {type = "trade_items";buy[] = {2000,"Coins"};sell[] = {500,"Coins"};};
 	class ChainSaw {type = "trade_weapons";buy[] = {100000,"Coins"};sell[] = {30000,"Coins"};};
 	class ChainSawB {type = "trade_weapons";buy[] = {100000,"Coins"};sell[] = {30000,"Coins"};};
 	class ChainSawG {type = "trade_weapons";buy[] = {100000,"Coins"};sell[] = {30000,"Coins"};};
@@ -40,6 +41,7 @@ class Category_679 {
 	class ItemMachete {type = "trade_weapons";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemFishingPole {type = "trade_weapons";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
 	class ItemKeyKit {type = "trade_weapons";buy[] = {8000,"Coins"};sell[] = {4000,"Coins"};};
+	class ItemSledge {type = "trade_weapons";buy[] = {10000,"Coins"};sell[] = {3000,"Coins"};};
 	//class ItemShovel {type = "trade_weapons";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
 	//class EvMoney {type = "trade_weapons";buy[] = {1000,"Coins"};sell[] = {1000,"Coins"};};
 };
