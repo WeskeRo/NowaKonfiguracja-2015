@@ -1078,14 +1078,13 @@ if (true) then
 };
 
 
-_vehicle_6271 = objNull;
+_vehicle_11030 = objNull;
 if (true) then
 {
-  _this = createVehicle ["USBasicWeapons_EP1", [14969.55, 18321.039, 12.679216], [], 0, "CAN_COLLIDE"];
-  _vehicle_6271 = _this;
-  _this setDir -173.59698;
-  _this setPos [14969.55, 18321.039, 12.679216];
-  _this setVariable ["permaLoot",true];
+  _this = createVehicle ["MAP_Dam_Barrier_40", [24337.742, 14226.41, 1.4826216], [], 0, "CAN_COLLIDE"];
+  _vehicle_11030 = _this;
+  _this setDir 212.96918;
+  _this setPos [24337.742, 14226.41, 1.4826216];
 };
 
 
