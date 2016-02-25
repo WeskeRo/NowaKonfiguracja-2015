@@ -1077,33 +1077,6 @@ if (true) then
   _this setPos [5534.1895, 23619.15, -0.031958234];
 };
 
-_vehicle_6260 = objNull;
-if (true) then
-{
-  _this = createVehicle ["RUBasicWeaponsBox", [16810.791, 1779.0376, 12.852472], [], 0, "CAN_COLLIDE"];
-  _vehicle_6260 = _this;
-  _this setPos [16810.791, 1779.0376, 12.852472];
-  _this setVariable ["permaLoot",true];
-};
-
-_vehicle_6261 = objNull;
-if (true) then
-{
-  _this = createVehicle ["USBasicWeapons_EP1", [16809.979, 1774.6685, 12.745981], [], 0, "CAN_COLLIDE"];
-  _vehicle_6261 = _this;
-  _this setPos [16809.979, 1774.6685, 12.745981];
-  _this setVariable ["permaLoot",true];
-};
-
-_vehicle_6270 = objNull;
-if (true) then
-{
-  _this = createVehicle ["RUBasicWeaponsBox", [14971.316, 18325.766, 12.788564], [], 0, "CAN_COLLIDE"];
-  _vehicle_6270 = _this;
-  _this setDir -173.59698;
-  _this setPos [14971.316, 18325.766, 12.788564];
-  _this setVariable ["permaLoot",true];
-};
 
 _vehicle_6271 = objNull;
 if (true) then
@@ -1115,33 +1088,8 @@ if (true) then
   _this setVariable ["permaLoot",true];
 };
 
-_vehicle_6274 = objNull;
-if (true) then
-{
-  _this = createVehicle ["RUBasicWeaponsBox", [3621.3647, 2006.4083, 13.021404], [], 0, "CAN_COLLIDE"];
-  _vehicle_6274 = _this;
-  _this setDir -34.762978;
-  _this setPos [3621.3647, 2006.4083, 13.021404];
-  _this setVariable ["permaLoot",true];
-};
 
-_vehicle_6275 = objNull;
-if (true) then
-{
-  _this = createVehicle ["USBasicWeapons_EP1", [3618.3286, 2008.4512, 12.411615], [], 0, "CAN_COLLIDE"];
-  _vehicle_6275 = _this;
-  _this setPos [3618.3286, 2008.4512, 12.411615];
-  _this setVariable ["permaLoot",true];
-};
 
-_vehicle_11030 = objNull;
-if (true) then
-{
-  _this = createVehicle ["MAP_Dam_Barrier_40", [24337.742, 14226.41, 1.4826216], [], 0, "CAN_COLLIDE"];
-  _vehicle_11030 = _this;
-  _this setDir 212.96918;
-  _this setPos [24337.742, 14226.41, 1.4826216];
-};
 
 _vehicle_11031 = objNull;
 if (true) then
