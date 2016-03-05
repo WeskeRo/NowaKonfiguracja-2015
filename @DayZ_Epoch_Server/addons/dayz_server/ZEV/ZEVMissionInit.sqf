@@ -11,14 +11,67 @@
 //  YouTube : http://www.youtube.com/channel/UCWuzUxNJ_Ctf9ynoJqiV2ww
 //
 //-----------------------------------------------------------//
-private ["_h","_idx"];
-
+private ["_files","_fileName","_compileCode"];
 if(!isServer) exitWith {};
-
 waituntil {!isnil "bis_fnc_init"};
-
-#include "\z\addons\dayz_server\ZEV\ZEVMissionArrayInit.sqf";
-// Обычные миссии
+if(!isnil "ZEVStarted") exitWith {};
+ZEVStarted = true;
+ZEVDebugMode = false;
+ZEVFiles = "ZEVMission\";
+if(ZEVDebugMode) then
+{
+	ZEVFiles = "ZEVMission\";
+};
+ZEVSleepSmall				= 0.001;
+ZEVSleep01					= 0.01;
+ZEVSleep1					= 1;
+ZEVIndex 					= "ZEVIndex";
+ZEVStatic 					= "ZEVStatic";
+ZEVObject					= "ZEVObject"; 
+ZEVLocationPos				= "LocationPos";
+ZEVRandom					= "Random";
+ZEVSpecified				= "Specified";
+ZEVGroupSkills				= "ZEVGroupSkills";
+ZEVGroupList				= "ZEVGroupList";
+ZEVYES						= "YES";
+ZEVNO						= "No";
+ZEVClearBody				= "ZEVClearBody";
+ZEVDeleteLaunchers			= "ZEVDeleteLaunchers";
+ZEVDeleteNVGoogle			= "ZEVDeleteNVGoogle";
+ZEVHumanityGain				= "ZEVHumanityGain";
+ZEVInitialPos				= "ZEVInitialPos";
+ZEVHeadShots				= "headShots";
+ZEVCashMoney				= "CashMoney";
+ZEVArmor					= "ZEVArmor";
+ZEVNVGoggles				= "NVGoggles";
+ZEVGroupSkillsValueType		= "ZEVGroupSkillsValueType";
+ZEVMissionDone				= "MissionDone";
+ZEVStartTime				= "ZEVStartTime";
+ZEV_MISSION_DONE			= "MISSION_DONE";
+ZEV_WAIT					= "WAIT";
+ZEV_TIMEOUT					= "TIMEOUT";
+ZEV_ALL_AI_DEAD				= "ALL_AI_DEAD";
+ZEV_PLAYER_IN_CENTER		= "PLAYER_IN_CENTER";
+ZEV_CAPTURE_VEHICLE			= "CAPTURE_VEHICLE";
+ZEV_START_WHEN_SPAWN		= "START_WHEN_SPAWN";
+ZEV_PLAYER_IN_TRIGGER		= "PLAYER_IN_TRIGGER";
+ZEV_PLAYER					= "PLAYER";
+ZEV_START					= "START";
+ZEVRandomList				= "RandomList";
+ZEVMod						= "Arma2DayZEpoch";
+ZEV_AI_Group				= "AI Group";
+ZEV_AI_Squad				= "AI Squad";
+ZEV_AI_Paradrop				= "AI Paradrop";
+ZEV_AI_Static_group			= "AI Static group";
+ZEV_AI_Vehicle_group		= "AI Vehicle group";
+ZEV_AI_Vehicle_convoy_group = "AI Vehicle convoy group";
+ZEV_MinefieldGroup			= "MinefieldGroup";
+ZEVNeedRepair				= "ZEVNeedRepair";
+ZEV_BuildingPatrol			= "BuildingPatrol";
+ZEVMissionEndReason			= "ZEVMissionEndReason";
+ZEVAIList					= "ZEVAIList";
+ZEVMissionObject			= [];
+ZEVMissionStaticObject		= [];
 ZEVMissionList				= [];
 ZEVEASTSkinRandomList		= [];
 ZEVResistanceSkinRandomList = [];
@@ -33,7 +86,7 @@ ZEVBackpackGearRandomList	= [];
 ZEVMissionGroups			= [];
 ZEVMissionLastFinishTime	= [];
 ZEVMissionVehicles			= [];
-// Статичиские миссии
+ZEVMissionAIList			= [];
 
 ZEVStaticMissionList  				= [];
 ZEVStaticEASTSkinRandomList			= [];
@@ -49,7 +102,7 @@ ZEVStaticBackpackGearRandomList		= [];
 ZEVStaticMissionGroups				= [];
 ZEVStaticMissionLastFinishTime		= [];
 ZEVStaticMissionVehicles			= [];
-
+ZEVStaticMissionAIList				= [];
 //-------------------
 WEST setFriend [EAST,0];
 WEST setFriend [Resistance,0];
@@ -61,9 +114,19 @@ EAST setFriend [Civilian, 1];
 Resistance setFriend [Civilian, 1];
 Civilian setFriend [East, 1];
 Civilian setFriend [Resistance, 1];
-
 //mission add here, like this:
-#include "\z\addons\dayz_server\ZEV\Mission\ZEVMissions.sqf";
+
+ZEVGlobalRandomList = [];
+#include "Mission\ZEVMissions.sqf";
+/*
+switch (ZEVMod) do
+{
+	case "ARMA2EPOCH": { #define ZEVARMA2 1};
+	case "ARMA3EPOCH": { #define ZEVARMA3 1};
+	case "ARMA3EXILE": { #define ZEVARMA3 1};
+	
+};
+*/
 
 
 ZEVMissionCount							= count ZEVMissionList;
@@ -79,8 +142,10 @@ ZEVStaticMissionMarkerStatus  			= [];
 	ZEVMissionInProgress 				= ZEVMissionInProgress + [0];
 	ZEVMissionLastFinishTime 			= ZEVMissionLastFinishTime + [ - ZEVMissionCooldownTime];
 	ZEVMissionMarkerStatus				= ZEVMissionMarkerStatus + [0];
-	ZEVActiveMissionParm set [count ZEVActiveMissionParm, [[0,0,0],0,0]]; //[pos, trigRadius, radius]
-	ZEVMissionVehicles   set [count ZEVMissionVehicles, []]; 
+	ZEVActiveMissionParm 	set [count ZEVActiveMissionParm, [[0,0,0],0,0]]; //[pos, trigRadius, radius]
+	ZEVMissionVehicles   	set [count ZEVMissionVehicles, []]; 
+	ZEVMissionAIList		set [count ZEVMissionAIList, 0]; 
+	ZEVMissionObject		set [count ZEVMissionObject, objNull];
 } foreach ZEVMissionList;
 
 
@@ -88,73 +153,116 @@ ZEVStaticMissionMarkerStatus  			= [];
 	ZEVStaticMissionInProgress 			= ZEVStaticMissionInProgress + [0];
 	ZEVStaticMissionLastFinishTime 		= ZEVStaticMissionLastFinishTime + [ - ZEVMissionCooldownTime];
 	ZEVStaticMissionMarkerStatus		= ZEVStaticMissionMarkerStatus + [0];
-	ZEVStaticActiveMissionParm set [count ZEVStaticActiveMissionParm, [[0,0,0],0,0]]; //[pos, trigRadius, radius]
-	ZEVStaticMissionVehicles   set [count ZEVStaticMissionVehicles, []]; 
+	ZEVStaticActiveMissionParm 	set [count ZEVStaticActiveMissionParm, [[0,0,0],0,0]]; //[pos, trigRadius, radius]
+	ZEVStaticMissionVehicles   	set [count ZEVStaticMissionVehicles, []]; 
+	ZEVStaticMissionAIList		set [count ZEVStaticMissionAIList, 0];
+	ZEVMissionStaticObject		set [count ZEVMissionStaticObject, objNull];
 } foreach ZEVStaticMissionList;
 
 publicVariable "ZEVMissionList";
 publicVariable "ZEVMissionInProgress";
 
+_files = 
+[
+"ZEVLoop",
+"ZEVStaticMissionLoop",
+"ZEVStart",
+"ZEVAddMarker",
+"ZEVAddUnitMarker",
+"ZEVAddWayPoints",
+"ZEVMonitor",
+"ZEVFindRunningMissionInRadius",
+"ZEVSelectSkin",
+"ZEVSelectPos",
+"ZEVAddBackpack",
+"ZEVSetupSkills",
+"ZEVVehicleMonitor",
+"ZEVSelect",
+"ZEVSaveToHive",
+"ZEVVehicleRearm",
+"ZEVAddAIUnit",
+"ZEVBodyclean",
+"ZEVAddInfantry",
+"ZEVAddInfantrySquad",
+"ZEVAddParadropStart",
+"ZEVAddParadropDrop",
+"ZEVAddVehicle",
+"ZEVAddBuilding",
+"ZEVIsPlayerInRange",
+"ZEVStaticGroup",
+"ZEVAliveUnitCount",
+"ZEVVehicleGroup",
+"ZEVVehicleConvoy",
+"ZEVRunStatic",
+"ZEVThrowSmokeShell",
+"ZEVGetMissionInProgress",
+"ZEVGetMissionCount",
+"ZEVGetMissionParms",
+"ZEVSetMissionInProgress",
+"ZEVSetActiveMissionParms",
+"ZEVGetMarkerStatus",
+"ZEVGetActiveMissionParms",
+"ZEVGetVehicleList",
+"ZEVSetVehicleList",
+"ZEVSetMissionLastFinishTime",
+"ZEVGetMissionLastFinishTime",
+"ZEVSetMarkerStatus",
+"ZEVLoadProperty",
+"ZEVGetProperty",
+"ZEVGetPropertyRandomList",
+"ZEVAddWeapon",
+"ZEVLog",
+"ZEVGetGlobalRandomList",
+"ZEVAddItemToObject",
+"ZEVPlayerDetect",
+"ZEVAddToObjectMonitor",
+"ZEVLockVehicle",
+"ZEVAddCaptureTrigger",
+"ZEVCheckStartCondition",
+"ZEVCheckEndCondition",
+"ZEVSpawnMission",
+"ZEVDespawnMission",
+"ZEVAddCaptureHandler",
+"ZEVAddBox",
+"ZEVMinefield",
+"ZEVAddAI2List",
+"ZEVAddAircraft",
+"ZEVAutoRepair",
+"ZEVDetectPlayers",
+"ZEVSetupVehicle",
+"ZEVFindGunner",
+"ZEVVehicleDamaged",
+"ZEVBuildingPatrol",
+"ZEVAddAreaSecurity",
+"ZEVBuildingPos",
+"ZEVCreateGroup",
+"ZEVLockToFinish",
+"ZEVAddHeadGear",
+"ZEVAddVest",
+"ZEVAddUniform",
+"ZEVRestrictAccess",
+"ZEVLockVehicle_ARMA2EPOCH",
+"ZEVLockVehicle_ARMA3EPOCH",
+"ZEVLockVehicle_ARMA3EXILE",
+"ZEVAddMine",
+"ZEVAddMine_ARMA2EPOCH",
+"ZEVAddMine_ARMA3EPOCH",
+"ZEVAddMine_ARMA3EXILE",
+"ZEVShowMessage",
+"ZEVAddToObjectMonitor_ARMA2DAYZ",
+"ZEVAddToObjectMonitor_ARMA2EPOCH",
+"ZEVAddToObjectMonitor_ARMA3EPOCH",
+"ZEVAddToObjectMonitor_ARMA3EXILE"
+];
 
+{
+	_compileCode = format ['%1 = compile preprocessFileLineNumbers "%2%1.sqf";', _x, ZEVFiles];
+	[] call compile _compileCode;
+} foreach _files;
 
-ZEVMissionLoop  						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionLoop.sqf";
-ZEVStaticMissionLoop					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVStaticMissionLoop.sqf";
-ZEVMissionStart							= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionStart.sqf";
-ZEVMissionAddMarker						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddMarker.sqf";
-ZEVMissionAddUnitMarker					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddUnitMarker.sqf";
-ZEVMissionAddWayPoints					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddWayPoints.sqf";
-ZEVMissionMonitor						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionMonitor.sqf";
-ZEVMissionDamageHandler 				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionDamageHandler.sqf";
-ZEVMissionFindRunningMissionInRadius 	= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionFindRunningMissionInRadius.sqf";
-ZEVMissionSelectSkin 					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSelectSkin.sqf";
-ZEVMissionSelectPos  					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSelectPos.sqf";
-ZEVMissionSelectWeapon 					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSelectWeapon.sqf";
-ZEVMissionAddBackpack  					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddBackpack.sqf";
-ZEVMissionSetupSkills  					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetupSkills.sqf";
-ZEVMissionVehicleMonitor				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleMonitor.sqf";
-ZEVMissionAddGear						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddGear.sqf";
-ZEVMissionSelect						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSelect.sqf";
-ZEVMissionVehicleAddLoot				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleAddLoot.sqf";
-ZEVMissionAddBackPackGear				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddBackPackGear.sqf";
-ZEVMissionSaveToHive					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSaveToHive.sqf";
-ZEVMissionVehicleRearm					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleRearm.sqf";
-ZEVMissionAddAIUnit						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddAIUnit.sqf";
-ZEVMissionBodyclean						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionBodyclean.sqf";
-ZEVMissionAddInfantry					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddInfantry.sqf";
-ZEVMissionAddInfantrySquad  			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddInfantrySquad.sqf";
-ZEVMissionAddParadropSquadStart			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddParadropSquad1.sqf";
-ZEVMissionAddParadropSquadDrop			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddParadropSquad2.sqf";
-ZEVMissionAddVehicle					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddVehicle.sqf";
-ZEVMissionAddBuilding					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAddBuilding.sqf";
-ZEVMissionIsPlayerInRange				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionIsPlayerInRange.sqf";
-ZEVMissionStaticGroup					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionStaticGroup.sqf";
-ZEVMissionAliveUnitCount				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAliveUnitCount.sqf";
-ZEVMissionVehicleGroup					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleGroup.sqf";
-ZEVMissionVehicleConvoy					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleConvoy.sqf";
-ZEVMissionRunStatic						= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionRunStatic.sqf";
-ZEVMissionThrowSmokeShell				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionThrowSmokeShell.sqf";
-ZEVMissionGetMissionInProgress			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetMissionInProgress.sqf";
-ZEVMissionGetMissionCount				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetMissionCount.sqf";
-ZEVMissionGetMissionParms				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetMissionParms.sqf";
-ZEVMissionSetMissionInProgress			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetMissionInProgress.sqf";
-ZEVMissionSetActiveMissionParms			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetActiveMissionParms.sqf";
-ZEVMissionGetMarkerStatus				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetMarkerStatus.sqf";
-ZEVMissionGetActiveMissionParms			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetActiveMissionParms.sqf";
-ZEVMissionGetVehicleList				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetVehicleList.sqf";
-ZEVMissionSetVehicleList				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetVehicleList.sqf";
-ZEVMissionSetMissionLastFinishTime		= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetMissionLastFinishTime.sqf";
-ZEVMissionGetMissionLastFinishTime		= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetMissionLastFinishTime.sqf";
-ZEVMissionSetMarkerStatus				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionSetMarkerStatus.sqf";
-ZEVMissionGetVehicleRandomList			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetVehicleRandomList.sqf";
-ZEVMissionGetBuildingRandomList			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetBuildingRandomList.sqf";
-ZEVMissionGetWeaponRandomList			= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetWeaponRandomList.sqf";
-ZEVMissionGetGearRandomList				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetGearRandomList.sqf";
-ZEVMissionVehicleFindGunner				= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionVehicleFindGunner.sqf";
-ZEVMissionAutoRepair					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionAutoRepair.sqf";
-ZEVMissionGetHitPoints					= compile preprocessFileLineNumbers "\z\addons\dayz_server\ZEV\ZEVMissionGetHitPoints.sqf";
-sleep 60;
-diag_log "ZEVMission: run staic missions:";
-[1] spawn ZEVStaticMissionLoop;//Статичные
-sleep 60;
-diag_log "ZEVMission: start main loop:";
-[0] spawn ZEVMissionLoop;//Обычные
+sleep 30;
+"ZEVMission: run staic missions:" call ZEVLog;
+[1] spawn ZEVStaticMissionLoop;
+sleep 30;
+"ZEVMission: start main loop:" call ZEVLog;
+[0] spawn ZEVLoop;
