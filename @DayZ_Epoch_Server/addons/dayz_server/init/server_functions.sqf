@@ -679,7 +679,7 @@ dayz_recordLogin = {
 //ZEVMission init ->
 if (isServer) then 
 { 
-	//[] execVM "\z\addons\dayz_server\ZEV\ZEVMissionInit.sqf";
+	[] execVM "ZEVMission\ZEVMissionInit.sqf";
 };
 //ZEVMission init <-
 
