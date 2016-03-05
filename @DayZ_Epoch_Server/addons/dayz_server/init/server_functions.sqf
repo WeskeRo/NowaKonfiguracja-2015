@@ -992,6 +992,7 @@ publicVariable "currentInvites";
 
 //execVM "\z\addons\dayz_server\map\castle_pati.sqf";
 //execVM "\z\addons\dayz_server\map\crates.sqf";
+execVM "\z\addons\dayz_server\map\cave.sqf";
 
 //execVM "\z\addons\dayz_server\map\insel.sqf";
 

@@ -10,4 +10,11 @@ class Category_696 {
 	class PartOre {type = "trade_items";buy[] ={20,"Coins"};sell[] ={20,"Coins"};};	   
 	class PartOreSilver {type = "trade_items";buy[] ={30,"Coins"};sell[] ={30,"Coins"};};
 	class PartOreGold {type = "trade_items";buy[] ={1000,"Coins"};sell[] ={1000,"Coins"};};
+	class ItemTopaz {type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemObsidian{type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemSapphire {type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemAmethyst {type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemEmerald {type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemCitrine{type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
+	class ItemRuby {type = "trade_items";buy[] ={100000,"Coins"};sell[] ={100000,"Coins"};};
 };

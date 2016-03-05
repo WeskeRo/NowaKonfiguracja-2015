@@ -29,17 +29,6 @@ _cpcimmune =[
 	"MetalFloor_Preview_DZ",
 	"MetalPanel_DZ",
 	"RampConcrete",
-	"WoodFloorHalf_DZ",
-	"WoodFloorQuarter_DZ",
-	"WoodFloor_DZ",
-	"WoodLargeWallWin_DZ",
-	"WoodLargeWall_DZ",
-	"WoodRamp_DZ",
-	"WoodSmallWallThird_DZ",
-	"WoodSmallWall_DZ",
-	"WoodStairsRails_DZ",
-	"WoodStairsSans_DZ",
-	"WoodStairs_DZ",
 	"WorkBench_DZ"
 ];
 

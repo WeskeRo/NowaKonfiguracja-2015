@@ -98,7 +98,7 @@ DZAI_deathMessages = false;
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Enable or disable static AI spawns. If enabled, AI spawn points will be generated in cities, towns, and other predefined areas. Does not affect custom-defined spawns (Default: true).
-DZAI_staticAI = true;
+DZAI_staticAI = false;
 
 //Set minimum and maximum wait time in seconds to respawn an AI group after all units have been killed. Applies to both static AI and custom spawned AI (Default: Min 300, Max 600).									
 DZAI_respawnTimeMin = 1200;

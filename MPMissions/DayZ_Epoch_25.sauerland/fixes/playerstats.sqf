@@ -28,7 +28,7 @@ _name = if (alive player) then {name player;} else {"Dead Player";};
 	(dayz_Survived),
 	(r_player_blood),
 	(count playableUnits),
-	(240-(round(serverTime/60))),
+	(180-(round(serverTime/60))),
 	(player getVariable['cashMoney', 0]),//11
 	(player getVariable['bankMoney', 0])//12
 	];

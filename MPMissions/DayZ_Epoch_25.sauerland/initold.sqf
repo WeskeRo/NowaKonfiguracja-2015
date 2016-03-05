@@ -25,7 +25,7 @@ spawnArea= 1500; // Default = 1500
 DZE_buildinglimit = 350;
 // 
 MaxVehicleLimit = 300; // Default = 50
-MaxDynamicDebris = 0; // Default = 100
+MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 22000; // Default = 10000
 
 dayz_minpos = -1000; 
@@ -106,7 +106,7 @@ if (isServer) then {
 
 		_serverMonitor = 	[] execVM "\z\addons\dayz_server\system\server_monitor.sqf";
 	//_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-	//_nil = [] execVM "\z\addons\dayz_server\system\most_wanted.sqf";
+	_nil = [] execVM "\z\addons\dayz_server\system\most_wanted.sqf";
 };
 
 if (!isDedicated) then {
