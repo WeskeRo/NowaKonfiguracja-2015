@@ -1,10 +1,12 @@
-private ["_part_out","_part_in","_qty_out","_qty_in","_qty","_bos","_bag","_class","_started","_finished","_animState","_isMedic","_num_removed","_needed","_activatingPlayer","_buy_o_sell","_textPartIn","_textPartOut","_traderID"];
+private ["_part_out","_part_in","_qty_out","_qty_in","_qty","_bos","_bag","_class","_started","_finished","_animState","_isMedic","_num_removed","_needed","_activatingPlayer","_buy_o_sell","_textPartIn","_textPartOut","_traderID","_abort","_msg"];
 //		   [part_out,part_in, qty_out, qty_in,];
 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_103") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
 _activatingPlayer = player;
+
+//diag_log format["DEBUG BACKPACK: %1", _this];
 
 _part_out = (_this select 3) select 0;
 _part_in = (_this select 3) select 1;
@@ -15,10 +17,20 @@ _textPartIn = (_this select 3) select 5;
 _textPartOut = (_this select 3) select 6;
 _traderID = (_this select 3) select 7;
 _bos = 0;
+_abort = false;
+_msg = "";
 
 if(_buy_o_sell == "buy") then {
 	//_qty = {_x == _part_in} count magazines player;
 	_qty = player getVariable ["cashMoney",0]; // get your money variable	
+	_bag = unitBackpack player;
+	_class = typeOf _bag;
+	if(!isNil "_class") then {
+		if(_class != "") then {
+			_abort = true;
+			_msg = "Drop or sell your current backpack before you can buy a new one.";
+		};
+	};
 } else {
 	_bos = 1;
 	_qty = 0;
@@ -27,6 +39,11 @@ if(_buy_o_sell == "buy") then {
 	if(_class == _part_in) then {
 		_qty = 1;
 	};
+};
+
+if (_abort) exitWith {
+	cutText [_msg, "PLAIN DOWN"];
+	DZE_ActionInProgress = false;
 };
 
 if (_qty >= _qty_in) then {
@@ -88,8 +105,22 @@ if (_qty >= _qty_in) then {
 
 			//["PVDZE_obj_Trade",[_activatingPlayer,_traderID,_bos]] call callRpcProcedure;
 			if (isNil "_bag") then { _bag = "Unknown Backpack" };
-			if (isNil "inTraderCity") then { inTraderCity = "Unknown Trader City" };
-			PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_bag,inTraderCity];
+			if (isNil "inTraderCity") then {
+				inTraderCity = "Unknown Trader"; 
+			} else {
+				if (inTraderCity == "Any") then {
+					inTraderCity = "Unknown Trader"; 
+				};
+			};
+			
+			if (_bos == 1) then {
+				// Selling
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_in,inTraderCity,CurrencyName,_qty_out];
+			} else {
+				// Buying
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_out,inTraderCity,CurrencyName,_qty_in];
+			};
+			
 			publicVariableServer  "PVDZE_obj_Trade";
 	
 			//diag_log format["DEBUG Starting to wait for answer: %1", PVDZE_obj_Trade];
@@ -101,7 +132,8 @@ if (_qty >= _qty_in) then {
 			if(dayzTradeResult == "PASS") then {
 
 				if(_buy_o_sell == "buy") then {
-
+					
+					// Buy
 					//_num_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
 					_qtychange = _qty - _qty_in;
 					player setVariable ["cashMoney", _qtychange , true];
@@ -110,12 +142,12 @@ if (_qty >= _qty_in) then {
 					
 					_num_removed = _qty - _newM; // 
 					
-						systemChat format ['Payed %1 %3. %2 incoming!',_num_removed,_part_out,CurrencyName];
 					if(_num_removed == _qty_in) then {
 						removeBackpack player;
 						player addBackpack _part_out;
 					};
 				} else {
+				
 					// Sell
 					if((typeOf (unitBackpack player)) == _part_in) then {
 						removeBackpack player;
@@ -126,7 +158,6 @@ if (_qty >= _qty_in) then {
 						_myMoney = player getVariable ["cashMoney",0];
 						_myMoney = _myMoney + _qty_out;
 						player setVariable ["cashMoney", _myMoney , true];
-								
 						
 					};
 				};
@@ -145,8 +176,7 @@ if (_qty >= _qty_in) then {
 	
 } else {
 	_needed =  _qty_in - _qty;
-	//cutText [format[(localize "str_epoch_player_184"),_needed,_textPartIn] , "PLAIN DOWN"];
-	cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"]; // edited so it says, You need 5000 coins or you need 1 engine.
+	cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"];
 };
 
 DZE_ActionInProgress = false;

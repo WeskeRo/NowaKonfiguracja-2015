@@ -94,8 +94,21 @@ if (_qty >= _qty_in) then {
 
 			//["PVDZE_obj_Trade",[_activatingPlayer,_traderID,_bos]] call callRpcProcedure;
 			if (isNil "_obj") then { _obj = "Unknown Vehicle" };
-			if (isNil "inTraderCity") then { inTraderCity = "Unknown Trader City" };
-			PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_obj,inTraderCity];
+			if (isNil "inTraderCity") then {
+				inTraderCity = "Unknown Trader"; 
+			} else {
+				if (inTraderCity == "Any") then {
+					inTraderCity = "Unknown Trader"; 
+				};
+			};
+			
+			if (_bos == 1) then {
+				// Selling
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_in,inTraderCity,CurrencyName,_qty_out];
+			} else {
+				// Buying
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_out,inTraderCity,CurrencyName,_qty_in];
+			};
 			publicVariableServer  "PVDZE_obj_Trade";
 	
 			//diag_log format["DEBUG Starting to wait for answer: %1", PVDZE_obj_Trade];
@@ -106,7 +119,7 @@ if (_qty >= _qty_in) then {
 
 			if(dayzTradeResult == "PASS") then {
 
-				if(_buy_o_sell == "buy") then {	
+				if(_buy_o_sell == "buy") then {
 
 					// First select key color
 					_keyColor = ["Green","Red","Blue","Yellow","Black"] call BIS_fnc_selectRandom;
@@ -125,16 +138,14 @@ if (_qty >= _qty_in) then {
 					if (_isOk and _isKeyOK) then {
 					
 						//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
-						
+							
 						_qtychange = _qty - _qty_in;
-					player setVariable ["cashMoney", _qtychange , true];	
-					_newM = player getVariable ["cashMoney",0];
-					//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
-					
-					_removed = _qty - _newM; // 
-					
-						systemChat format ['Payed %1 %3. %2 incoming!',_removed,_part_out,CurrencyName];
+						player setVariable ["cashMoney", _qtychange , true];	
+						_newM = player getVariable ["cashMoney",0];
+						//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
 						
+						_removed = _qty - _newM; // 
+							
 						if(_removed == _qty_in) then {
 							_dir = round(random 360);
 
@@ -158,6 +169,7 @@ if (_qty >= _qty_in) then {
 						} else {
 							player removeMagazine _keySelected;
 						};
+							
 					} else {
 						cutText [(localize "str_epoch_player_107"), "PLAIN DOWN"];
 					};
@@ -200,8 +212,8 @@ if (_qty >= _qty_in) then {
 							//};
 							
 							_myMoney = player getVariable ["cashMoney",0];
-								_myMoney = _myMoney + _qty_out;
-								player setVariable ["cashMoney", _myMoney , true];
+							_myMoney = _myMoney + _qty_out;
+							player setVariable ["cashMoney", _myMoney , true];
 
 							_objectID 	= _obj getVariable ["ObjectID","0"];
 							_objectUID	= _obj getVariable ["ObjectUID","0"];
@@ -235,7 +247,7 @@ if (_qty >= _qty_in) then {
 } else {
 	_needed =  _qty_in - _qty;
 	if(_buy_o_sell == "buy") then {
-		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"]; // edited so it says, You need 5000 coins or you need 1 engine.
+		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"];
 	} else {
 		cutText [format[(localize "str_epoch_player_185"),_textPartIn] , "PLAIN DOWN"];
 	};	

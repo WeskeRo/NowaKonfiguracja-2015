@@ -1,8 +1,5 @@
 private ["_veh","_location","_part_out","_part_in","_qty_out","_qty_in","_qty","_buy_o_sell","_obj","_objectID","_objectUID","_bos","_started","_finished","_animState","_isMedic","_dir","_helipad","_removed","_damage","_tireDmg","_tires","_okToSell","_hitpoints","_needed","_activatingPlayer","_textPartIn","_textPartOut","_traderID","_playerNear"];
 
-
-// DONE
-
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_103") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
@@ -13,40 +10,43 @@ DZE_ActionInProgress = true;
 // [part_out,part_in, qty_out, qty_in, loc];
 
 _activatingPlayer = player;
-// http://puu.sh/6lbnL.jpg buy
 
-// http://puu.sh/6lbpE.jpg sell
-
-_part_out = (_this select 3) select 0; //  Foodnutmix -------------------------ItemCopperBar (classname)
-_part_in = (_this select 3) select 1; // CopperBar-----------------------------Foodnutmix (classname)
-_qty_out = (_this select 3) select 2; // 1 ammount u get of item---------------1 coins u get
-_qty_in = (_this select 3) select 3; // 2 amount of coins u give---------------1 food u give
-_buy_o_sell = (_this select 3) select 4; // buy -------------------------------sell
-_textPartIn = (_this select 3) select 5; // Coins text-------------------------Trail Mix (name
-_textPartOut = (_this select 3) select 6; // Trail mix ( show name of item)----Coins
-_traderID = (_this select 3) select 7; // 5868 klenn food----------------------5868
-_bos = 0; // ??
+_part_out = (_this select 3) select 0;
+_part_in = (_this select 3) select 1;
+_qty_out = (_this select 3) select 2;
+_qty_in = (_this select 3) select 3;
+_buy_o_sell = (_this select 3) select 4;
+_textPartIn = (_this select 3) select 5;
+_textPartOut = (_this select 3) select 6;
+_traderID = (_this select 3) select 7;
+_bos = 0;
 
 //systemChat format ['_part_out = %1 , _part_in = %2 ,_qty_out = %3 , _qty_in =  %4,_buy_o_sell = $5,_textPartIn = %6, _textPartOut = %7, _qty = %8 , ',_part_out,_part_in,_qty_out,_qty_in,_buy_o_sell,_textPartIn,_textPartOut];
 
 if(_buy_o_sell == "buy") then {
 	//_qty = {_x == _part_in} count magazines player;	
-	_qty = player getVariable ["cashMoney",0]; // get your money variable	
-	
-	
+	_qty = player getVariable ["cashMoney",0];
 } else {
-	_obj = nearestObjects [(getPosATL player), [_part_in], dayz_sellDistance_vehicle];
-	_qty = count _obj; // aantal fietsen
-	_bos = 1; // bos 1 bij sell 0 by buy?
+	_distance = dayz_sellDistance_vehicle;
+	if (_part_in isKindOf "Air") then {
+		_distance = dayz_sellDistance_air;
+	};
+	if (_part_in isKindOf "Ship") then {
+		_distance = dayz_sellDistance_boat;
+	};
+
+	_obj = nearestObjects [(getPosATL player), [_part_in], _distance];
+	_qty = count _obj;
+	_bos = 1;
 };
 
 if (_qty >= _qty_in) then {
 
-	cutText [(localize "str_epoch_player_105"), "PLAIN DOWN"]; //start trading blabla
+	cutText [(localize "str_epoch_player_105"), "PLAIN DOWN"];
 	 
 	[1,1] call dayz_HungerThirst;
 	// force animation 
-	player playActionNow "Medic"; // do some silly things with your hands
+	player playActionNow "Medic";
 
 	r_interrupt = false;
 	_animState = animationState player;
@@ -80,15 +80,23 @@ if (_qty >= _qty_in) then {
 		cutText [(localize "str_epoch_player_106") , "PLAIN DOWN"];
 	};
 
-	if (_finished) then { // serious stuff
+	if (_finished) then {
 
 		// Double check for items
 		if(_buy_o_sell == "buy") then {
 			//_qty = {_x == _part_in} count magazines player;			
-			_qty = player getVariable ["cashMoney",0]; // get your money variable
+			_qty = player getVariable ["cashMoney",0];
 		
 		} else {
-			_obj = nearestObjects [(getPosATL player), [_part_in], dayz_sellDistance_vehicle];
+			_distance = dayz_sellDistance_vehicle;
+			if (_part_in isKindOf "Air") then {
+				_distance = dayz_sellDistance_air;
+			};
+			if (_part_in isKindOf "Ship") then {
+				_distance = dayz_sellDistance_boat;
+			};
+			
+			_obj = nearestObjects [(getPosATL player), [_part_in], _distance];
 			_qty = count _obj;
 		};
 
@@ -96,8 +104,22 @@ if (_qty >= _qty_in) then {
 
 			//["PVDZE_obj_Trade",[_activatingPlayer,_traderID,_bos]] call callRpcProcedure;
 			if (isNil "_obj") then { _obj = "Unknown Vehicle" };
-			if (isNil "inTraderCity") then { inTraderCity = "Unknown Trader City" };
-			PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_obj,inTraderCity];
+			if (isNil "inTraderCity") then {
+				inTraderCity = "Unknown Trader"; 
+			} else {
+				if (inTraderCity == "Any") then {
+					inTraderCity = "Unknown Trader"; 
+				};
+			};
+			
+			if (_bos == 1) then {
+				// Selling
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_in,inTraderCity,CurrencyName,_qty_out];
+			} else {
+				// Buying
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_out,inTraderCity,CurrencyName,_qty_in];
+			};
+			
 			publicVariableServer  "PVDZE_obj_Trade";
 	
 			//diag_log format["DEBUG Starting to wait for answer: %1", PVDZE_obj_Trade];
@@ -112,17 +134,17 @@ if (_qty >= _qty_in) then {
 									
 					_oudaantal = player getVariable ["cashMoney",0];
 					_qtychange = _oudaantal - _qty_in;
-					_oudEC = player getVariable ["extra_coins",0];
-					_verschil = _oudEC + _qty_in;
-									
-					player setVariable ["extra_coins", _verschil , true];
 					player setVariable ["cashMoney", _qtychange , true];	
 					_newM = player getVariable ["cashMoney",0];
+					
+					//_oudEC = player getVariable ["extra_coins",0];
+					//_verschil = _oudEC + _qty_in;
+					// player setVariable ["extra_coins", _verschil , true]; // what is this?
+					
 					//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
 					
 					_removed = _qty - _newM; // 
 					
-						systemChat format ['Payed %1 %3. %2 incoming!',_removed,_part_out, CurrencyName];
 				
 					if(_removed == _qty_in) then {
 					
@@ -225,7 +247,7 @@ if (_qty >= _qty_in) then {
 } else {
 	_needed =  _qty_in - _qty;
 	if(_buy_o_sell == "buy") then {
-		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"]; // edited so it says, You need 5000 coins or you need 1 engine.
+		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"];
 	} else {
 		cutText [format[(localize "str_epoch_player_185"),_textPartIn] , "PLAIN DOWN"];
 	};	

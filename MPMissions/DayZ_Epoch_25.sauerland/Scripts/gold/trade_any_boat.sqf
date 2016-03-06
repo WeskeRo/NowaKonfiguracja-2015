@@ -86,8 +86,21 @@ if (_qty >= _qty_in) then {
 
 			//["PVDZE_obj_Trade",[_activatingPlayer,_traderID,_bos]] call callRpcProcedure;
 			if (isNil "_obj") then { _obj = "Unknown Vehicle" };
-			if (isNil "inTraderCity") then { inTraderCity = "Unknown Trader City" };
-			PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_obj,inTraderCity];
+			if (isNil "inTraderCity") then {
+				inTraderCity = "Unknown Trader"; 
+			} else {
+				if (inTraderCity == "Any") then {
+					inTraderCity = "Unknown Trader"; 
+				};
+			};
+			
+			if (_bos == 1) then {
+				// Selling
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_in,inTraderCity,CurrencyName,_qty_out];
+			} else {
+				// Buying
+				PVDZE_obj_Trade = [_activatingPlayer,_traderID,_bos,_part_out,inTraderCity,CurrencyName,_qty_in];
+			};
 			publicVariableServer  "PVDZE_obj_Trade";
 	
 			//diag_log format["DEBUG Starting to wait for answer: %1", PVDZE_obj_Trade];
@@ -98,7 +111,7 @@ if (_qty >= _qty_in) then {
 
 			if(dayzTradeResult == "PASS") then {
 
-				if(_buy_o_sell == "buy") then {	
+				if(_buy_o_sell == "buy") then {
 
 					// First select key color
 					_keyColor = ["Green","Red","Blue","Yellow","Black"] call BIS_fnc_selectRandom;
@@ -119,13 +132,11 @@ if (_qty >= _qty_in) then {
 						//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
 						
 						_qtychange = _qty - _qty_in;
-					player setVariable ["cashMoney", _qtychange , true];
-					_newM = player getVariable ["cashMoney",0];
-					//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
-					
-					_removed = _qty - _newM; // 
-					
-						systemChat format ['Payed %1 %3. %2 incoming!',_removed,_part_out, CurrencyName];
+						player setVariable ["cashMoney", _qtychange , true];
+						_newM = player getVariable ["cashMoney",0];
+						//_removed = ([player,_part_in,_qty_in] call BIS_fnc_invRemove);
+						
+						_removed = _qty - _newM;
 						
 						
 						if(_removed == _qty_in) then {
@@ -149,7 +160,8 @@ if (_qty >= _qty_in) then {
 
 							player reveal _veh;
 
-							cutText [format[("Bought %3 for %1 %2, key added to toolbelt."),_qty_in,_textPartIn,_textPartOut], "PLAIN DOWN"];
+							
+							cutText [format[(localize "STR_EPOCH_ACTIONS_11"),_qty_in,_textPartIn,_textPartOut] , "PLAIN DOWN"];
 						} else {
 							player removeMagazine _keySelected;
 						};
@@ -198,7 +210,7 @@ if (_qty >= _qty_in) then {
 } else {
 	_needed =  _qty_in - _qty;
 	if(_buy_o_sell == "buy") then {
-		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"]; // edited so it says, You need 5000 coins or you need 1 engine.
+		cutText [format["You need %1 %2",_needed,_textPartIn] , "PLAIN DOWN"];
 	} else {
 		cutText [format[(localize "str_epoch_player_185"),_textPartIn] , "PLAIN DOWN"];
 	};

@@ -28,6 +28,8 @@ _cpcimmune =[
 	"MAP_Wall_TinCom_9",
 	"MetalFloor_Preview_DZ",
 	"MetalPanel_DZ",
+	"CinderWallDoorSmallLocked_DZ",
+	"Land_DZE_GarageWoodDoorLocked",
 	"RampConcrete",
 	"WorkBench_DZ"
 ];
