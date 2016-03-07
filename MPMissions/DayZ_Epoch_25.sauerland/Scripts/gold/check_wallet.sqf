@@ -8,20 +8,22 @@ if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_4", "PLAIN DOWN"]
 _name = _body getVariable ["bodyName","unknown"];
 _hisMoney = _body getVariable ["cashMoney",0];
 _myMoney = player getVariable ["cashMoney",0];
-_myMoney = _myMoney + _hisMoney;
-_body setVariable ["cashMoney", 0 , true];
-player setVariable ["cashMoney", _myMoney , true];
+if (_hisMoney > 0) then
+{
+	_myMoney = _myMoney + _hisMoney;
+	_body setVariable ["cashMoney", 0 , true];
+	player setVariable ["cashMoney", _myMoney , true];
 
-systemChat format ['You took %1 coins, ID says %2 !',_hisMoney,_name];
-sleep 2;
+	systemChat format ['You took %1 coins, ID says %2 !',_hisMoney,_name];
+	sleep 2;
+}
+else 
+{
+	systemChat format ['Wallet was empty, ID says %1 !',_name];
+	sleep 2;
+};
 
 _cid =	player getVariable ["CharacterID","0"];
-
 _cashMoney = player getVariable ["cashMoney",0];
 
-
-if(_cashMoney > 0) then{
-
-}else{
-_cashMoney = 0;
-};	
+if(_cashMoney > 0) then{} else {_cashMoney = 0;};	
