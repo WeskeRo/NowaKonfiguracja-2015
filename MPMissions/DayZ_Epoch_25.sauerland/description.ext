@@ -195,6 +195,8 @@ class DayZ_loadingScreen
 #include "Scripts\dzgm\defines.hpp"
 #include "Scripts\plotManagement\defines.hpp"
 
+#include "Scripts\Garage\garage_defines.hpp"
+#include "Scripts\Garage\garage_dialog.hpp"
 
 //----Custom GUI----//
 #include "fixes\gui\ATD_Hud2.h"

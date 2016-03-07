@@ -11,6 +11,8 @@ MaxDonatorBankMoney = 1000000; // Bank size donators
 
 //-----------------------------------Currency & Banking Configs END ---------------------------------//
 
+DZE_Garage = ["Land_MBG_Garage_Single_A","Land_MBG_Garage_Single_B","Land_MBG_Garage_Single_C","Land_MBG_Garage_Single_D"];
+
 /**DoorManagement Config**/
 DoorAdminList = ["76561198009425402","76561198018007006","76561198121993182","76561198089990137","76561198088732522" ,"76561198161513402"]; // List of Player Id's of admins that can manage all doors
 AllowManualCode = true;// 2 reason| 1: Allows breaking codes (if 2nd config = false and code = 3 digits) | 2: Friends can access access not owned doors until owner gets on.
@@ -344,7 +346,8 @@ dayz_resetSelfActions = {
 	
 	s_clothes = -1;
 
-	s_player_packOBJ = -1;
+
+	s_player_garage = -1;
 };
 call dayz_resetSelfActions;
 

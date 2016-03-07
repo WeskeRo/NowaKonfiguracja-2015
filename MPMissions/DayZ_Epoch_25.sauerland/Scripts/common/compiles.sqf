@@ -16,14 +16,24 @@ if (!isDedicated) then {
 	fn_gearMenuChecks =			compile preprocessFileLineNumbers "fixes\fn_gearMenuChecks.sqf";
 	player_animalCheck =			compile preprocessFileLineNumbers "fixes\player_animalCheck.sqf";	
 	
+	garage_getnearVeh = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_nearvehicles.sqf";
+	garage_getstoredVeh = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_storedvehicles.sqf";
+	garage_manage = 			compile preprocessFileLineNumbers "Scripts\Garage\garage_manage.sqf";
+	garage_fillplayers = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_fillplayers.sqf";
+	garage_addfriend = 			compile preprocessFileLineNumbers "Scripts\Garage\garage_addfriend.sqf";
+	garage_removefriend = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_removefriend.sqf";
+	garage_spawnVehicle = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_spawnvehicle.sqf";
+	garage_storeVehicle = 		compile preprocessFileLineNumbers "Scripts\Garage\garage_storeVehicle.sqf";
+	player_build_garage			= compile preprocessFileLineNumbers "Scripts\Garage\player_build_garage.sqf";
+	
 	/*Plot*/
-	PlotGetFriends      = compile preprocessFileLineNumbers "Scripts\plotManagement\plotGetFriends.sqf";
-	PlotNearbyHumans    = compile preprocessFileLineNumbers "Scripts\plotManagement\plotNearbyHumans.sqf";
-	PlotAddFriend       = compile preprocessFileLineNumbers "Scripts\plotManagement\plotAddFriend.sqf";
-	PlotRemoveFriend    = compile preprocessFileLineNumbers "Scripts\plotManagement\plotRemoveFriend.sqf";
-	MaintainPlot    	= compile preprocessFileLineNumbers "Scripts\plotManagement\maintain_area.sqf";
-	PlotPreview    		= compile preprocessFileLineNumbers "Scripts\plotManagement\plotToggleMarkers.sqf";
-	PlotObjects         = compile preprocessFileLineNumbers "Scripts\plotManagement\plotObjects.sqf"; // NEW
+	PlotGetFriends      = 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotGetFriends.sqf";
+	PlotNearbyHumans    = 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotNearbyHumans.sqf";
+	PlotAddFriend       = 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotAddFriend.sqf";
+	PlotRemoveFriend    = 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotRemoveFriend.sqf";
+	MaintainPlot    	= 		compile preprocessFileLineNumbers "Scripts\plotManagement\maintain_area.sqf";
+	PlotPreview    		= 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotToggleMarkers.sqf";
+	PlotObjects         = 		compile preprocessFileLineNumbers "Scripts\plotManagement\plotObjects.sqf"; // NEW
 	/*Plot End*/
 	
 	/*DoorManagement Zupa*/
