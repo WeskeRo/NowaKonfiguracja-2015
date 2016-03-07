@@ -13,5 +13,4 @@ class CfgTraderCategory {
 	#include "Category\Weapons.hpp"
 	#include "Category\Vehicles.hpp"
 	#include "Category\Wholesalers.hpp"
-	#include "Category\Origins.hpp"
 };
