@@ -232,7 +232,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		  //	s_player_maintain_area = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTAREA"], "\z\addons\dayz_code\actions\maintain_area.sqf", "maintain", 5, false];
 		 //	s_player_maintain_area_preview = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTPREV"], "\z\addons\dayz_code\actions\maintain_area.sqf", "preview", 5, false];
 		// };
-		
 
 		 _plotDistance = (DZE_PlotPole select 0);
 		_PlotsmarkersNear = count (_cursorTarget nearEntities ["Land_coneLight", _PlotDistance]);
@@ -269,28 +268,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_plot_take_ownership;
 		s_player_plot_take_ownership = -1;
 	};
-	
-	
-		private ["_garageowner","_garagefriends","_garageallowed","_friend"];
-		_garageowner = _cursorTarget getVariable ["ownerPUID","0"]; //<-- We get the PUID of the owner. Here with P4L
-		_friend = _cursorTarget getVariable ["GarageFriends",[]];
-		_garagefriends = [];
-		{
-			_garagefriends set [count _garagefriends,(_x select 0)];
-		} count _friend;
-		_garageallowed = [_owner] + _garagefriends;
-		if ((_typeOfCursorTarget in DZE_Garage) && (speed player <= 1) && _canDo) then {
-			if (s_player_garage < 0) then {
-				if ((getPlayerUID player) in _garageallowed) then {
-					s_player_garage =  player addAction ["<t color='#FFAA00'>Garage Menu</t>", "Garage\player_virtualgarage.sqf", _cursorTarget, 2, false];
-				} else {
-					s_player_garage = player addAction ["<t color='#FF0000'>Garage Locked</t>", "",_cursorTarget, 2, true, true, "", ""];   
-				};
-			};
-		} else {
-			player removeAction s_player_garage;
-			s_player_garage = -1;       
-		};
 
 	// CURSOR TARGET ALIVE
 	if(_isAlive) then {
