@@ -416,6 +416,12 @@ class Category_803 {
 		buy[] =  {3000000,"Coins"};
 		sell[] = {1500000,"Coins"};
 		};
+		
+		class BAF_Jackal2_GMG_D {
+		type = "trade_any_vehicle";
+		buy[] =  {1500000,"Coins"};
+		sell[] = {75000,"Coins"};
+		};
 
 		class M1126_ICV_M2_EP1 {
 		type = "trade_any_vehicle";

@@ -34,6 +34,7 @@ class Category_564 {
 	class UralCivil2_DZE {type = "trade_any_vehicle";buy[] = {30000,"Coins"};sell[] = {15000,"Coins"};};
 	class KamazOpen_DZE {type = "trade_any_vehicle";buy[] = {40000,"Coins"};sell[] = {20000,"Coins"};};
 	class MTVR {type = "trade_any_vehicle";buy[] = {45000,"Coins"};sell[] = {20000,"Coins"};};
+	class UralOpen_CDF {type = "trade_any_vehicle";buy[] = {45000,"Coins"};sell[] = {20000,"Coins"};};
 };
 //Fuel Trucks
 class Category_492 {
