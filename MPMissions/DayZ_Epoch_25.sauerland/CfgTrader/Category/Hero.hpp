@@ -102,7 +102,7 @@ class Category_477 {
 	class Mk_48_DZ {type = "trade_weapons";buy[] = {20000,"Coins"};sell[] = {15000,"Coins"};};
 	class M240_DZ {type = "trade_weapons";buy[] = {15000,"Coins"};sell[] = {12000,"Coins"};};
 	class M110_NVG_EP1 {type = "trade_weapons";buy[] = {40000,"Coins"};sell[] = {20000,"Coins"};};
-	class DMR_DZ {type = "trade_weapons";buy[] = {100000,"Coins"};sell[] = {40000,"Coins"};};
+	class DMR_DZ {type = "trade_weapons";buy[] = {30000,"Coins"};sell[] = {15000,"Coins"};};
 	class M79_EP1 {type = "trade_weapons";buy[] = {20000,"Coins"};sell[] = {10000,"Coins"};};
 	class SCAR_H_CQC_CCO {type = "trade_weapons";buy[] = {20000,"Coins"};sell[] = {10000,"Coins"};};
 	class SCAR_H_LNG_Sniper {type = "trade_weapons";buy[] = {30000,"Coins"};sell[] = {10000,"Coins"};};

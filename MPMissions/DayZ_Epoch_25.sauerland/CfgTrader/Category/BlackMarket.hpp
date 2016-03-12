@@ -38,7 +38,7 @@ class Category_503 {
 	class KSVK_DZE {type = "trade_weapons";buy[] = {30000,"Coins"};sell[] = {15000,"Coins"};};
 	class SCAR_H_LNG_Sniper {type = "trade_weapons";buy[] = {40000,"Coins"};sell[] = {10000,"Coins"};};
 	class VSS_vintorez {type = "trade_weapons";buy[] = {10000,"Coins"};sell[] = {4000,"Coins"};};
-	class DMR_DZ {type = "trade_weapons";buy[] = {100000,"Coins"};sell[] = {40000,"Coins"};};
+	class DMR_DZ {type = "trade_weapons";buy[] = {30000,"Coins"};sell[] = {15000,"Coins"};};
 	class M110_NVG_EP1 {type = "trade_weapons";buy[] = {80000,"Coins"};sell[] = {20000,"Coins"};};
 };
 //Overwatch Pistols
