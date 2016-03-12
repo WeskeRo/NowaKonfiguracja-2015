@@ -15,16 +15,16 @@ LOG_EnterLeave = false;	// This will log to your .rpt when a player enters or le
 _infiSZ =
 [
 
-[[6851.2,17004.1,0],250,true],
-[[2206.61,20292.4,0],250,true],
-[[1345.1,11679.7,0],250,true],
-[[16615.6,1773.58,0],250,true],
-[[24857,15298.8,0],250,true],
-[[17588.7,17657.3,0],250,true],
-[[15232.8,11423,0],250,true],
-[[11899.7,6588.69,0],250,true],
-[[8940.53,21810.4,0],275,true],
-[[15176,18305,0],250,true]
+[[6851.2,17004.1,0],125,true],
+[[2206.61,20292.4,0],125,true],
+[[1345.1,11679.7,0],125,true],
+[[16615.6,1773.58,0],125,true],
+[[24857,15298.8,0],125,true],
+[[17588.7,17657.3,0],125,true],
+[[15232.8,11423,0],125,true],
+[[11899.7,6588.69,0],125,true],
+[[8940.53,21810.4,0],150,true],
+[[15176,18305,0],150,true]
 ];
 if (isServer) exitWith
 {
@@ -36,7 +36,7 @@ if (isServer) exitWith
 			_lSign = _x select 2;
 			if (_lSign) then
 			{
-				for '_i' from 0 to 360 step (350 / _radius)*2 do
+				for '_i' from 0 to 360 step (750 / _radius)*2 do
 				{
 					_location = [(_center select 0) + ((cos _i) * _radius), (_center select 1) + ((sin _i) * _radius),0];
 					_dir = ((_center select 0) - (_location select 0)) atan2 ((_center select 1) - (_location select 1));
