@@ -26,6 +26,17 @@ if (!isDedicated) then {
 	PlotObjects         = compile preprocessFileLineNumbers "Scripts\plotManagement\plotObjects.sqf"; // NEW
 	/*Plot End*/
 	
+	/*Virtual Garage*/
+	garage_getnearVeh 		= compile preprocessFileLineNumbers "Scripts\Garage\garage_nearvehicles.sqf";
+	garage_getstoredVeh 	= compile preprocessFileLineNumbers "Scripts\Garage\garage_storedvehicles.sqf";
+	garage_manage 			= compile preprocessFileLineNumbers "Scripts\Garage\garage_manage.sqf";
+	garage_fillplayers 		= compile preprocessFileLineNumbers "Scripts\Garage\garage_fillplayers.sqf";
+	garage_addfriend 		= compile preprocessFileLineNumbers "Scripts\Garage\garage_addfriend.sqf";
+	garage_removefriend 	= compile preprocessFileLineNumbers "Scripts\Garage\garage_removefriend.sqf";
+	garage_spawnVehicle 	= compile preprocessFileLineNumbers "Scripts\Garage\garage_spawnvehicle.sqf";
+	garage_storeVehicle		= compile preprocessFileLineNumbers "Scripts\Garage\garage_storeVehicle.sqf";
+	/*Virtual Garage*/
+	
 	/*DoorManagement Zupa*/
 	DoorGetFriends 				= compile preprocessFileLineNumbers "Scripts\doorManagement\doorGetFriends.sqf";
 	DoorNearbyHumans 			= compile preprocessFileLineNumbers "Scripts\doorManagement\doorNearbyHumans.sqf";

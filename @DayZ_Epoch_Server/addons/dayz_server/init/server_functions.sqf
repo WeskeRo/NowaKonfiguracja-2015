@@ -11,6 +11,12 @@ BIS_Effects_Burn =				{};
 
 call compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\KK_Functions.sqf";
 
+server_storevehicle = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_storevehicle.sqf";
+server_spawnvehicle = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnvehicle.sqf";
+	//Garage EH
+	"PVDZE_veh_store" addPublicVariableEventHandler {(_this select 1) spawn server_storevehicle};
+	"PVDZE_veh_spawn" addPublicVariableEventHandler {(_this select 1) spawn server_spawnvehicle};
+
 server_playerLogin =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
 server_onPlayerDisconnect = 	compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_onPlayerDisconnect.sqf";
@@ -679,7 +685,7 @@ dayz_recordLogin = {
 //ZEVMission init ->
 if (isServer) then 
 { 
-	//[] execVM "ZEVMission\ZEVMissionInit.sqf";
+	[] execVM "ZEVMission\ZEVMissionInit.sqf";
 };
 //ZEVMission init <-
 

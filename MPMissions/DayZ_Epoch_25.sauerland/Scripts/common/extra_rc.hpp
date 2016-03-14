@@ -10,6 +10,9 @@ class ExtraRc {
 		class laydown 	{ text = "Laydown"; 		script = "execVM 'Scripts\Fun\laydown.sqf'"; 	};
 		class playdead 	{ text = "Play Dead"; 		script = "execVM 'Scripts\Fun\deathflop.sqf'"; 	};
 	};
+	class EvMoscow {class garage 	{ text = "Build garage"; 	script = "['Land_MBG_Garage_Single_C','Vehicle Garage','EvMoscow'] spawn player_build_garage";};};
+	class EvKobalt {class helipad 	{ text = "Build HeliPad"; 		script = "['HeliHCivil','Vehicle Garage Spawn Point','EvKobalt'] spawn player_build_garage";};};
+	
   class ItemRadio {
      class GroupManagement {
         text = "Group Management";

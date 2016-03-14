@@ -20,6 +20,7 @@ HarderPenalty = true;// Cen's Penalty: Flashes screen white. And kicks player to
 /**DoorManagement Config END**/
 DZE_DoorsLocked = ["Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallDoorLocked_DZ","CinderWallDoorSmallLocked_DZ"];
 
+DZE_Garage = ["Land_MBG_Garage_Single_A","Land_MBG_Garage_Single_B","Land_MBG_Garage_Single_C","Land_MBG_Garage_Single_D"];
 
 if (isNil "DayZ_UseSteamID") then {
 	DayZ_UseSteamID = true;
@@ -345,6 +346,8 @@ dayz_resetSelfActions = {
 	s_clothes = -1;
 
 	s_player_packOBJ = -1;
+	
+	s_player_garage = -1;
 };
 call dayz_resetSelfActions;
 

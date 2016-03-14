@@ -1,13 +1,14 @@
 /*
 [_object,_type] spawn server_updateObject;
 */
-private ["_object","_type","_objectID","_uid","_lastUpdate","_needUpdate","_object_position","_object_inventory","_object_damage","_isNotOk","_parachuteWest","_firstTime","_object_killed","_object_repair","_isbuildable"];
+private ["_object","_type","_objectID","_uid","_lastUpdate","_needUpdate","_object_position","_object_inventory","_object_damage","_isNotOk","_parachuteWest","_firstTime","_object_killed","_object_repair","_isbuildable","_garagelist"];
 
 _object = 	_this select 0;
 
 if(isNull(_object)) exitWith {
 	diag_log format["Skipping Null Object: %1", _object];
 };
+if ((typeOf _object) in DZE_Garage) then {_garagelist = _this select 2;};
 
 _type = 	_this select 1;
 _parachuteWest = ((typeOf _object == "ParachuteWest") || (typeOf _object == "ParachuteC"));
@@ -68,6 +69,20 @@ _object_inventory = {
 			_isNormal = false;
 			_inventory = _object getVariable ["doorfriends", []]; //We're replacing the inventory with UIDs for this item
 		};
+		
+		if ((typeOf _object) in DZE_Garage) then {
+			_isNormal = false;
+			_inventory = [];
+			if (isNil "_garagelist") then {
+				_garagelist = _object getVariable ["StoredVehicles",[]];
+			};
+			if (_objectID == "0") then {
+				_key = format["CHILD:309:%1:%2:",_uid,_garagelist];
+			} else {
+				_key = format["CHILD:303:%1:%2:",_objectID,_garagelist];
+			};
+			_key call server_hiveWrite;
+		};
 
 		if(_isNormal)then {
 			_inventory = [
@@ -90,6 +105,10 @@ _object_inventory = {
 };
 
 _object_damage = {
+	if ((typeOf _object) in DZE_Garage) then {
+			_damage = damage _object;
+			_array = _object getVariable ["GarageFriends",[]];
+		} else {
 	private["_hitpoints","_array","_hit","_selection","_key","_damage"];
 		_hitpoints = _object call vehicle_getHitpoints;
 		_damage = damage _object;
@@ -105,6 +124,7 @@ _object_damage = {
 		//diag_log ("HIVE: WRITE: "+ str(_key));
 		_key call server_hiveWrite;
 	_object setVariable ["needUpdate",false,true];
+	};
 	};
 
 _object_killed = {

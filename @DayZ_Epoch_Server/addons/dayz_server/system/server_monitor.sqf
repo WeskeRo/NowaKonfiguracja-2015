@@ -31,7 +31,8 @@ _cpcimmune =[
 	"CinderWallDoorSmallLocked_DZ",
 	"Land_DZE_GarageWoodDoorLocked",
 	"RampConcrete",
-	"WorkBench_DZ"
+	"WorkBench_DZ",
+	"Land_MBG_Garage_Single_C"
 ];
 
 _cpcimmuneAnim = [ 
@@ -255,6 +256,11 @@ if (count _worldspace >= 3) then{
 				{
 					_object setVariable ["plotfriends", _inventory, true];
 				};
+			if ((typeOf _object) in DZE_Garage) then 
+			{
+				_object setVariable ["StoredVehicles",_inventory,true];
+				_object setVariable ["GarageFriends",_hitPoints,true];
+			};
 			_object setVariable ["OwnerPUID", _ownerPUID, true];
 			
 			// ### [CPC] Indestructible Buildables Fix
@@ -332,7 +338,7 @@ if (count _worldspace >= 3) then{
 				
 			};
 
-			if ((count _inventory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ") && !(typeOf( _object) in  DZE_DoorsLocked)) then {
+			if ((count _inventory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ") && !(typeOf( _object) in  DZE_DoorsLocked) && !((typeOf _object) in DZE_Garage)) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
 					_object setVariable ["WeaponCargo", (_inventory select 0),true];
@@ -534,7 +540,7 @@ if (count _worldspace >= 3) then{
 		
 		endLoadingScreen;
 	};
-	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
+	//[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
 	allowConnection = true;	
 	sm_done = true;

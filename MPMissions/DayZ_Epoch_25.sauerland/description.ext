@@ -236,6 +236,9 @@ class RscTitles
 #include "Scripts\spawn\halo.hpp"
 #include "Scripts\spawn\spawn.hpp"
 
+#include "Scripts\Garage\garage_defines.hpp"
+#include "Scripts\Garage\garage_dialog.hpp"
+
 #include "Scripts\dzgm\groupManagement.hpp"
 #include "Scripts\snap_pro\snappoints.hpp"
 

@@ -351,6 +351,27 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 		};
 	
+	private ["_garageowner","_garagefriends","_garageallowed","_friend"];
+	_garageowner = _cursorTarget getVariable ["ownerPUID","0"]; //<-- We get the PUID of the owner. Here with P4L
+	_friend = _cursorTarget getVariable ["GarageFriends",[]];
+	_garagefriends = [];
+	{
+    _garagefriends set [count _garagefriends,(_x select 0)];
+	} count _friend;
+	_garageallowed = [_owner] + _garagefriends;
+	if ((_typeOfCursorTarget in DZE_Garage) && (speed player <= 1) && _canDo) then {
+		if (s_player_garage < 0) then {
+			if ((getPlayerUID player) in _garageallowed) then {
+				s_player_garage =  player addAction ["<t color='#FFAA00'>Garage Menu</t>", "Script\Garage\player_virtualgarage.sqf", _cursorTarget, 2, false];
+			} else {
+				s_player_garage = player addAction ["<t color='#FF0000'>Garage Locked</t>", "",_cursorTarget, 2, true, true, "", ""];   
+			};
+		};
+	} else {
+    player removeAction s_player_garage;
+    s_player_garage = -1;       
+};
+
 	};
 
 	if(_player_deleteBuild) then {
@@ -1139,9 +1160,11 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	player removeAction s_bank_dialog2;
 	s_bank_dialog2 = -1;
 	
-		player removeAction s_player_packOBJ;
+	player removeAction s_player_packOBJ;
 	s_player_packOBJ = -1;
 	
+	player removeAction s_player_garage;
+	s_player_garage = -1;
 };
 
 

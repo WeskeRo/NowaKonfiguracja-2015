@@ -724,3 +724,8 @@ class Category_809 {
 		class ItemSodaRabbit 	{type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 		class ItemSodaSacrite 	{type = "trade_items";buy[] = {500,"Coins"};sell[] = {500,"Coins"};};
 };
+
+class Category_810 {
+		class EvMoscow 		{type = "trade_weapons";buy[] = {200000,"Coins"}; sell[] = {200000,"Coins"};};
+		class EvKobalt 	{type = "trade_weapons";buy[] = {10000,"Coins"};sell[] = {10000,"Coins"};};
+};
